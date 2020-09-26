@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Token {
+public struct Token {
     let value: String
     let expiration: String
     
@@ -16,6 +16,6 @@ struct Token {
     }
 }
 
-extension Token {
+public extension Token {
     static let empty = Token(value: .init(), expiration: .init())
 }

@@ -5,13 +5,13 @@
 //  Created by Jullian Mercier on 2020-09-26.
 //
 
-struct Search: Codable {
+public struct Search: Codable {
     let items: [SearchItem]
     let hasMore: Bool
 }
 
 // MARK: - Item
-struct SearchItem: Codable {
+public struct SearchItem: Codable {
     let tags: [String]
     let questionScore: Int
     let isAccepted: Bool
@@ -25,7 +25,7 @@ struct SearchItem: Codable {
     let answerCount: Int?
 }
 
-enum ItemType: String, Codable {
+public enum ItemType: String, Codable {
     case answer = "answer"
     case question = "question"
 }

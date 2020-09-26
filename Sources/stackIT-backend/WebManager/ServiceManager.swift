@@ -10,7 +10,7 @@ import Combine
 
 private typealias CacheID = String
 
-public protocol ServiceManager {
+protocol ServiceManager {
     func fetch<T: Decodable>(endpoint: Endpoint, model: T.Type) -> AnyPublisher<T, Error>
     func send<T:Decodable>(endpoint: Endpoint, model: T.Type) -> AnyPublisher<T, Error>
 }

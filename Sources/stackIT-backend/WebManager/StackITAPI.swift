@@ -12,8 +12,8 @@ import Combine
 public class StackITAPI {
     let serviceManager: ServiceManager
     
-    init(serviceManager: ServiceManager) {
-        self.serviceManager = serviceManager
+    public init(enableMock: Bool = false) {
+        self.serviceManager = enableMock ? MockManager(): NetworkManager()
     }
 }
 

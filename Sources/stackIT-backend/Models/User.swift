@@ -6,11 +6,11 @@
 //
 
 // MARK: - Welcome
-struct User: Codable {
+public struct User: Codable {
     let items: [UserDetails]
 }
 
-struct UserDetails: Codable {
+public struct UserDetails: Codable {
     let badgeCounts: BadgeCounts
     let accountId: Int
     let isEmployee: Bool
@@ -24,11 +24,11 @@ struct UserDetails: Codable {
     let displayName: String
 }
 
-struct BadgeCounts: Codable {
+public struct BadgeCounts: Codable {
     let bronze, silver, gold: Int
 }
 
-extension User {
+public extension User {
     static let empty = User(items: [])
 }
 
