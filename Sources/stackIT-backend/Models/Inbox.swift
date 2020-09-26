@@ -6,20 +6,20 @@
 //
 
 public struct Inbox: Codable {
-    let items: [Message]
-    let hasMore: Bool
-    let quotaMax, quotaRemaining: Int
+    public let items: [Message]
+    public let hasMore: Bool
+    public let quotaMax, quotaRemaining: Int
 }
 
 // MARK: - Item
 public struct Message: Codable {
-    let isUnread: Bool
-    let creationDate: Int
-    let commentId, answerId: Int?
-    let itemType: MessageType
-    let link: String
-    let title: String
-    var body: String
+    public let isUnread: Bool
+    public let creationDate: Int
+    public let commentId, answerId: Int?
+    public let itemType: MessageType
+    public let link: String
+    public let title: String
+    public var body: String
 }
 
 public enum MessageType: String, Codable {

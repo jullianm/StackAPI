@@ -8,9 +8,9 @@
 import Foundation
 
 public struct Questions: Codable {
-    let items: [Question]
-    let hasMore: Bool
-    let quotaRemaining: Int
+    public let items: [Question]
+    public let hasMore: Bool
+    public let quotaRemaining: Int
 }
 
 public extension Questions {

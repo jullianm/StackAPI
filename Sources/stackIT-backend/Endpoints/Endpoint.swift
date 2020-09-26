@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Endpoint {
+public enum Endpoint {
     case questions(subendpoint: QuestionsEndpoint)
     case answers(subendpoint: AnswersEndpoint)
     case comments(subendpoint: CommentsEndpoint)
