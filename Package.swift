@@ -23,7 +23,16 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "stackIT-backend",
-            dependencies: ["KeychainAccess"]),
+            dependencies: ["KeychainAccess"],
+            resources: [.copy("Answers.json"),
+                        .copy("Comments.json"),
+                        .copy("Inbox.json"),
+                        .copy("Posts.json"),
+                        .copy("Questions.json"),
+                        .copy("Search.json"),
+                        .copy("Tags.json"),
+                        .copy("Timeline.json"),
+                        .copy("User.json")]),
         .testTarget(
             name: "stackIT-backendTests",
             dependencies: ["stackIT-backend"]),

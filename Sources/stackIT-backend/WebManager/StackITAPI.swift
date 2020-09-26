@@ -50,10 +50,10 @@ public extension StackITAPI {
     
     /// Retrieve questions using filters from `Stack Exchange` API.
     /// - parameter keywords: A list of keywords.
-    /// - returns : A type-erased publisher of `Questions` and `Error`.
-    func fetchQuestionsByKeywords(keywords: String, action: Action?) -> AnyPublisher<Questions, Error> {
+    /// - returns : A type-erased publisher of `Search` and `Error`.
+    func fetchQuestionsByKeywords(keywords: String, action: Action?) -> AnyPublisher<Search, Error> {
         serviceManager.fetch(endpoint: .questions(subendpoint: .keywords(keywords, action: action)),
-                             model: Questions.self)
+                             model: Search.self)
     }
 }
 
@@ -103,7 +103,7 @@ public extension StackITAPI {
     }
 }
 
-// MARK: Account API calls
+// MARK: User API calls
 public extension StackITAPI {
     /// Retrieve user messages from `Stack Exchange` API.
     ///
@@ -125,5 +125,27 @@ public extension StackITAPI {
     func fetchTimeline(token: String, key: String) -> AnyPublisher<Timeline, Error> {
         serviceManager.fetch(endpoint: .timeline(token: token, key: key),
                              model: Timeline.self)
+    }
+    
+    /// Retrieve user posts from `Stack Exchange` API.
+    ///
+    /// Required a registered app on `Stack Exchange`.
+    /// - parameter token: The user token.
+    /// - parameter key: The app key.
+    /// - returns : A type-erased publisher of `Posts` and `Error`.
+    func fetchPosts(token: String, key: String) -> AnyPublisher<Posts, Error> {
+        return serviceManager.fetch(endpoint: .posts(token: token, key: key),
+                                    model: Posts.self)
+    }
+    
+    /// Retrieve user profile from `Stack Exchange` API.
+    ///
+    /// Required a registered app on `Stack Exchange`.
+    /// - parameter token: The user token.
+    /// - parameter key: The app key.
+    /// - returns : A type-erased publisher of `User` and `Error`.
+    func fetchUser(token: String, key: String) -> AnyPublisher<User, Error> {
+        return serviceManager.fetch(endpoint: .user(token: token, key: key),
+                                    model: User.self)
     }
 }
