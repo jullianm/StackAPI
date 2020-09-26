@@ -6,9 +6,9 @@
 //
 
 public struct Comments: Codable {
-    let items: [Comment]
-    let hasMore: Bool
-    let quotaRemaining: Int
+    public let items: [Comment]
+    public let hasMore: Bool
+    public let quotaRemaining: Int
 }
 
 public extension Comments {
@@ -17,9 +17,9 @@ public extension Comments {
 
 // MARK: - Item
 public struct Comment: Codable {
-    let owner: Owner
-    let edited: Bool
-    let score, creationDate, postId, commentId: Int
-    let body: String
-    let replyToUser: Owner?
+    public let owner: Owner
+    public let edited: Bool
+    public let score, creationDate, postId, commentId: Int
+    public let body: String
+    public let replyToUser: Owner?
 }

@@ -9,7 +9,7 @@ public enum Action: Equatable {
     case page(count: Int = 1)
     case refresh
     
-    func updatePagingCount() -> Self {
+    public func updatePagingCount() -> Self {
         switch self {
         case let .page(count):
             return .page(count: count + 1)
@@ -18,7 +18,7 @@ public enum Action: Equatable {
         }
     }
     
-    var pageCount: Int {
+    public var pageCount: Int {
         switch self {
         case .page(let count):
             return count

@@ -6,18 +6,18 @@
 //
 
 public struct Timeline: Codable {
-    let items: [TimelineItems]
-    let hasMore: Bool
-    let quotaMax, quotaRemaining: Int
+    public let items: [TimelineItems]
+    public let hasMore: Bool
+    public let quotaMax, quotaRemaining: Int
 }
 
 public struct TimelineItems: Codable {
-    let postId, userId: Int?
-    let timelineType: TimelineType
-    let creationDate: Int
-    let title: String?
-    let detail: String?
-    let commentId, badgeId: Int?
+    public let postId, userId: Int?
+    public let timelineType: TimelineType
+    public let creationDate: Int
+    public let title: String?
+    public let detail: String?
+    public let commentId, badgeId: Int?
 
 }
 
@@ -31,7 +31,7 @@ public enum TimelineType: String, Codable {
     case editedAPost = "revision"
     case suggestedAnEdit = "suggested"
     
-    var title: String {
+    public var title: String {
         switch self {
         case .acceptedAnAnswer:
             return "Accepted an answer"

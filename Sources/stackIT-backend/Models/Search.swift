@@ -6,23 +6,23 @@
 //
 
 public struct Search: Codable {
-    let items: [SearchItem]
-    let hasMore: Bool
+    public let items: [SearchItem]
+    public let hasMore: Bool
 }
 
 // MARK: - Item
 public struct SearchItem: Codable {
-    let tags: [String]
-    let questionScore: Int
-    let isAccepted: Bool
-    let answerId: Int?
-    let isAnswered: Bool
-    let questionId: Int
-    let itemType: ItemType
-    let score, lastActivityDate, creationDate: Int
-    let body, excerpt, title: String
-    let hasAcceptedAnswer: Bool?
-    let answerCount: Int?
+    public let tags: [String]
+    public let questionScore: Int
+    public let isAccepted: Bool
+    public let answerId: Int?
+    public let isAnswered: Bool
+    public let questionId: Int
+    public let itemType: ItemType
+    public let score, lastActivityDate, creationDate: Int
+    public let body, excerpt, title: String
+    public let hasAcceptedAnswer: Bool?
+    public let answerCount: Int?
 }
 
 public enum ItemType: String, Codable {

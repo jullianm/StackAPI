@@ -6,9 +6,9 @@
 //
 
 public struct Tags: Codable {
-    let items: [TagName]
+    public let items: [TagName]
 }
 
 public struct TagName: Codable {
-    let name: String
+    public let name: String
 }

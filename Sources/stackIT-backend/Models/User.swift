@@ -7,25 +7,25 @@
 
 // MARK: - Welcome
 public struct User: Codable {
-    let items: [UserDetails]
+    public let items: [UserDetails]
 }
 
 public struct UserDetails: Codable {
-    let badgeCounts: BadgeCounts
-    let accountId: Int
-    let isEmployee: Bool
-    let lastModifiedDate, lastAccessDate, reputationChangeYear, reputationChangeQuarter: Int
-    let reputationChangeMonth, reputationChangeWeek, reputationChangeDay, reputation: Int
-    let creationDate: Int
-    let userType: String
-    let userId: Int
-    let location: String
-    let link, profileImage: String
-    let displayName: String
+    public let badgeCounts: BadgeCounts
+    public let accountId: Int
+    public let isEmployee: Bool
+    public let lastModifiedDate, lastAccessDate, reputationChangeYear, reputationChangeQuarter: Int
+    public let reputationChangeMonth, reputationChangeWeek, reputationChangeDay, reputation: Int
+    public let creationDate: Int
+    public let userType: String
+    public let userId: Int
+    public let location: String
+    public let link, profileImage: String
+    public let displayName: String
 }
 
 public struct BadgeCounts: Codable {
-    let bronze, silver, gold: Int
+    public let bronze, silver, gold: Int
 }
 
 public extension User {

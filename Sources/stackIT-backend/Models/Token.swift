@@ -8,10 +8,10 @@
 import Foundation
 
 public struct Token {
-    let value: String
-    let expiration: String
+    public let value: String
+    public let expiration: String
     
-    var isNotEmpty: Bool {
+    public var isNotEmpty: Bool {
         return value != "" && expiration != ""
     }
 }

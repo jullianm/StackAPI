@@ -8,17 +8,17 @@
 import Foundation
 
 public struct Answers: Codable {
-    let items: [Answer]
-    let hasMore: Bool
+    public let items: [Answer]
+    public let hasMore: Bool
 }
 
 public struct Answer: Codable {
-    let owner: Owner
-    let isAccepted: Bool
-    let score, lastActivityDate: Int
-    let lastEditDate: Int?
-    let creationDate, answerId, questionId: Int
-    let body: String
+    public let owner: Owner
+    public let isAccepted: Bool
+    public let score, lastActivityDate: Int
+    public let lastEditDate: Int?
+    public let creationDate, answerId, questionId: Int
+    public let body: String
 }
 
 public extension Answers {

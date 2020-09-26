@@ -19,28 +19,28 @@ public extension Questions {
 
 // MARK: - Item
 public struct Question: Codable {
-    let tags: [String]
-    let owner: Owner
-    let isAnswered: Bool
-    let viewCount, answerCount, score, lastActivityDate: Int
-    let creationDate: Int
-    let lastEditDate: Int?
-    let questionId: Int
-    let link: String
-    let title: String
-    let body: String
-    let acceptedAnswerId, closedDate: Int?
-    let closedReason: String?
+    public let tags: [String]
+    public let owner: Owner
+    public let isAnswered: Bool
+    public let viewCount, answerCount, score, lastActivityDate: Int
+    public let creationDate: Int
+    public let lastEditDate: Int?
+    public let questionId: Int
+    public let link: String
+    public let title: String
+    public let body: String
+    public let acceptedAnswerId, closedDate: Int?
+    public let closedReason: String?
 }
 
 public struct Owner: Codable {
-    let reputation: Int?
-    let userId: Int?
-    let userType: String?
-    let profileImage: String?
-    let displayName: String?
-    let link: String?
-    let acceptRate: Int?
+    public let reputation: Int?
+    public let userId: Int?
+    public let userType: String?
+    public let profileImage: String?
+    public let displayName: String?
+    public let link: String?
+    public let acceptRate: Int?
 }
 
 public extension Question {
