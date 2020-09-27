@@ -11,6 +11,11 @@ public struct Token {
     public let value: String
     public let expiration: String
     
+    public init(value: String, expiration: String) {
+        self.value = value
+        self.expiration = expiration
+    }
+    
     public var isNotEmpty: Bool {
         return value != "" && expiration != ""
     }
