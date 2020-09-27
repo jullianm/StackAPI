@@ -60,7 +60,7 @@ enum Endpoint {
         case .questions(let subendpoint):
             switch subendpoint {
             case let .filters(tags, trending, status):
-                return tags.joined(separator: ";") + "&" + trending + String(status?.pageCount ?? 0)
+                return tags.joined(separator: ";") + "&" + trending + String(status?.pageCount ?? 1)
             case .ids(let ids):
                 return ids
             case .keywords(let keywords, _):

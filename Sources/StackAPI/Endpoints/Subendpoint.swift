@@ -41,7 +41,7 @@ enum QuestionsEndpoint {
                 .init(name: "sort", value: trending),
                 .init(name: "site", value: "stackoverflow"),
                 .init(name: "filter", value: "withbody"),
-                .init(name: "page", value: String(status?.pageCount ?? 0))
+                .init(name: "page", value: String(status?.pageCount ?? 1))
             ]
             if !tags.isEmpty {
                 items.append(.init(name: "tagged", value: tags.joined(separator: ";")))
