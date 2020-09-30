@@ -31,6 +31,7 @@ public struct Question: Codable {
     public let body: String
     public let acceptedAnswerId, closedDate: Int?
     public let closedReason: String?
+    public let commentCount: Int
 }
 
 public struct Owner: Codable {
@@ -59,7 +60,8 @@ public extension Question {
                                       body: "",
                                       acceptedAnswerId: nil,
                                       closedDate: 1590047664,
-                                      closedReason: nil)
+                                      closedReason: nil,
+                                      commentCount: 5)
 }
 
 public extension Owner {

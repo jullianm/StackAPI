@@ -40,7 +40,7 @@ enum QuestionsEndpoint {
                 .init(name: "order", value: "desc"),
                 .init(name: "sort", value: trending),
                 .init(name: "site", value: "stackoverflow"),
-                .init(name: "filter", value: "withbody"),
+                .init(name: "filter", value: "!--1nZw8Pr5S*"),
                 .init(name: "page", value: String(status?.pageCount ?? 1))
             ]
             if !tags.isEmpty {
@@ -60,7 +60,7 @@ enum QuestionsEndpoint {
                 .init(name: "order", value: "desc"),
                 .init(name: "sort", value: "activity"),
                 .init(name: "site", value: "stackoverflow"),
-                .init(name: "filter", value: "withbody")
+                .init(name: "filter", value: "!--1nZw8Pr5S*")
             ]
         }
     }
@@ -94,7 +94,7 @@ enum AnswersEndpoint {
             return [
                 .init(name: "order", value: "desc"),
                 .init(name: "site", value: "stackoverflow"),
-                .init(name: "filter", value: "withbody")
+                .init(name: "filter", value: "!--1nZxQ38Bk1")
             ]
         case .ids:
             return [
