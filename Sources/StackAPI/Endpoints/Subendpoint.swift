@@ -101,7 +101,7 @@ enum AnswersEndpoint {
                 .init(name: "site", value: "stackoverflow"),
                 .init(name: "order", value: "desc"),
                 .init(name: "sort", value: "activity"),
-                .init(name: "filter", value: "withbody")
+                .init(name: "filter", value: "!--1nZxQ38Bk1")
             ]
         }
     }

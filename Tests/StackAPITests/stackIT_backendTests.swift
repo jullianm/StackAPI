@@ -1,5 +1,5 @@
 import XCTest
-@testable import stackIT_backend
+@testable import StackAPI
 
 final class stackIT_backendTests: XCTestCase {
     func testExample() {
