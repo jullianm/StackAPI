@@ -13,6 +13,7 @@ public struct Inbox: Codable {
 
 // MARK: - Item
 public struct Message: Codable {
+    public let questionId: Int
     public let isUnread: Bool
     public let creationDate: Int
     public let commentId, answerId: Int?
