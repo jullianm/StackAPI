@@ -43,8 +43,8 @@ public extension StackITAPI {
     /// Retrieve questions using questions ids from `Stack Exchange` API.
     /// - parameter ids: A concatenated list of questions ids.
     /// - returns : A type-erased publisher of `Questions` and `Error`.
-    func fetchQuestionsByIds(_ ids: String) -> AnyPublisher<Questions, Error> {
-        serviceManager.fetch(endpoint: .questions(subendpoint: .ids(ids)),
+    func fetchQuestionsByIds(_ ids: String, action: Action?) -> AnyPublisher<Questions, Error> {
+        serviceManager.fetch(endpoint: .questions(subendpoint: .ids(ids, action: action)),
                              model: Questions.self)
     }
     
@@ -62,16 +62,16 @@ public extension StackITAPI {
     /// Retrieve answers using answers ids from `Stack Exchange` API.
     /// - parameter ids: A concatenated list of answers ids.
     /// - returns : A type-erased publisher of `Answers` and `Error`.
-    func fetchAnswersByIds(_ ids: String) -> AnyPublisher<Answers, Error> {
-        serviceManager.fetch(endpoint: .answers(subendpoint: .ids(ids)),
+    func fetchAnswersByIds(_ ids: String, action: Action?) -> AnyPublisher<Answers, Error> {
+        serviceManager.fetch(endpoint: .answers(subendpoint: .ids(ids, action: action)),
                              model: Answers.self)
     }
     
     /// Retrieve answers using answers ids from `Stack Exchange` API.
     /// - parameter questionId: The question id.
     /// - returns : A type-erased publisher of `Answers` and `Error`.
-    func fetchAnswersByQuestionId(_ questionId: String) -> AnyPublisher<Answers, Error> {
-        serviceManager.fetch(endpoint: .answers(subendpoint: .questionId(questionId)),
+    func fetchAnswersByQuestionId(_ questionId: String, action: Action?) -> AnyPublisher<Answers, Error> {
+        serviceManager.fetch(endpoint: .answers(subendpoint: .questionId(questionId, action: action)),
                              model: Answers.self)
     }
 }
@@ -81,24 +81,24 @@ public extension StackITAPI {
     /// Retrieve comments using answers ids from `Stack Exchange` API.
     /// - parameter answersId: A concatenated list of answers ids.
     /// - returns : A type-erased publisher of `Comments` and `Error`.
-    func fetchCommentsByAnswersIds(_ answersIds: String) -> AnyPublisher<Comments, Error> {
-        serviceManager.fetch(endpoint: .comments(subendpoint: .answersIds(answersIds)),
+    func fetchCommentsByAnswersIds(_ answersIds: String, action: Action?) -> AnyPublisher<Comments, Error> {
+        serviceManager.fetch(endpoint: .comments(subendpoint: .answersIds(answersIds, action: action)),
                              model: Comments.self)
     }
     
     /// Retrieve comments using comments ids from `Stack Exchange` API.
     /// - parameter ids: A concatenated list of comments ids.
     /// - returns : A type-erased publisher of `Comments` and `Error`.
-    func fetchCommentsByIds(_ ids: String) -> AnyPublisher<Comments, Error> {
-        serviceManager.fetch(endpoint: .comments(subendpoint: .ids(ids)),
+    func fetchCommentsByIds(_ ids: String, action: Action?) -> AnyPublisher<Comments, Error> {
+        serviceManager.fetch(endpoint: .comments(subendpoint: .ids(ids, action: action)),
                              model: Comments.self)
     }
     
     /// Retrieve comments using questions ids from `Stack Exchange` API.
     /// - parameter questionsIds: A concatenated list of questions ids.
     /// - returns : A type-erased publisher of `Comments` and `Error`.
-    func fetchCommentsByQuestionsIds(_ questionsIds: String) -> AnyPublisher<Comments, Error> {
-        serviceManager.fetch(endpoint: .comments(subendpoint: .questionsIds(questionsIds)),
+    func fetchCommentsByQuestionsIds(_ questionsIds: String, action: Action?) -> AnyPublisher<Comments, Error> {
+        serviceManager.fetch(endpoint: .comments(subendpoint: .questionsIds(questionsIds, action: action)),
                              model: Comments.self)
     }
 }
