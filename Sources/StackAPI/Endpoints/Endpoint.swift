@@ -57,31 +57,14 @@ enum Endpoint {
     
     var cacheID: String {
         switch self {
-        case .questions(let subendpoint):
-            switch subendpoint {
-            case let .filters(tags, trending, status):
-                return tags.joined(separator: ";") + "&" + trending + String(status?.pageCount ?? 1)
-            case .ids(let ids, _):
-                return ids
-            case .keywords(let keywords, _):
-                return keywords
-            }
+        case let .questions(subendpoint):
+            return subendpoint.cacheID
         case let .answers(subendpoint):
-            switch subendpoint {
-            case .questionId(let questionId, _):
-                return subendpoint.path + questionId
-            case .ids(let ids, _):
-                return subendpoint.path + ids
-            }
+            return subendpoint.cacheID
         case let .comments(subendpoint):
-            switch subendpoint {
-            case .answersIds(let ids, _),
-                 .ids(let ids, _),
-                 .questionsIds(let ids, _):
-                return subendpoint.path + ids
-            }
+            return subendpoint.cacheID
         default:
-            return .init()
+            return .init() /// no cache
         }
     }
     

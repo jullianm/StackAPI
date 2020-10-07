@@ -33,6 +33,17 @@ enum QuestionsEndpoint {
         }
     }
     
+    var cacheID: String {
+        switch self {
+        case let .filters(tags, trending, action):
+            return path + tags.joined(separator: ";") + "&" + trending + String(action?.pageCount ?? 1)
+        case let .ids(ids, action):
+            return path + ids + String(action?.pageCount ?? 1)
+        case let .keywords(keywords, action):
+            return path + keywords + String(action?.pageCount ?? 1)
+        }
+    }
+    
     var queryItems: [URLQueryItem] {
         switch self {
         case let .filters(tags, trending, status):
@@ -90,6 +101,15 @@ enum AnswersEndpoint {
         }
     }
     
+    var cacheID: String {
+        switch self {
+        case let .questionId(questionId, action):
+            return path + questionId + String(action?.pageCount ?? 1)
+        case let .ids(ids, action):
+            return path + ids + String(action?.pageCount ?? 1)
+        }
+    }
+    
     var queryItems: [URLQueryItem] {
         switch self {
         case .questionId(_, let action):
@@ -131,6 +151,15 @@ enum CommentsEndpoint {
             return "/2.2/comments/\(ids)"
         case .questionsIds(let questionsId, _):
             return "2.2/questions/\(questionsId)/comments"
+        }
+    }
+    
+    var cacheID: String {
+        switch self {
+        case .answersIds(let ids, let action),
+             .ids(let ids, let action),
+             .questionsIds(let ids, let action):
+            return path + ids + String(action?.pageCount ?? 1)
         }
     }
     
