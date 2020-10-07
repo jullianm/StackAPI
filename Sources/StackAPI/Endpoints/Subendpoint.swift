@@ -10,7 +10,7 @@ import Foundation
 
 enum QuestionsEndpoint {
     case filters(tags: [String], trending: String, action: Action? = nil)
-    case ids(_ ids: String)
+    case ids(_ ids: String, action: Action? = nil)
     case keywords(_ keywords: String, action: Action? = nil)
     
     var action: Action? {
@@ -28,7 +28,7 @@ enum QuestionsEndpoint {
             return "2.2/questions"
         case .keywords:
             return "2.2/search/excerpts"
-        case .ids(let ids):
+        case .ids(let ids,_ ):
             return "2.2/questions/\(ids)"
         }
     }
@@ -48,19 +48,21 @@ enum QuestionsEndpoint {
             }
             
             return items
-        case let .keywords(keywords, _):
+        case let .keywords(keywords, action):
             return [
                 .init(name: "order", value: "desc"),
                 .init(name: "sort", value: "relevance"),
                 .init(name: "site", value: "stackoverflow"),
-                .init(name: "q", value: keywords)
+                .init(name: "q", value: keywords),
+                .init(name: "page", value: String(action?.pageCount ?? 1))
             ]
-        case .ids:
+        case .ids(_, let action):
             return [
                 .init(name: "order", value: "desc"),
                 .init(name: "sort", value: "activity"),
                 .init(name: "site", value: "stackoverflow"),
-                .init(name: "filter", value: "!--1nZw8Pr5S*")
+                .init(name: "filter", value: "!--1nZw8Pr5S*"),
+                .init(name: "page", value: String(action?.pageCount ?? 1))
             ]
         }
     }
@@ -76,32 +78,34 @@ enum QuestionsEndpoint {
 }
 
 enum AnswersEndpoint {
-    case ids(_ ids: String)
-    case questionId(_ questionId: String)
+    case ids(_ ids: String, action: Action? = nil)
+    case questionId(_ questionId: String, action: Action? = nil)
     
     var path: String {
         switch self {
-        case let .questionId(questionId):
+        case let .questionId(questionId, _):
             return "2.2/questions/\(questionId)/answers"
-        case .ids(let ids):
+        case .ids(let ids, _):
             return "2.2/answers/\(ids)"
         }
     }
     
     var queryItems: [URLQueryItem] {
         switch self {
-        case .questionId:
+        case .questionId(_, let action):
             return [
                 .init(name: "order", value: "desc"),
                 .init(name: "site", value: "stackoverflow"),
-                .init(name: "filter", value: "!--1nZxQ38Bk1")
+                .init(name: "filter", value: "!--1nZxQ38Bk1"),
+                .init(name: "page", value: String(action?.pageCount ?? 1))
             ]
-        case .ids:
+        case .ids(_, let action):
             return [
                 .init(name: "site", value: "stackoverflow"),
                 .init(name: "order", value: "desc"),
                 .init(name: "sort", value: "activity"),
-                .init(name: "filter", value: "withbody")
+                .init(name: "filter", value: "withbody"),
+                .init(name: "page", value: String(action?.pageCount ?? 1))
             ]
         }
     }
@@ -115,43 +119,46 @@ enum AnswersEndpoint {
 }
 
 enum CommentsEndpoint {
-    case ids(_ ids: String)
-    case answersIds(_ answersId: String)
-    case questionsIds(_ questionsId: String)
+    case ids(_ ids: String, action: Action? = nil)
+    case answersIds(_ answersId: String, action: Action? = nil)
+    case questionsIds(_ questionsId: String, action: Action? = nil)
     
     var path: String {
         switch self {
-        case .answersIds(let answersId):
+        case .answersIds(let answersId, _):
             return "2.2/answers/\(answersId)/comments"
-        case .ids(let ids):
+        case .ids(let ids, _):
             return "/2.2/comments/\(ids)"
-        case .questionsIds(let questionsId):
+        case .questionsIds(let questionsId, _):
             return "2.2/questions/\(questionsId)/comments"
         }
     }
     
     var queryItems: [URLQueryItem] {
         switch self {
-        case .answersIds:
+        case .answersIds(_, let action):
             return [
                 .init(name: "order", value: "desc"),
                 .init(name: "sort", value: "creation"),
                 .init(name: "site", value: "stackoverflow"),
-                .init(name: "filter", value: "withbody")
+                .init(name: "filter", value: "withbody"),
+                .init(name: "page", value: String(action?.pageCount ?? 1))
             ]
-        case .ids:
+        case .ids(_, let action):
             return [
                 .init(name: "site", value: "stackoverflow"),
                 .init(name: "order", value: "desc"),
                 .init(name: "sort", value: "creation"),
-                .init(name: "filter", value: "withbody")
+                .init(name: "filter", value: "withbody"),
+                .init(name: "page", value: String(action?.pageCount ?? 1))
             ]
-        case .questionsIds:
+        case .questionsIds(_, let action):
             return [
                 .init(name: "order", value: "desc"),
                 .init(name: "sort", value: "creation"),
                 .init(name: "site", value: "stackoverflow"),
-                .init(name: "filter", value: "withbody")
+                .init(name: "filter", value: "withbody"),
+                .init(name: "page", value: String(action?.pageCount ?? 1))
             ]
         }
     }

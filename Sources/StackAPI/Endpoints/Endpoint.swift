@@ -61,23 +61,23 @@ enum Endpoint {
             switch subendpoint {
             case let .filters(tags, trending, status):
                 return tags.joined(separator: ";") + "&" + trending + String(status?.pageCount ?? 1)
-            case .ids(let ids):
+            case .ids(let ids, _):
                 return ids
             case .keywords(let keywords, _):
                 return keywords
             }
         case let .answers(subendpoint):
             switch subendpoint {
-            case .questionId(let questionId):
+            case .questionId(let questionId, _):
                 return subendpoint.path + questionId
-            case .ids(let ids):
+            case .ids(let ids, _):
                 return subendpoint.path + ids
             }
         case let .comments(subendpoint):
             switch subendpoint {
-            case .answersIds(let ids),
-                 .ids(let ids),
-                 .questionsIds(let ids):
+            case .answersIds(let ids, _),
+                 .ids(let ids, _),
+                 .questionsIds(let ids, _):
                 return subendpoint.path + ids
             }
         default:
