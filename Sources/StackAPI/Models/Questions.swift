@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Questions.swift
 //  
 //
 //  Created by Jullian Mercier on 2020-09-26.
@@ -32,6 +32,8 @@ public struct Question: Codable {
     public let acceptedAnswerId, closedDate: Int?
     public let closedReason: String?
     public let commentCount: Int
+    public let upvoted: Bool?
+    public let downvoted: Bool?
 }
 
 public struct Owner: Codable {
@@ -61,7 +63,9 @@ public extension Question {
                                       acceptedAnswerId: nil,
                                       closedDate: 1590047664,
                                       closedReason: nil,
-                                      commentCount: 5)
+                                      commentCount: 5,
+                                      upvoted: nil,
+                                      downvoted: nil)
 }
 
 public extension Owner {

@@ -1,5 +1,5 @@
 //
-//  File 2.swift
+//  Error.swift
 //  
 //
 //  Created by Jullian Mercier on 2020-09-25.

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Comments.swift
 //  
 //
 //  Created by Jullian Mercier on 2020-09-26.
@@ -11,10 +11,6 @@ public struct Comments: Codable {
     public let quotaRemaining: Int
 }
 
-public extension Comments {
-    static let empty = Comments(items: [], hasMore: false, quotaRemaining: 0)
-}
-
 // MARK: - Item
 public struct Comment: Codable {
     public let owner: Owner
@@ -22,4 +18,9 @@ public struct Comment: Codable {
     public let score, creationDate, postId, commentId: Int
     public let body: String
     public let replyToUser: Owner?
+    public let upvoted: Bool?
+}
+
+public extension Comments {
+    static let empty = Comments(items: [], hasMore: false, quotaRemaining: 0)
 }

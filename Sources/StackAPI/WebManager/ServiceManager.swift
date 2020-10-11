@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ServiceManager.swift
 //  
 //
 //  Created by Jullian Mercier on 2020-09-25.
@@ -22,21 +22,22 @@ final class NetworkManager: ServiceManager {
         if endpoint.action == .refresh {
             cache = [:]
         } else {
-            if let value = cache[endpoint.cacheID] as? T {
+            if endpoint.method == .get,
+               let value = cache[endpoint.cacheID] as? T {
                 return Just(value)
                     .setFailureType(to: Error.self)
                     .eraseToAnyPublisher()
             }
         }
         
-        guard let url = endpoint.url else {
+        guard let urlRequest = endpoint.urlRequest else {
             return Fail(error: Error.wrongURL).eraseToAnyPublisher()
         }
                 
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
-        return URLSession.shared.dataTaskPublisher(for: url)
+        return URLSession.shared.dataTaskPublisher(for: urlRequest)
             .mapError(Error.network)
             .map(\.data)
             .decode(type: model, decoder: decoder)
@@ -65,17 +66,6 @@ final class NetworkManager: ServiceManager {
             .print("#DEBUG POST REQUEST")
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
-    }
-    
-    private func isResponseValid(_ response: URLResponse) -> Bool {
-        let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 500
-        
-        switch statusCode {
-        case 200..<300:
-            return true
-        case _:
-            return false
-        }
     }
 }
 

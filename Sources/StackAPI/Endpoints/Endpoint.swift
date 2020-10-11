@@ -7,17 +7,35 @@
 
 import Foundation
 
+enum Method: String {
+    case get = "GET"
+    case post = "POST"
+}
+
 enum Endpoint {
     case questions(subendpoint: QuestionsEndpoint)
     case answers(subendpoint: AnswersEndpoint)
     case comments(subendpoint: CommentsEndpoint)
     case tags
-    case user(token: String, key: String)
-    case posts(token: String, key: String)
-    case inbox(token: String, key: String)
-    case timeline(token: String, key: String)
+    case user(credentials: StackCredentials)
+    case posts(credentials: StackCredentials)
+    case inbox(credentials: StackCredentials)
+    case timeline(credentials: StackCredentials)
     
-    var url: URL? {
+    var method: Method {
+        switch self {
+        case .answers(let subendpoint):
+            return subendpoint.method
+        case .questions(let subendpoint):
+            return subendpoint.method
+        case .comments(let subendpoint):
+            return subendpoint.method
+        case _:
+            return .get
+        }
+    }
+    
+    private var url: URL? {
         var components = URLComponents()
         components.scheme = "https"
         components.host = host
@@ -48,9 +66,7 @@ enum Endpoint {
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = method
-        request.allHTTPHeaderFields = headers
-        request.httpBody = components.query?.data(using: .utf8)
+        request.httpMethod = method.rawValue
         
         return request
     }
@@ -93,14 +109,6 @@ enum Endpoint {
         }
     }
     
-    var headers: [String: String] {
-        return .init()
-    }
-    
-    var method: String {
-        return "GET"
-    }
-    
     var queryItems: [URLQueryItem] {
         switch self {
         case .tags:
@@ -109,27 +117,27 @@ enum Endpoint {
                 .init(name: "sort", value: "popular"),
                 .init(name: "site", value: "stackoverflow")
             ]
-        case let .user(token, key):
+        case let .user(credentials):
             return [
                 .init(name: "order", value: "desc"),
                 .init(name: "sort", value: "reputation"),
                 .init(name: "site", value: "stackoverflow"),
-                .init(name: "access_token", value: token),
-                .init(name: "key", value: key)
+                .init(name: "access_token", value: credentials.token),
+                .init(name: "key", value: credentials.key)
             ]
-        case .posts(let token, let key):
+        case .posts(let credentials):
             return [
                 .init(name: "order", value: "desc"),
                 .init(name: "sort", value: "activity"),
                 .init(name: "site", value: "stackoverflow"),
-                .init(name: "access_token", value: token),
-                .init(name: "key", value: key)
+                .init(name: "access_token", value: credentials.token),
+                .init(name: "key", value: credentials.key)
             ]
-        case .inbox(token: let token, key: let key):
+        case .inbox(let credentials):
             return [
                 .init(name: "site", value: "stackoverflow"),
-                .init(name: "access_token", value: token),
-                .init(name: "key", value: key),
+                .init(name: "access_token", value: credentials.token),
+                .init(name: "key", value: credentials.key),
                 .init(name: "filter", value: "withbody")
             ]
         case .questions(let subendpoint):
@@ -138,11 +146,11 @@ enum Endpoint {
             return subendpoint.queryItems
         case .comments(let subendpoint):
             return subendpoint.queryItems
-        case .timeline(token: let token, key: let key):
+        case .timeline(let credentials):
             return [
                 .init(name: "site", value: "stackoverflow"),
-                .init(name: "access_token", value: token),
-                .init(name: "key", value: key)
+                .init(name: "access_token", value: credentials.token),
+                .init(name: "key", value: credentials.key)
             ]
         }
     }

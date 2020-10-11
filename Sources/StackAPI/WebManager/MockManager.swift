@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  MockManager.swift
 //  
 //
 //  Created by Jullian Mercier on 2020-09-26.
