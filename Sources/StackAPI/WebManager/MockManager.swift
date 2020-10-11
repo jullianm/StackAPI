@@ -21,7 +21,7 @@ final class MockManager: ServiceManager {
     }
     
     func send<T:Decodable>(endpoint: Endpoint, model: T.Type) -> AnyPublisher<T, Error> {
-        guard let url = endpoint.url else {
+        guard let url = endpoint.urlRequest else {
             return Fail(error: Error.wrongURL).eraseToAnyPublisher()
         }
         
