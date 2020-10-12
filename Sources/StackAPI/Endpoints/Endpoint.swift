@@ -156,35 +156,37 @@ enum Endpoint {
     }
     
     var mockData: Data {
+        let url = URL(fileURLWithPath: #file)
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .appendingPathComponent("Mocks")
+     
         switch self {
         case .questions(let subendpoint):
             return subendpoint.mockData
         case .tags:
-            return Bundle.main.data(from: "Tags.json")
+            return url.data(from: "Tags.json")
         case .answers(let subendpoint):
             return subendpoint.mockData
         case .comments(let subendpoint):
             return subendpoint.mockData
         case .user:
-            return Bundle.main.data(from: "User.json")
+            return url.data(from: "User.json")
         case .posts:
-            return Bundle.main.data(from: "Posts.json")
+            return url.data(from: "Posts.json")
         case .inbox:
-            return Bundle.main.data(from: "Inbox.json")
+            return url.data(from: "Inbox.json")
         case .timeline:
-            return Bundle.main.data(from: "Timeline.json")
+            return url.data(from: "Timeline.json")
         }
     }
 }
 
-extension Bundle {
-    func data(from file: String) -> Data {
-        guard let url = self.url(forResource: file, withExtension: nil) else {
-            fatalError("Failed to locate \(file) in bundle.")
-        }
-        
-        guard let data = try? Data(contentsOf: url) else {
-            fatalError("Failed to load \(file) from bundle.")
+extension URL {
+    func data(from resource: String) -> Data {
+        let mockURL = appendingPathComponent(resource)
+        guard let data = try? Data(contentsOf: mockURL) else {
+            fatalError("Failed to load \(resource) from bundle.")
         }
         
         return data

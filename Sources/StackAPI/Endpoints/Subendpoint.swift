@@ -127,11 +127,18 @@ enum QuestionsEndpoint {
     }
     
     var mockData: Data {
+        let url = URL(fileURLWithPath: #file)
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .appendingPathComponent("Mocks")
+        
         switch self {
-        case .filters, .ids, .vote:
-            return Bundle.main.data(from: "Questions.json")
+        case .filters, .ids:
+            return url.data(from: "Questions.json")
         case .keywords:
-            return Bundle.main.data(from: "Search.json")
+            return url.data(from: "Search.json")
+        case .vote:
+            return url.data(from: "VotedQuestion.json")
         }
     }
 }
@@ -209,9 +216,16 @@ enum AnswersEndpoint {
     }
     
     var mockData: Data {
+        let url = URL(fileURLWithPath: #file)
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .appendingPathComponent("Mocks")
+        
         switch self {
-        case .questionId, .ids, .vote:
-            return Bundle.main.data(from: "Answers.json")
+        case .questionId, .ids:
+            return url.data(from: "Answers.json")
+        case .vote:
+            return url.data(from: "VotedAnswer.json")
         }
     }
 }
@@ -296,9 +310,16 @@ enum CommentsEndpoint {
     }
     
     var mockData: Data {
+        let url = URL(fileURLWithPath: #file)
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .appendingPathComponent("Mocks")
+        
         switch self {
-        case .ids, .questionsIds, .answersIds, .vote:
-            return Bundle.main.data(from: "Comments.json")
+        case .ids, .questionsIds, .answersIds:
+            return url.data(from: "Comments.json")
+        case .vote:
+            return url.data(from: "VotedComment.json")
         }
     }
 }

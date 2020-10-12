@@ -1,0 +1,808 @@
+{
+    "items": [
+        {
+            "tags": [
+                "java",
+                "email",
+                "smtp",
+                "p2p"
+            ],
+            "owner": {
+                "reputation": 1327,
+                "user_id": 1463320,
+                "user_type": "registered",
+                "accept_rate": 50,
+                "profile_image": "https://www.gravatar.com/avatar/2d861c8bf791f34b5eb87e829bbc9fa9?s=128&d=identicon&r=PG",
+                "display_name": "jvataman",
+                "link": "https://stackoverflow.com/users/1463320/jvataman"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 173,
+            "answer_count": 2,
+            "score": 0,
+            "last_activity_date": 1602535259,
+            "creation_date": 1401466113,
+            "question_id": 23958900,
+            "link": "https://stackoverflow.com/questions/23958900/how-to-receive-p2p-smtp-messages-using-java",
+            "title": "How to receive P2P SMTP messages (using Java)?",
+            "body": "<p>We need to set up a service that is able to receive SMTP messages. </p>\n\n<ul>\n<li>Only incoming ones and only from a single source </li>\n<li>direct end-to-end connection </li>\n<li>source knows destination IP</li>\n<li>no encryption needed since we go through a dedicated VPN</li>\n</ul>\n\n<p>We would then need to process the messages in our Java-Based System.\nThe server can run any Linux distro.</p>\n\n<p>Does anyone have a hint / experience on how to achieve that without a lot of overhead?</p>\n"
+        },
+        {
+            "tags": [
+                "python",
+                "selenium"
+            ],
+            "owner": {
+                "reputation": 23,
+                "user_id": 12659835,
+                "user_type": "registered",
+                "profile_image": "https://lh3.googleusercontent.com/a-/AAuE7mBoGS9p7kUUVo7YK3Oc3clIfPCvyo4LinOok6edbQ=k-s128",
+                "display_name": "AnupaM",
+                "link": "https://stackoverflow.com/users/12659835/anupam"
+            },
+            "comment_count": 3,
+            "is_answered": false,
+            "view_count": 10,
+            "answer_count": 0,
+            "score": 0,
+            "last_activity_date": 1602535253,
+            "creation_date": 1602533254,
+            "last_edit_date": 1602535253,
+            "question_id": 64324688,
+            "link": "https://stackoverflow.com/questions/64324688/how-to-get-tag-name-in-selenium-python",
+            "title": "How to get tag name in Selenium Python?",
+            "body": "<p>Is there any way to get name of the tag of selenium web element??</p>\n<p>I found, there is <code>.getTagName()</code> in selenium for java, <em>here:<a href=\"https://www.tutorialspoint.com/how-do-i-get-a-parent-html-tag-with-selenium-webdriver-using-java\" rel=\"nofollow noreferrer\">https://www.tutorialspoint.com/how-do-i-get-a-parent-html-tag-with-selenium-webdriver-using-java</a></em></p>\n<p><strong>EDIT</strong>:</p>\n<p>example: In this HTML, if I iterate though class='some_class_name', how can I get the tag_name (<code>h2</code>,  <code>p</code>, <code>ul</code> or <code>li</code>)</p>\n<pre><code>&lt;div class='some_class_name'&gt;\n    &lt;h2&gt;Some Random Heading 1&lt;/h2&gt;\n    &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry&lt;/p&gt;\n\n    &lt;h2&gt;Some Random Heading 2&lt;/h2&gt;\n    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;\n    &lt;p&gt;Random list are:&lt;/p&gt;\n    &lt;ul&gt;\n        &lt;li&gt;Lorem&lt;/li&gt;\n        &lt;li&gt;Ipsum&lt;/li&gt;\n        &lt;li&gt;Dolor&lt;/li&gt;\n    &lt;/ul&gt;\n&lt;/div&gt;\n\n</code></pre>\n<p>Python code may look like this..</p>\n<pre><code>content = driver.find_elements_by_xpath(&quot;//div[@class='some_class_name']//child::*&quot;)\nfor c in content:\n    print(c.getTagName())      # something like this to get the tag of inner content..\n</code></pre>\n"
+        },
+        {
+            "tags": [
+                "python",
+                "pandas",
+                "dataframe"
+            ],
+            "owner": {
+                "reputation": 711,
+                "user_id": 7504470,
+                "user_type": "registered",
+                "accept_rate": 29,
+                "profile_image": "https://www.gravatar.com/avatar/1cfdd23a75415989d8473d53bb63de93?s=128&d=identicon&r=PG&f=1",
+                "display_name": "Matt-pow",
+                "link": "https://stackoverflow.com/users/7504470/matt-pow"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 13,
+            "answer_count": 2,
+            "score": 0,
+            "last_activity_date": 1602535248,
+            "creation_date": 1602533213,
+            "last_edit_date": 1602535248,
+            "question_id": 64324678,
+            "link": "https://stackoverflow.com/questions/64324678/check-two-series-if-they-are-10-mins-apart-or-both-null",
+            "title": "Check two Series if they are 10 mins apart or both null",
+            "body": "<p>I have 2 <code>pandas.Series</code> with datetime datatype.</p>\n<p>First series : <code>['2017-12-31 16:00:00-08:00', '2017-12-31 17:00:00-08:00', '2017-12-31 18:00:00-08:00']</code></p>\n<p>Second series : <code>['2017-12-31 17:00:00-08:00', None, '2017-12-31 18:00:10-08:00']</code></p>\n<p>I want to check if the two series are equal with the following condition :</p>\n<ul>\n<li>when comparing a time with None, it should output True</li>\n<li>when comparing two time, they must be within 10 mins apart. Otherwise, output False</li>\n</ul>\n<p>Expected output : <code>[False, True, True]</code></p>\n<pre><code>def date_check(x, y):\n    return (np.abs(x - y)) &gt; timedelta(minutes=10)\n</code></pre>\n<p>it reaches an error : <code>unsupported operand type(s) for -: 'DatetimeIndex' and 'NoneType'</code></p>\n"
+        },
+        {
+            "tags": [
+                "javascript",
+                "reactjs",
+                "onchange"
+            ],
+            "owner": {
+                "reputation": 1,
+                "user_id": 14404161,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/c920ed7133835bf1ba22f4594f374ea0?s=128&d=identicon&r=PG&f=1",
+                "display_name": "merenik",
+                "link": "https://stackoverflow.com/users/14404161/merenik"
+            },
+            "comment_count": 2,
+            "is_answered": false,
+            "view_count": 23,
+            "answer_count": 1,
+            "score": 0,
+            "last_activity_date": 1602535244,
+            "creation_date": 1602534946,
+            "last_edit_date": 1602535236,
+            "question_id": 64325009,
+            "link": "https://stackoverflow.com/questions/64325009/uncaught-typeerror-event-target-is-undefined",
+            "title": "Uncaught TypeError: event.target is undefined",
+            "body": "<p>Using React and React-Dropdown package, I keep getting this <code>Uncaught TypeError: event.target is undefined</code> error whenever I select a year.</p>\n<pre class=\"lang-js prettyprint-override\"><code>const [sYear, setSelectYear] = useState()\n\nfunction newYearSetter(event) {\n  setSelectYear(event.target.value)\n  console.log(event.target.value)\n}\n\nreturn (\n  &lt;Dropdown\n    options={years}\n    value={sYear}\n    onChange={newYearSetter}\n    placeholder=&quot;Select a year&quot;\n  /&gt;\n)\n</code></pre>\n"
+        },
+        {
+            "tags": [
+                "java"
+            ],
+            "owner": {
+                "reputation": 1,
+                "user_id": 14438285,
+                "user_type": "registered",
+                "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GgeV35S9UE_K-7_PMoSAOyIl1cz4_PnIxT4p1B6RfE=s96-c=k-s128",
+                "display_name": "JuiceBox",
+                "link": "https://stackoverflow.com/users/14438285/juicebox"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 2,
+            "answer_count": 0,
+            "score": 0,
+            "last_activity_date": 1602535244,
+            "creation_date": 1602535244,
+            "question_id": 64325072,
+            "link": "https://stackoverflow.com/questions/64325072/stuck-on-error-with-null-exception-in-thread-main-java-lang-nullpointerexcepti",
+            "title": "Stuck on error with null Exception in thread &quot;main&quot; java.lang.NullPointerException",
+            "body": "<p>I think I'm supposed to initialize it but I'm not sure how?</p>\n<pre><code>public boolean add(Account account) {\n    \n    boolean x = false;\n    int n = accounts.length;\n    int secondNumber = account.getNumber();\n\n    for(int i = 0; i&lt;n;i++){\n\n        int firstNumber = accounts[i].getNumber();\n        \n        if((firstNumber != secondNumber) &amp;&amp; (numAccounts &lt; n)){\n            x = true;\n</code></pre>\n"
+        },
+        {
+            "tags": [
+                "javascript",
+                "html",
+                "getelementbyid"
+            ],
+            "owner": {
+                "reputation": 625,
+                "user_id": 1159970,
+                "user_type": "registered",
+                "accept_rate": 100,
+                "profile_image": "https://www.gravatar.com/avatar/acd26f65479383cf3994f429a8910005?s=128&d=identicon&r=PG",
+                "display_name": "Vic Fanberg",
+                "link": "https://stackoverflow.com/users/1159970/vic-fanberg"
+            },
+            "comment_count": 1,
+            "is_answered": true,
+            "view_count": 16,
+            "answer_count": 1,
+            "score": -1,
+            "last_activity_date": 1602535241,
+            "creation_date": 1602534061,
+            "last_edit_date": 1602535241,
+            "question_id": 64324855,
+            "link": "https://stackoverflow.com/questions/64324855/getelementbyid-seems-to-fail-within-forms",
+            "title": "getElementById seems to fail within forms",
+            "body": "<p>I have been having problems with getting getElementById working on a specific webpage.  So, I've cut it down the following minimal code.  In this code, first alert() is displayed, but the second one is not, and about the only thing I can guess why is getElementById() is failing.  Any ideas?</p>\n<p><div class=\"snippet\" data-lang=\"js\" data-hide=\"false\" data-console=\"true\" data-babel=\"false\">\r\n<div class=\"snippet-code\">\r\n<pre class=\"snippet-code-html lang-html prettyprint-override\"><code>&lt;!doctype html&gt;\n&lt;html&gt;\n    &lt;head&gt;\n        &lt;script type=\"text/javascript\"&gt;\n            function Process(X) {\n                alert(\"In Process at A\");\n                var y = Document.getElementById(\"YourName\").value;\n                alert(\"At B\");\n            }\n        &lt;/script&gt;\n\n        &lt;meta charset=\"utf-8\"&gt;\n        &lt;title&gt;Test&lt;/title&gt;\n    &lt;/head&gt;\n\n    &lt;body&gt;\n        &lt;div&gt;\n            &lt;form onsubmit=\"Process(getElementById('YourName').value);return false;\"&gt;\n                &lt;label for=\"name\"&gt;Your name&lt;/label&gt;\n                &lt;input type=\"text\" maxlength=\"50\" name=\"YourName\" id=\"YourName\"&gt;\n\n                &lt;input type=\"submit\" value=\"Do it\" /&gt;\n            &lt;/form&gt; \n        &lt;/div&gt;\n    &lt;/body&gt;\n&lt;/html&gt;</code></pre>\r\n</div>\r\n</div>\r\n</p>\n"
+        },
+        {
+            "tags": [
+                "c++",
+                "language-lawyer",
+                "c++-standard-library"
+            ],
+            "owner": {
+                "reputation": 38581,
+                "user_id": 432358,
+                "user_type": "registered",
+                "accept_rate": 69,
+                "profile_image": "https://i.stack.imgur.com/D931H.png?s=128&g=1",
+                "display_name": "Slava",
+                "link": "https://stackoverflow.com/users/432358/slava"
+            },
+            "comment_count": 17,
+            "is_answered": false,
+            "view_count": 57,
+            "closed_date": 1602474175,
+            "answer_count": 0,
+            "score": 1,
+            "last_activity_date": 1602535240,
+            "creation_date": 1602451438,
+            "last_edit_date": 1602535240,
+            "question_id": 64309142,
+            "link": "https://stackoverflow.com/questions/64309142/why-standard-library-does-not-have-typed-accessor-for-stdistream",
+            "closed_reason": "Opinion-based",
+            "title": "Why standard library does not have typed accessor for `std::istream`?",
+            "body": "<p>When writing code involving reading from <code>std::istream</code> it usually disturbs me that it has to be verbose even in simple cases:</p>\n<pre><code> int i = 0;\n std::cin &gt;&gt; i;\n // using your input here\n</code></pre>\n<p>writing a simple loop is also too verbose:</p>\n<pre><code> int i = 0;\n for( std::cin &gt;&gt; i; i; --i ) { ... }\n</code></pre>\n<p>and it is not only verbose but forces me to extend lifetime of  <code>i</code> where it should not be. And so on.</p>\n<p>But with rather simple addition to standard library it can be this:</p>\n<pre><code> template &lt;class T&gt;\n T read( std::istream &amp;is )\n {\n      auto var = T{};\n      if( !is &gt;&gt; var ) throw std::runtime_error( &quot;read failed&quot; );\n      return var;\n }\n\n template &lt;class T&gt;\n T read( std::istream &amp;is, T defValue )\n {\n      std::cin &gt;&gt; defValue;\n      return defValue;\n }\n</code></pre>\n<p>(or it could be member function of <code>std::istream</code> as well). So now previous cases can be as simple as:</p>\n<pre><code> auto i = std::read&lt;int&gt;( std::cin );\n // using your input here\n</code></pre>\n<p>or the loop:</p>\n<pre><code> for( auto i = std::read&lt;int&gt;( std::cin ); i; --i ) { ... }\n</code></pre>\n<p>So I think it is quite obvious that it would be useful, why it is not there?</p>\n"
+        },
+        {
+            "tags": [
+                "java"
+            ],
+            "owner": {
+                "reputation": 137,
+                "user_id": 12055789,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/fe5e6b2ce327202ccbbdf45f7f2e17a6?s=128&d=identicon&r=PG&f=1",
+                "display_name": "Zeeen",
+                "link": "https://stackoverflow.com/users/12055789/zeeen"
+            },
+            "comment_count": 1,
+            "is_answered": false,
+            "view_count": 19,
+            "answer_count": 2,
+            "score": 0,
+            "last_activity_date": 1602535238,
+            "creation_date": 1602534712,
+            "question_id": 64324978,
+            "link": "https://stackoverflow.com/questions/64324978/how-do-i-convert-an-int-to-an-int-in-java",
+            "title": "How do I convert an Int to an Int[] in java?",
+            "body": "<p>I want to convert an integer like this</p>\n<pre class=\"lang-java prettyprint-override\"><code>int myInt = 4821;\n</code></pre>\n<p>to something like this</p>\n<pre class=\"lang-java prettyprint-override\"><code>int[] myInt = {4, 8, 2, 1};\n</code></pre>\n"
+        },
+        {
+            "tags": [
+                "javascript",
+                "javascript-import"
+            ],
+            "owner": {
+                "reputation": 1289,
+                "user_id": 994876,
+                "user_type": "registered",
+                "accept_rate": 90,
+                "profile_image": "https://www.gravatar.com/avatar/56322d41d105baf4fe9d4e833b33c285?s=128&d=identicon&r=PG",
+                "display_name": "MindSpiker",
+                "link": "https://stackoverflow.com/users/994876/mindspiker"
+            },
+            "comment_count": 3,
+            "is_answered": false,
+            "view_count": 16,
+            "answer_count": 1,
+            "score": 0,
+            "last_activity_date": 1602535234,
+            "creation_date": 1602533832,
+            "question_id": 64324810,
+            "link": "https://stackoverflow.com/questions/64324810/import-javascript-prototype-extension",
+            "title": "Import JavaScript prototype extension",
+            "body": "<p>I found (on this site) a cool little prototype extension function for cleaning up numbers, and now want to use this in a library that I can then import as needed. I see how to import defined functions but not prototype extensions.</p>\n<p>file: SomeLib.js</p>\n<pre><code>&quot;use strict&quot;;\nNumber.prototype.round = function(places) {\n    return +(Math.round(this + &quot;e+&quot; + places)  + &quot;e-&quot; + places);\n}\nfunction foo() {\n    console.log(&quot;doing SomeLib.foo()&quot;);\n}\nexport default { round, foo }\n</code></pre>\n<p>file: SomeImporter.js</p>\n<pre><code>&quot;use strict&quot;;\nimport somelib from &quot;./SomeLib.js&quot;; \nsomelib.foo();   // outputs 'doing SomeLib.foo()'\nvar someNum = 1.2345;\nconsole.log(someNum.round(2)); // outputs 'Uncaught ReferenceError: round is not defined'\n</code></pre>\n<p>How can I import the 'Number.prototype.round' function in another file?</p>\n"
+        },
+        {
+            "tags": [
+                "swagger"
+            ],
+            "owner": {
+                "reputation": 83,
+                "user_id": 861550,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/1028b50b12333e5ff0077b5f2573c05e?s=128&d=identicon&r=PG",
+                "display_name": "Ahmad Esmat",
+                "link": "https://stackoverflow.com/users/861550/ahmad-esmat"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 2,
+            "answer_count": 0,
+            "score": 0,
+            "last_activity_date": 1602535234,
+            "creation_date": 1602535234,
+            "question_id": 64325069,
+            "link": "https://stackoverflow.com/questions/64325069/failed-to-start-bean-documentationpluginsbootstrapper-annotationformaterror-u",
+            "title": "Failed to start bean &#39;documentationPluginsBootstrapper&#39; AnnotationFormatError: Unexpected end of annotations?",
+            "body": "<p>Suddenly we found that our application fails sometimes during the deployment at tomcat due to the below exception, however the same code could be deployed successfully if tried another time I mean it doesn't fail all the time. we use tomcat version 8, and Java 8, spring 2.</p>\n<p>2020-10-12 20:14:11 INFO  o.s.j.e.a.AnnotationMBeanExporter:433 - Registering beans for JMX exposure on startup\n2020-10-12 20:14:11 INFO  o.s.c.s.DefaultLifecycleProcessor:351 - Starting beans in phase 2147483647\n2020-10-12 20:14:11 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:160 - Context refreshed\n2020-10-12 20:14:11 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:163 - Found 1 custom documentation plugin(s)\n2020-10-12 20:14:11 INFO  s.d.s.w.s.ApiListingReferenceScanner:41 - Scanning for api listing references\n2020-10-12 20:14:16 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:558 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.annotation.AnnotationFormatError: Unexpected end of annotations.\n2020-10-12 20:14:16 INFO  o.s.j.e.a.AnnotationMBeanExporter:451 - Unregistering JMX-exposed beans on shutdown\n2020-10-12 20:14:16 INFO  o.s.s.c.ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'brokerChannelExecutor'\n2020-10-12 20:14:16 INFO  o.s.s.c.ThreadPoolTaskScheduler:208 - Shutting down ExecutorService 'messageBrokerTaskScheduler'\n2020-10-12 20:14:16 INFO  o.s.s.c.ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'clientOutboundChannelExecutor'\n2020-10-12 20:14:16 INFO  o.s.s.c.ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'clientInboundChannelExecutor'\n2020-10-12 20:14:16 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:597 - Closing JPA EntityManagerFactory for persistence unit 'default'\n2020-10-12 20:14:16 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:597 - Closing JPA EntityManagerFactory for persistence unit 'default'\n2020-10-12 20:14:16 INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener:101 -</p>\n<p>Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.\n2020-10-12 20:14:16 ERROR o.s.b.SpringApplication:842 - Application run failed\norg.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.annotation.AnnotationFormatError: Unexpected end of annotations.\nat org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:184)\nat org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:52)\nat org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)\nat org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:157)\nat org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:121)\nat org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:885)\nat org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)\nat org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553)\nat org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)\nat org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)\nat org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395)\nat org.springframework.boot.SpringApplication.run(SpringApplication.java:327)\nat org.springframework.boot.web.servlet.support.SpringBootServletInitializer.run(SpringBootServletInitializer.java:155)\nat org.springframework.boot.web.servlet.support.SpringBootServletInitializer.createRootApplic</p>\n"
+        },
+        {
+            "tags": [
+                "python",
+                "selenium",
+                "selenium-webdriver",
+                "firefox",
+                "windows-subsystem-for-linux"
+            ],
+            "owner": {
+                "reputation": 19,
+                "user_id": 14226524,
+                "user_type": "registered",
+                "profile_image": "https://lh4.googleusercontent.com/-NIcKG2soQFE/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnl7rScl7J8g6sMK_PsvHBV6DgDbg/photo.jpg?sz=128",
+                "display_name": "Berke Şent&#252;rk",
+                "link": "https://stackoverflow.com/users/14226524/berke-%c5%9eent%c3%bcrk"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 2,
+            "answer_count": 0,
+            "score": 0,
+            "last_activity_date": 1602535233,
+            "creation_date": 1602535233,
+            "question_id": 64325068,
+            "link": "https://stackoverflow.com/questions/64325068/console-error-while-using-selenium-under-wsl2",
+            "title": "Console error while using selenium under WSL2",
+            "body": "<p>I'm trying to run the test code that has been shared in Selenium documentation, because I use WSL2, I'm running Firefox webdriver in headless mode;</p>\n<pre><code>from selenium import webdriver\nfrom selenium.webdriver.common.keys import Keys\nfrom selenium.webdriver.firefox.options import Options\n\n\noptions = Options() \noptions.headless = True\ndriver = webdriver.Firefox(options=options)\n#driver = webdriver.Firefox()\ndriver.get(&quot;http://www.python.org&quot;)\nassert &quot;Python&quot; in driver.title\nelem = driver.find_element_by_name(&quot;q&quot;)\nelem.clear()\nelem.send_keys(&quot;pycon&quot;)\nelem.send_keys(Keys.RETURN)\nassert &quot;No results found.&quot; not in driver.page_source\ndriver.close()\n</code></pre>\n<p>There is no error outputs on command line. However, the geckofile.log file outputs like this,</p>\n<pre><code>1602532495397   geckodriver INFO    Listening on 127.0.0.1:52679\n1602532495400   mozrunner::runner   INFO    Running command: &quot;/usr/bin/firefox&quot; &quot;--marionette&quot; &quot;-headless&quot; &quot;-foreground&quot; &quot;-no-remote&quot; &quot;-profile&quot; &quot;/tmp/rust_mozprofiletLwjrV&quot;\n*** You are running in headless mode.\nconsole.error: SearchCache: &quot;_readCacheFile: Error reading cache file:&quot; (new Error(&quot;&quot;, &quot;(unknown module)&quot;))\n1602532496837   Marionette  INFO    Listening on port 38037\n1602532496906   Marionette  WARN    TLS certificate errors will be ignored for this session\nJavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 235: Error: Invalid autocomplete selectedIndex\n1602532499412   Marionette  INFO    Stopped listening on port 38037\n1602534735902   geckodriver INFO    Listening on 127.0.0.1:42551\n1602534735905   mozrunner::runner   INFO    Running command: &quot;/usr/bin/firefox&quot; &quot;--marionette&quot; &quot;-headless&quot; &quot;-foreground&quot; &quot;-no-remote&quot; &quot;-profile&quot; &quot;/tmp/rust_mozprofilecTeoz7&quot;\n*** You are running in headless mode.\nconsole.error: SearchCache: &quot;_readCacheFile: Error reading cache file:&quot; (new Error(&quot;&quot;, &quot;(unknown module)&quot;))\n1602534737300   Marionette  INFO    Listening on port 38781\n1602534737312   Marionette  WARN    TLS certificate errors will be ignored for this session\n1602534739717   Marionette  INFO    Stopped listening on port 38781\n</code></pre>\n<p>How can I fix this problem and do Web Scraping under WSL2?</p>\n"
+        },
+        {
+            "tags": [
+                "python",
+                "pandas"
+            ],
+            "owner": {
+                "reputation": 15,
+                "user_id": 5617882,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/7ed0a12bccdf38705ff54f8f11460cf8?s=128&d=identicon&r=PG&f=1",
+                "display_name": "mlabenski",
+                "link": "https://stackoverflow.com/users/5617882/mlabenski"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 17,
+            "answer_count": 1,
+            "score": 0,
+            "last_activity_date": 1602535233,
+            "creation_date": 1602534277,
+            "last_edit_date": 1602535056,
+            "question_id": 64324891,
+            "link": "https://stackoverflow.com/questions/64324891/converting-a-datetime-column-to-a-datetimeindex-in-pandas",
+            "title": "Converting a Datetime column to a DatetimeIndex in pandas",
+            "body": "<p>There are so many questions that revolve around converting dates to a datetimeindex. I personally need a datetimeindex to work with the Calmap package that requires the datetimeindex. After following many stackoverflow guides, I haven't been able to change my date fields to a datetimeindex. Here are the following steps I took.</p>\n<pre><code>import numpy as np\nimport pandas as pd\n##I also attempted to add parse_dates=[&quot;Date'] and Index[&quot;Date&quot;] to the pd.read_csv() \nmain_data = pd.read_csv('newoutput2.csv', delimiter=&quot;,&quot;, encoding='cp1252')\nmain_data =  main_data.set_index(pd.to_datetime(main_data[&quot;Date&quot;], format = &quot;%m/%d/%y&quot;))\nimport calmap\nevents = pd.Series(main_data.index)\ncalmap.yearplot(events, year=2020)\n\n##When I run events[0] the output is\n##Timestamp('2020-10-05 00:00:00')\n\n</code></pre>\n<p>The error I receive after running that code is</p>\n<pre><code>python\\python38-32\\lib\\site-packages\\calmap\\__init__.py in yearplot(data, year, how, vmin, vmax, cmap, fillcolor, linewidth, linecolor, daylabels, dayticks, monthlabels, monthticks, ax, **kwargs)\n    141         # Sample by day.\n    142         if _pandas_18:\n--&gt; 143             by_day = data.resample(&quot;D&quot;).agg(how)\n    144         else:\n    145             by_day = data.resample(&quot;D&quot;, how=how)\n\nTypeError: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'\n</code></pre>\n<p>No matter the format I follow, it never seems to create a datetimeindex from the data.</p>\n<p>The data is here</p>\n<p><a href=\"https://i.stack.imgur.com/8EixA.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/8EixA.png\" alt=\"CSV data, loaded in excel\" /></a></p>\n<p>The original data</p>\n<pre><code>Name    Time    Date\nFName LName 12:00PM     10/5/20\nFName LName 12:00PM     10/5/20\nFName LName 12:00PM     10/5/20\nFName LName 12:00PM     10/5/20\nFName LName 12:00PM     10/5/20\nFName LName 12:00PM     10/5/20\nFName LName 12:00PM     10/5/20\n</code></pre>\n<p>If I print main_data, it appears like this</p>\n<pre><code>    Name    Time    Date\nDate            \n2020-10-05  FName LName 12:00:00    10/5/20\n2020-10-05  FName LName 12:00:00    10/5/20\n2020-10-05  FName LName 12:00:00    10/5/20\n2020-10-05  FName LName 12:00:00    10/5/20\n2020-10-05  FName LName 12:00:00    10/5/20\n</code></pre>\n"
+        },
+        {
+            "tags": [
+                "android",
+                "fusedlocationproviderapi"
+            ],
+            "owner": {
+                "reputation": 5576,
+                "user_id": 4243687,
+                "user_type": "registered",
+                "accept_rate": 57,
+                "profile_image": "https://www.gravatar.com/avatar/3052f181cbfd30dead0a5ba4c046ba6b?s=128&d=identicon&r=PG&f=1",
+                "display_name": "Ersen Osman",
+                "link": "https://stackoverflow.com/users/4243687/ersen-osman"
+            },
+            "comment_count": 7,
+            "is_answered": true,
+            "view_count": 3075,
+            "answer_count": 2,
+            "score": 1,
+            "last_activity_date": 1602535224,
+            "creation_date": 1418410680,
+            "question_id": 27450302,
+            "link": "https://stackoverflow.com/questions/27450302/android-how-do-i-remove-a-request-with-locationrequest",
+            "title": "Android: How do I remove a request with LocationRequest?",
+            "body": "<p>Im using Google Play Services, Fused Location Provider and LocationRequest to get the current location. </p>\n\n<pre><code>mLocationRequest = LocationRequest.create();\nmLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);\nmLocationRequest.setNumUpdates(1); \nmLocationClient.requestLocationUpdates(mLocationRequest, this);\n</code></pre>\n\n<p>I would like to know how do I go about cancelling a request in progress? As stated by documentation when I call setNumUpdates() and pass 1, I must set an expiration which is fine while the app is running but what if I go to paused state? How can I explicitly cancel the request as the docs mention as soon as paused state occurs?</p>\n\n<p>Thanks for reading </p>\n"
+        },
+        {
+            "tags": [
+                "sql",
+                "postgresql",
+                "count",
+                "sql-order-by",
+                "greatest-n-per-group"
+            ],
+            "owner": {
+                "reputation": 55,
+                "user_id": 9905254,
+                "user_type": "registered",
+                "profile_image": "https://i.stack.imgur.com/SUXTe.jpg?s=128&g=1",
+                "display_name": "Npeach",
+                "link": "https://stackoverflow.com/users/9905254/npeach"
+            },
+            "comment_count": 0,
+            "is_answered": true,
+            "view_count": 15,
+            "accepted_answer_id": 64324706,
+            "answer_count": 2,
+            "score": -1,
+            "last_activity_date": 1602535224,
+            "creation_date": 1602533295,
+            "last_edit_date": 1602535224,
+            "question_id": 64324695,
+            "link": "https://stackoverflow.com/questions/64324695/column-must-appear-in-group-by-or-aggregate-function-in-nested-query",
+            "title": "Column must appear in group by or aggregate function in nested query",
+            "body": "<p>I have the following table.</p>\n<pre><code>Fights (fight_year, fight_round, winner, fid, city, league)\n</code></pre>\n<p>I am trying to query the following:</p>\n<p>For each year that appears in the Fights table, find the city that held the most fights. For example, if in year 1992, Jersey held more fights than any other city did, you should print out (1992, Jersey)</p>\n<p>Here's what I have so far but I keep getting the following error. I am not sure how I should construct my group by functions.</p>\n<p>ERROR: column, 'ans.fight_round' must appear in the GROUP BY clause or be used in an aggregate function. Line 3  from (select *</p>\n<pre><code>select fight_year, city, max(*)\nfrom (select *\n    from (select *\n        from fights as ans\n        group by (fight_year)) as l2\n     group by (ans.city)) as l1;\n</code></pre>\n"
+        },
+        {
+            "tags": [
+                "python",
+                "object",
+                "runtime",
+                "slice"
+            ],
+            "owner": {
+                "reputation": 1,
+                "user_id": 12217471,
+                "user_type": "registered",
+                "profile_image": "https://i.stack.imgur.com/WCd5H.jpg?s=128&g=1",
+                "display_name": "H Maze",
+                "link": "https://stackoverflow.com/users/12217471/h-maze"
+            },
+            "comment_count": 3,
+            "is_answered": false,
+            "view_count": 12,
+            "answer_count": 0,
+            "score": -1,
+            "last_activity_date": 1602535224,
+            "creation_date": 1602533683,
+            "last_edit_date": 1602535224,
+            "question_id": 64324764,
+            "link": "https://stackoverflow.com/questions/64324764/which-one-is-more-efficient-for-slicing-a-list-python-subsequence-vs-object-met",
+            "title": "Which one is more efficient for slicing a list? python subsequence vs object method vs getitem",
+            "body": "<pre><code>slice_obj = slice(1, 8)\nr = range(10, 40, 3)\nprint('slice_obj')\nprint(['r', 'list(r)'])\nprint('r[slice_obj]')\nprint('r[1:8]')\n\n# g = r[slice_obj]\nsl = r.__getitem__(slice(1, 8))\nprint(['sl', 'list(sl)'])\nfor e in sl:\n    print('e')\n</code></pre>\n<p>(1) <code>r[slice]obj</code>, (2) <code>r[1:8]</code>, and using the (3) <code>sl = r.__getitem__(slice(1, 8))</code></p>\n<p>I used python's timeIt() function to test the efficiency of each and I got back the following (from least to most runtime).</p>\n<p>My question is why is this such? I have somewhat of an idea but I would like if I could get a more thorough explanation as to why?</p>\n<p>Timeit</p>\n<pre><code>import timeit\ndef sliceobj():\n    r = range(10, 40, 3)\n    slice_obj = slice(1, 8)\n    print(r[slice_obj])\n    return r\n\ndef slicesubsequence():\n    r = range(10, 40, 3)\n    print(r[1:8])\n    return r\n    \ndef slicegetitem():\n    r = range(10, 40, 3)\n    sl = r.__getitem__(slice(1, 8))\n    print(['sl', 'list(sl)'])\n    for e in sl:\n        print('e')\n\nprint(timeit.timeit(sliceobj, number=1))\nprint(timeit.timeit(slicesubsequence, number=1))\nprint(timeit.timeit(slicegetitem, number=1))\n</code></pre>\n<p>OUTCOME</p>\n<pre><code>0.0006418399998437962\nrange(13, 34, 3)\n0.00031232299988914747\n['sl', 'list(sl)']\ne\ne\ne\ne\ne\ne\ne\n0.0021967720003885916\n</code></pre>\n"
+        },
+        {
+            "tags": [
+                "android",
+                "flutter",
+                "ffmpeg",
+                "flutter-ffmpeg"
+            ],
+            "owner": {
+                "reputation": 658,
+                "user_id": 9132930,
+                "user_type": "registered",
+                "profile_image": "https://lh6.googleusercontent.com/-Sd0UqyExcOI/AAAAAAAAAAI/AAAAAAAAANQ/EXMlSEOACLs/photo.jpg?sz=128",
+                "display_name": "Sarthak Singhal",
+                "link": "https://stackoverflow.com/users/9132930/sarthak-singhal"
+            },
+            "comment_count": 5,
+            "is_answered": false,
+            "view_count": 63,
+            "answer_count": 1,
+            "score": 1,
+            "last_activity_date": 1602535220,
+            "creation_date": 1601054320,
+            "last_edit_date": 1602530534,
+            "question_id": 64068672,
+            "link": "https://stackoverflow.com/questions/64068672/how-to-get-exact-coordinats-scale-and-rotation-of-a-widget-in-flutter-to-use-wi",
+            "title": "How to get exact coordinats, scale and rotation of a widget in flutter to use with ffmpeg",
+            "body": "<p>I am working an app in flutter in which user can add image on a video like the given screenshot. The user should be able to move the image widget anywhere on the screen, resize it, and rotate it also.</p>\n<p>For now I have used Stack and MatrixGestureDetector to let the user move the images on the screen.</p>\n<p><strong>I want to know how to merge this image along with the exact scale, rotation and position as seen on the screen to use with ffmpeg.</strong></p>\n<p><a href=\"https://i.stack.imgur.com/7kskF.jpg\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/7kskF.jpg\" alt=\"As you can see, we can move image and draw text in canvas over a video. After doing all this, how to get exact positions about where to merge the images\" /></a></p>\n"
+        },
+        {
+            "tags": [
+                "python",
+                "qt-designer",
+                "qlineedit"
+            ],
+            "owner": {
+                "reputation": 3,
+                "user_id": 14430811,
+                "user_type": "registered",
+                "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GjT4-bvHxPl5zrxziXvodHNKQ4VzoxtF4vOOdzzew=k-s128",
+                "display_name": "Famous8",
+                "link": "https://stackoverflow.com/users/14430811/famous8"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 2,
+            "answer_count": 0,
+            "score": 0,
+            "last_activity_date": 1602535219,
+            "creation_date": 1602535219,
+            "question_id": 64325065,
+            "link": "https://stackoverflow.com/questions/64325065/lineedit-with-qt5-designer-with-python",
+            "title": "LineEdit with QT5 Designer with Python",
+            "body": "<p>I coded a Pythagorean Theorem Calculator. here is the code:</p>\n<pre><code>import math\nwhile True:\nprint(&quot;What would you like to do&quot;)\nprint(&quot;1. Square a Number&quot;)\nprint(&quot;2. Find the Square root of a Number&quot;)\nprint(&quot;3. Find a&quot;)\nprint(&quot;4. Find b&quot;)\nprint(&quot;5. Find c&quot;)\nprint(&quot;6. Add Numbers&quot;)\nprint (&quot;7. Find out if the triangle is Right&quot;)\naction = input(&quot;Please put the action you are doing &quot;)\n\nif action == &quot;1&quot;:\n    square = float(input(&quot;What number would you like to square &quot;))\n    print(square * square)\nelif action == &quot;2&quot;:\n    squareRoot = float(input(&quot;What number would you like to find the Square Root of &quot;))\n    print(math.sqrt(squareRoot))\nelif action == &quot;3&quot;:\n    side_b = float(input('Input the length of side b: '))\n    side_c = float(input('Input the length of side c: '))\n\n    side_a = math.sqrt((side_c * side_c) - (side_b * side_b))\n\n    print('The length of side a is')\n    print(side_a)\n\nelif action == &quot;4&quot;:\n    side_a = float(input('Input the length of side a: '))\n    side_c = float(input('Input the length of side c: '))\n\n    side_b =math.sqrt(side_c * side_c - side_a * side_a)\n\n    print('The length of side b is')\n    print(side_c)\nelif action == &quot;5&quot;:\n    side_a = float(input('Input the length of side a: '))\n    side_b = float(input('Input the length of side b: '))\n\n    side_c = math.sqrt(side_a * side_a + side_b * side_b)\n\n    print('The length of side c is: ')\n    print(side_c)\n\nelif action == &quot;6&quot;:\n    number_1 = int(input(&quot;Please enter the first number you would like to add &quot;))\n    number_2 = int(input(&quot;Please enter the second number you would like to add &quot;))\n\n    print(number_1 + number_2)\nelif action == &quot;7&quot;:\n    a = float(input(&quot;Please enter side a of the triangle &quot;))\n    b = float(input(&quot;Please enter side b of the triangle &quot;))\n    c = float(input(&quot;Please enter side c of the triangle &quot;))\n    if c == math.sqrt(a * a + b * b):\n        print (&quot;This triangle is a Right Triangle&quot;)\n\n    else:\n        print (&quot;this triangle is not a right triangle&quot;)\n</code></pre>\n<p>I decided to make a GUI for it and chose QT Designer to make it. I created a GUI and coded some of the buttons as seen in the video below.\nvideo: <a href=\"https://drive.google.com/file/d/12bQajundfpVCjyllIe82HkwUV_HNd2PA/view?usp=sharing\" rel=\"nofollow noreferrer\">https://drive.google.com/file/d/12bQajundfpVCjyllIe82HkwUV_HNd2PA/view?usp=sharing</a>\nI would like to know how to do all the same functions with QT designer with the LineEdit widgets.\nFor Example I insert a number in one LineEdit, and then it will square the number and print it in the other lineEdit.\nThanks, Famous8</p>\n"
+        },
+        {
+            "tags": [
+                "c#",
+                "image",
+                "path",
+                "discord"
+            ],
+            "owner": {
+                "reputation": 11,
+                "user_id": 13735644,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/561ba6cb4e748048412cf2ed6fc61583?s=128&d=identicon&r=PG&f=1",
+                "display_name": "Zerthz",
+                "link": "https://stackoverflow.com/users/13735644/zerthz"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 2,
+            "answer_count": 0,
+            "score": 0,
+            "last_activity_date": 1602535218,
+            "creation_date": 1602535218,
+            "question_id": 64325064,
+            "link": "https://stackoverflow.com/questions/64325064/i-got-a-image-library-that-im-trying-to-access-at-runtime-but-the-relative-path",
+            "title": "I got a image library that I&#39;m trying to access at runtime but the relative paths doesn&#39;t work",
+            "body": "<p>I'm creating a discord bot and I got a very larg image library that I would like to access. It's in the same folder as the solution. Using the hardcoded path works just fine. However when I've tried to make the relative path, using help online and just my regular ways, it doesn't work. Any ideas?</p>\n"
+        },
+        {
+            "tags": [
+                "java"
+            ],
+            "owner": {
+                "reputation": 1,
+                "user_id": 14285182,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/a761627c33c99613c8612d925ad30dff?s=128&d=identicon&r=PG&f=1",
+                "display_name": "user14285182",
+                "link": "https://stackoverflow.com/users/14285182/user14285182"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 18,
+            "closed_date": 1602534417,
+            "answer_count": 0,
+            "score": -4,
+            "last_activity_date": 1602535217,
+            "creation_date": 1602534276,
+            "last_edit_date": 1602535217,
+            "question_id": 64324890,
+            "link": "https://stackoverflow.com/questions/64324890/how-do-make-an-if-statement-that-excites-a-code-every-other-iteration",
+            "closed_reason": "Needs details or clarity",
+            "title": "How do make an if statement that excites a code every other iteration?",
+            "body": "<p>I want to to print out this in the first iteration</p>\n<pre><code>Enter player 1 name: Bob\nEnter plater 2 name: Jim\n\nBob's turn...\n</code></pre>\n<p>then this in the second iteration and so on...</p>\n<p><code>Jim's turn ...</code></p>\n<p>Im doing this\nSystem.out.print(&quot;Enter player 1 name: &quot;);\nScanner Player1 = input.nextString();</p>\n<pre><code>    System.out.print(&quot;Enter player 2 name: &quot;);\n    Scanner Player2 = input.nextString();\n\n    for (i=2; i &lt; 2; i++){\n        if (i % 2 = 0){\n            System.out.print(Player1 +&quot;'s turn...&quot;);\n        } else {\n            System.out.print(Player2 +&quot;'s trun...&quot;);\n        }\n    }\n</code></pre>\n"
+        },
+        {
+            "tags": [
+                "python",
+                "plugins",
+                "middleware",
+                "fastapi",
+                "starlette"
+            ],
+            "owner": {
+                "reputation": 45,
+                "user_id": 10096180,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/03f931a63b12e7bbca1003f0caf6d3a1?s=128&d=identicon&r=PG",
+                "display_name": "Ahad Rafat Talebi",
+                "link": "https://stackoverflow.com/users/10096180/ahad-rafat-talebi"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 14,
+            "answer_count": 1,
+            "score": 0,
+            "last_activity_date": 1602535216,
+            "creation_date": 1602526626,
+            "last_edit_date": 1602535216,
+            "question_id": 64323261,
+            "link": "https://stackoverflow.com/questions/64323261/how-does-fastapis-application-mounting-works",
+            "title": "How does FastAPI&#39;s application mounting works?",
+            "body": "<p>For certain reasons, we have chosen the <a href=\"https://fastapi.tiangolo.com/\" rel=\"nofollow noreferrer\">FastAPI</a>, in order to use it as back-end tier of our multi-module production. One of its attractive features is sub application, that helps us to separate different modules with intention of making it more modular. But we are <em><strong>concerned</strong></em> about some possible deficiencies which are missing in the official documentation. There are a considerable amount of common things -- e.g data, services, etc -- that we need to share them between main module and submodule through plugins, middle-wares and dependency-injection. The questions are: <strong>Is this feature good enough for separate modules?</strong> and so: <strong>Do sub applications inherit middle-ware, plugins and dependency injection from parent app?</strong></p>\n<p><em>thanks for sharing your experiences.</em></p>\n<p><a href=\"https://fastapi.tiangolo.com/advanced/sub-applications/\" rel=\"nofollow noreferrer\">the sample code in the official docs </a></p>\n<pre><code>from fastapi import FastAPI\n\napp = FastAPI()\n\n\n@app.get(&quot;/app&quot;)\ndef read_main():\n    return {&quot;message&quot;: &quot;Hello World from main app&quot;}\n\n\nsubapi = FastAPI()\n\n\n@subapi.get(&quot;/sub&quot;)\ndef read_sub():\n    return {&quot;message&quot;: &quot;Hello World from sub API&quot;}\n\n\napp.mount(&quot;/subapi&quot;, subapi)\n</code></pre>\n"
+        },
+        {
+            "tags": [
+                "design-system-react"
+            ],
+            "owner": {
+                "reputation": 11,
+                "user_id": 14422791,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/6efbef0e748a333ac2845f04075468ec?s=128&d=identicon&r=PG&f=1",
+                "display_name": "Tyler Niggel",
+                "link": "https://stackoverflow.com/users/14422791/tyler-niggel"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 15,
+            "bounty_amount": 100,
+            "bounty_closes_date": 1603140016,
+            "answer_count": 0,
+            "score": 1,
+            "last_activity_date": 1602535216,
+            "creation_date": 1602279183,
+            "question_id": 64287577,
+            "link": "https://stackoverflow.com/questions/64287577/is-it-possible-to-use-svg-files-within-slds-react-datepicker-components",
+            "title": "Is it possible to use SVG files within SLDS React Datepicker components?",
+            "body": "<p>I am working in the Quip platform (which runs on React), using the SLDS-React Datepicker component within a SLDS-React DataTableCell but have been unable to render any of the SLDS icons (.SVG files) within the Datepicker. It seems the following code snippet (which is generated from SLDS, and should be rendering the right arrow used to navigate between months) is restricting the SVG icon from displaying at all. I have included these assets in my build and can open &amp; view the asset in another tab using the same link included below.</p>\n<p>This code is just an example of icon usage, but this occurs in multiple places.</p>\n<pre><code>&lt;button class=&quot;slds-button slds-button_icon-container&quot; type=&quot;button&quot;&gt;\n        &lt;svg aria-hidden=&quot;true&quot; class=&quot;slds-button__icon&quot;&gt;\n                &lt;use href=&quot;dist/assets/right.svg&quot;&gt;\n                &lt;/use&gt;\n        &lt;/svg&gt;\n        &lt;span class=&quot;slds-assistive-text&quot;&gt;Next month&lt;/span&gt;\n&lt;/button&gt;\n</code></pre>\n<p>This is how I am instantiating the Datepicker component:</p>\n<pre><code>return (\n        &lt;IconSettings onRequestIconPath={({category, name}) =&gt; `dist/assets/${name}.svg`}&gt;\n                &lt;DatePicker\n                 align='right'\n                 labels={{}}\n                 onChange={(event, data) =&gt; {\n                 this.state.editMode = false;\n                 this.passUpdate(this.state.property, this.state.rowId, this.state.children);\n                                }}\n                 formatter={(date) =&gt; {\n                          let newDate = date ? moment(date).format('YYYY-MM-DD') : '';\n                          this.state.children = newDate;\n                          return newDate;\n                 }}\n                 menuPosition='overflowBoundaryElement'\n                 parser={(dateString) =&gt; {\n                         return moment(dateString, 'MM-DD-YYYY').toDate();\n                 }}\n                 value={this.state.children}\n                 /&gt;\n        &lt;/IconSettings&gt;\n)\n</code></pre>\n<p>I have not added any styling to the components. I have also seen that editing the Button HTML inline from the browser and replacing the &lt;svg component with an &lt;img component, passing in the path to the icon as the src parameter, works perfectly.</p>\n<p>Since I cannot modify the SLDS code directly to change these tags and replace the &lt;svg with an &lt;img, how can I get my icons to render within the Datepicker component?</p>\n"
+        },
+        {
+            "tags": [
+                "mitmproxy"
+            ],
+            "owner": {
+                "reputation": 43,
+                "user_id": 11748992,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/66892637e4600495281137d46605c857?s=128&d=identicon&r=PG&f=1",
+                "display_name": "Nils Andr&#233;",
+                "link": "https://stackoverflow.com/users/11748992/nils-andr%c3%a9"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 2,
+            "answer_count": 0,
+            "score": 0,
+            "last_activity_date": 1602535212,
+            "creation_date": 1602535212,
+            "question_id": 64325063,
+            "link": "https://stackoverflow.com/questions/64325063/unload-script-mitmproxy",
+            "title": "Unload script mitmproxy",
+            "body": "<p>I started <code>mitmproxy</code> using the <code>-s</code> option to execute a script. However, I no longer need the script. How would it be possible to unload/disable the script without restarting mitmproxy?</p>\n"
+        },
+        {
+            "tags": [
+                "html",
+                "css"
+            ],
+            "owner": {
+                "reputation": 21,
+                "user_id": 13368788,
+                "user_type": "registered",
+                "profile_image": "https://lh6.googleusercontent.com/-w2wJvFPiam4/AAAAAAAAAAI/AAAAAAAAAAA/AAKWJJOwbjw1WFHaEBB0zkfFznEC6AoHgQ/photo.jpg?sz=128",
+                "display_name": "karim",
+                "link": "https://stackoverflow.com/users/13368788/karim"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 9,
+            "answer_count": 1,
+            "score": 0,
+            "last_activity_date": 1602535212,
+            "creation_date": 1602535004,
+            "question_id": 64325021,
+            "link": "https://stackoverflow.com/questions/64325021/i-creat-a-table-but-it-dont-be-horizontal-scroll",
+            "title": "i creat a table but it don&#39;t be horizontal scroll",
+            "body": "<p>i work on a <code>table</code> of names and data is very large when the browser is resizing the <code>table</code> can't get horizontal scroll.please guide me write its <code>style sheet</code>.</p>\n<p><div class=\"snippet\" data-lang=\"js\" data-hide=\"false\" data-console=\"true\" data-babel=\"false\">\r\n<div class=\"snippet-code\">\r\n<pre class=\"snippet-code-html lang-html prettyprint-override\"><code> &lt;div&gt;\n        &lt;table&gt;\n            &lt;tr&gt;\n                &lt;th&gt;First Name&lt;/th&gt;\n                &lt;th&gt;Last Name&lt;/th&gt;\n                &lt;th&gt;Points&lt;/th&gt;\n                &lt;th&gt;Points&lt;/th&gt;\n                &lt;th&gt;Points&lt;/th&gt;\n                &lt;th&gt;Points&lt;/th&gt;\n                &lt;th&gt;Points&lt;/th&gt;\n                &lt;th&gt;Points&lt;/th&gt;\n                &lt;th&gt;Points&lt;/th&gt;\n                &lt;th&gt;Points&lt;/th&gt;\n                &lt;th&gt;Points&lt;/th&gt;\n                &lt;th&gt;Points&lt;/th&gt;\n            &lt;/tr&gt;\n            &lt;tr&gt;\n                &lt;td&gt;ali&lt;/td&gt;\n                &lt;td&gt;ordoukhani&lt;/td&gt;\n                &lt;td&gt;50&lt;/td&gt;\n                &lt;td&gt;50&lt;/td&gt;\n                &lt;td&gt;50&lt;/td&gt;\n                &lt;td&gt;50&lt;/td&gt;\n                &lt;td&gt;50&lt;/td&gt;\n                &lt;td&gt;50&lt;/td&gt;\n                &lt;td&gt;50&lt;/td&gt;\n                &lt;td&gt;50&lt;/td&gt;\n                &lt;td&gt;50&lt;/td&gt;\n                &lt;td&gt;50&lt;/td&gt;\n            &lt;/tr&gt;\n            &lt;tr&gt;\n                &lt;td&gt;mohammad&lt;/td&gt;\n                &lt;td&gt;ordoukhani&lt;/td&gt;\n                &lt;td&gt;94&lt;/td&gt;\n                &lt;td&gt;94&lt;/td&gt;\n                &lt;td&gt;94&lt;/td&gt;\n                &lt;td&gt;94&lt;/td&gt;\n                &lt;td&gt;94&lt;/td&gt;\n                &lt;td&gt;94&lt;/td&gt;\n                &lt;td&gt;94&lt;/td&gt;\n                &lt;td&gt;94&lt;/td&gt;\n                &lt;td&gt;94&lt;/td&gt;\n                &lt;td&gt;94&lt;/td&gt;\n            &lt;/tr&gt;\n            &lt;tr&gt;\n                &lt;td&gt;Adam&lt;/td&gt;\n                &lt;td&gt;Johnson&lt;/td&gt;\n                &lt;td&gt;67&lt;/td&gt;\n                &lt;td&gt;67&lt;/td&gt;\n                &lt;td&gt;67&lt;/td&gt;\n                &lt;td&gt;67&lt;/td&gt;\n                &lt;td&gt;67&lt;/td&gt;\n                &lt;td&gt;67&lt;/td&gt;\n                &lt;td&gt;67&lt;/td&gt;\n                &lt;td&gt;67&lt;/td&gt;\n                &lt;td&gt;67&lt;/td&gt;\n                &lt;td&gt;67&lt;/td&gt;\n            &lt;/tr&gt;\n        &lt;/table&gt;\n    &lt;/div&gt;</code></pre>\r\n</div>\r\n</div>\r\n</p>\n"
+        },
+        {
+            "tags": [
+                "firebase",
+                "google-cloud-firestore",
+                "firebase-storage"
+            ],
+            "owner": {
+                "reputation": 1,
+                "user_id": 13041994,
+                "user_type": "registered",
+                "profile_image": "https://lh3.googleusercontent.com/a-/AOh14Gixlfk5AXTRgs45-Q1cXxljm9bxD782FaEn-kWmmGQ=k-s128",
+                "display_name": "H&#233;ctor Serrano",
+                "link": "https://stackoverflow.com/users/13041994/h%c3%a9ctor-serrano"
+            },
+            "comment_count": 1,
+            "is_answered": false,
+            "view_count": 7,
+            "answer_count": 0,
+            "score": 0,
+            "last_activity_date": 1602535207,
+            "creation_date": 1602532396,
+            "last_edit_date": 1602535207,
+            "question_id": 64324517,
+            "link": "https://stackoverflow.com/questions/64324517/firebase-firestore-link-already-uploaded-images-to-my-firestore-database",
+            "title": "Firebase (firestore) link already uploaded images to my Firestore Database",
+            "body": "<p>This is my first time using Stackoverflow to ask a question.</p>\n<p>I'd love some guidance.</p>\n<p>As of now, I have a Firestore Database where my colleague has already parsed data from an old HTML site (built using tables, like the old days) and we've got a Database that we can easily consult and get a JSON back, all working like a charm.</p>\n<p>However, we've now come to the part where we'd like to add images to it, so each object within the JSON should not only include stuff like 'name': 'client name', 'hobbies': 'whatever the hobby is', but also and 'img':'&lt;link to my storage image'.</p>\n<p>So far I've seen tutorials explaining how to <strong>upload</strong> the image from the UI and then store the URLref to a const and then set() to the database but in our case we've got the images uploaded already, we just want to be done with our endpoint so we can use NextJS to start hydrating our /profiles page but also include the images.</p>\n<pre><code>import firebase from 'firebase/app'\nimport 'firebase/firestore'\n\nconst firebaseConfig = {\n    apiKey: '##############',\n    authDomain: 'island-beer-club.firebaseapp.com',\n    databaseURL: 'https://island-beer-club.firebaseio.com',\n    projectId: 'island-beer-club',\n    storageBucket: 'island-beer-club.appspot.com',\n    messagingSenderId: '##########',\n    appId: '1:############',\n    measurementId: 'G-MVN7L8L5QE',\n}\n\nif (!firebase.apps.length) {\n    firebase.initializeApp(firebaseConfig)\n}\n\nexport default firebase.firestore()\n</code></pre>\n<p>I hope what I've explained so far makes sense.</p>\n<p>Any help would be greatly appreciated.</p>\n<p>🙌🏻</p>\n"
+        },
+        {
+            "tags": [
+                "python",
+                "visual-studio-code",
+                "anaconda"
+            ],
+            "owner": {
+                "reputation": 3,
+                "user_id": 10104344,
+                "user_type": "registered",
+                "profile_image": "https://lh5.googleusercontent.com/-C1yIgJL84As/AAAAAAAAAAI/AAAAAAAAAAA/AAnnY7oBtrzCoJJYOqCjh-rwacN7idkCPg/mo/photo.jpg?sz=128",
+                "display_name": "Antonio Krsnik",
+                "link": "https://stackoverflow.com/users/10104344/antonio-krsnik"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 7,
+            "answer_count": 1,
+            "score": 0,
+            "last_activity_date": 1602535207,
+            "creation_date": 1602528151,
+            "question_id": 64323583,
+            "link": "https://stackoverflow.com/questions/64323583/anaconda-environment-on-vs-code",
+            "title": "Anaconda Environment on VS Code",
+            "body": "<p>In general I am new to python so keep it easy. I have started my coding in Spyder since it was easy to install libraries with Anaconda.</p>\n<p>Now we want to switch to VS Code for version control. I have switched interpreter and python path to Anaconda folder, but if I open python files I have created in Spyder I can't use in VS code, issue always is with importing libraries.</p>\n<p><a href=\"https://i.stack.imgur.com/5wGgv.jpg\" rel=\"nofollow noreferrer\">Screenshot</a></p>\n"
+        },
+        {
+            "tags": [
+                "r",
+                "ggplot2",
+                "facet-grid"
+            ],
+            "owner": {
+                "reputation": 11,
+                "user_id": 12295054,
+                "user_type": "registered",
+                "profile_image": "https://lh3.googleusercontent.com/a-/AAuE7mDaeKEr8-pRlXl-WwQMM6lKHEsB2hgxjP9woBAQdg=k-s128",
+                "display_name": "SahirAdv",
+                "link": "https://stackoverflow.com/users/12295054/sahiradv"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 8,
+            "answer_count": 1,
+            "score": 1,
+            "last_activity_date": 1602535203,
+            "creation_date": 1602534525,
+            "last_edit_date": 1602534650,
+            "question_id": 64324933,
+            "link": "https://stackoverflow.com/questions/64324933/change-order-margin-is-presented-in-facet-grid-ggplot2",
+            "title": "Change order margin is presented in facet_grid ggplot2?",
+            "body": "<p>I've seen several answers on how to change the order of facets by reordering the factor levels. But I would like to change the order in which the margin is presented. So basically have <code>(all)</code> displayed on the left panel before <code>4</code>, <code>6</code>, <code>8</code>. Thanks in advance!</p>\n<pre><code>library(ggplot2)\nqplot(mpg, wt, data=mtcars) + facet_grid(. ~ cyl, margins=TRUE)\n</code></pre>\n<p><a href=\"https://i.stack.imgur.com/cvyPu.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/cvyPu.png\" alt=\"enter image description here\" /></a></p>\n"
+        },
+        {
+            "tags": [
+                "json",
+                "paypal"
+            ],
+            "owner": {
+                "reputation": 25,
+                "user_id": 14118565,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/ec9a2e8e49733d4028fb209131c896fb?s=128&d=identicon&r=PG&f=1",
+                "display_name": "eartoolbox",
+                "link": "https://stackoverflow.com/users/14118565/eartoolbox"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 2,
+            "answer_count": 0,
+            "score": 0,
+            "last_activity_date": 1602535199,
+            "creation_date": 1602535199,
+            "question_id": 64325059,
+            "link": "https://stackoverflow.com/questions/64325059/why-am-i-getting-this-paypal-create-order-error",
+            "title": "Why am I getting this Paypal create order error?",
+            "body": "<p>When I run this code and click the Paypal button, I get the following error:</p>\n<blockquote>\n<p>err: &quot;TypeError: Cannot read property 'map'</p>\n</blockquote>\n<p>Any idea why this is? As far as I can tell I formatted it correctly. (Obviously I replaced MY_CLIENT_ID with my client ID).</p>\n<pre><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=&quot;en&quot;&gt;\n&lt;head&gt;\n&lt;meta charset=&quot;UTF-8&quot;&gt;\n&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;\n&lt;title&gt;Document&lt;/title&gt;\n&lt;script src=&quot;https://www.paypal.com/sdk/js?currency=GBP&amp;client-id=MY_CLIENT_ID&quot;&gt;&lt;/script&gt;\n&lt;/head&gt;\n&lt;body&gt;\n\n&lt;div id=&quot;paypal-button-container&quot;&gt;&lt;/div&gt;\n\n&lt;!-- Add the checkout buttons, set up the order and approve the order --&gt;\n&lt;script&gt;\npaypal.Buttons({\ncreateOrder: function(data, actions) {\nreturn actions.order.create([{\n&quot;purchase_units&quot;:{\n&quot;reference_id&quot;:&quot;HOP_6rN2fD3oyM&quot;,\n&quot;description&quot;:&quot;Hop Music Lesson Purchase&quot;,\n&quot;custom_id&quot;:&quot;HOP_6rN2fD3oyM&quot;,\n&quot;soft_descriptor&quot;:&quot;HOP_6rN2fD3oyM&quot;,\n&quot;amount&quot;:{\n&quot;currency_code&quot;:&quot;GBP&quot;,\n&quot;value&quot;:&quot;36&quot;,\n&quot;breakdown&quot;:{\n&quot;item_total&quot;:{&quot;currency_code&quot;:&quot;GBP&quot;,\n&quot;value&quot;:&quot;36&quot;}}\n},\n&quot;items&quot;:[{\n&quot;name&quot;:&quot;Single Lesson, In-Person: 45 mins&quot;,\n&quot;description&quot;:&quot;Single Lesson, In-Person: 45 mins&quot;,\n&quot;sku&quot;:&quot;45MIN_SINGLE_INPERSON&quot;,\n&quot;unit_amount&quot;:{\n&quot;currency_code&quot;:&quot;GBP&quot;,\n&quot;value&quot;:&quot;36&quot;},\n&quot;quantity&quot;:&quot;1&quot;,\n&quot;category&quot;:&quot;SINGLE&quot;\n}]\n}}]);\n},\nonApprove: function(data, actions) {\nreturn actions.order.capture().then(function(details) {\nalert('Transaction completed by ' + details.payer.name.given_name);\n});\n}\n}).render('#paypal-button-container'); // Display payment options on your web page\n&lt;/script&gt;\n\n\n&lt;/body&gt;\n&lt;/html&gt;\n</code></pre>\n"
+        },
+        {
+            "tags": [
+                "javascript",
+                "arrays"
+            ],
+            "owner": {
+                "reputation": 1,
+                "user_id": 13659966,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/06307462572bec54f055cf595f739682?s=128&d=identicon&r=PG&f=1",
+                "display_name": "ltfx",
+                "link": "https://stackoverflow.com/users/13659966/ltfx"
+            },
+            "comment_count": 1,
+            "is_answered": false,
+            "view_count": 11,
+            "answer_count": 1,
+            "score": 0,
+            "last_activity_date": 1602535198,
+            "creation_date": 1602535013,
+            "question_id": 64325023,
+            "link": "https://stackoverflow.com/questions/64325023/remove-duplicates-from-sorted-array-js",
+            "title": "Remove Duplicates from Sorted Array JS",
+            "body": "<p>I'm trying to understand why my solution to this problem is only partially working.</p>\n<p><strong>Problem</strong>:</p>\n<p>Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length.</p>\n<p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p>\n<p>My Solution:</p>\n<p><div class=\"snippet\" data-lang=\"js\" data-hide=\"false\" data-console=\"true\" data-babel=\"false\">\r\n<div class=\"snippet-code\">\r\n<pre class=\"snippet-code-js lang-js prettyprint-override\"><code>var removeDuplicates = function(nums) {\n    \n    if (nums.length === 0) return 0;\n    for (let i = 1; i &lt;= nums.length; i++){\n        if(nums[i] === nums[i-1]){\n            nums.splice(nums[i], 1);\n        }\n    }\n    return nums.length;\n};</code></pre>\r\n</div>\r\n</div>\r\n</p>\n<p>This is the outcome I'm getting on leetcode but I don't understand why my solution stops working and the '3s' are not removed?</p>\n<p><a href=\"https://i.stack.imgur.com/4sssH.png\" rel=\"nofollow noreferrer\">output screenshot</a></p>\n"
+        },
+        {
+            "tags": [
+                "c#",
+                "unity3d",
+                "mef"
+            ],
+            "owner": {
+                "reputation": 839,
+                "user_id": 1375031,
+                "user_type": "registered",
+                "accept_rate": 86,
+                "profile_image": "https://www.gravatar.com/avatar/4fd14d750986de6c866f2dc0b2b9f734?s=128&d=identicon&r=PG&f=1",
+                "display_name": "StackHola",
+                "link": "https://stackoverflow.com/users/1375031/stackhola"
+            },
+            "comment_count": 0,
+            "is_answered": false,
+            "view_count": 4,
+            "answer_count": 0,
+            "score": 0,
+            "last_activity_date": 1602535197,
+            "creation_date": 1602534614,
+            "last_edit_date": 1602535197,
+            "question_id": 64324955,
+            "link": "https://stackoverflow.com/questions/64324955/release-a-runtime-import-and-export-in-mef-avoid-changerejectedexception",
+            "title": "Release a runtime Import and Export in Mef, avoid ChangeRejectedException",
+            "body": "<p>I'm using composition batch for adding externally created elements (here in Unity3D context, bu could be any other context). I'm then using ComposeParts from the container to Compose my requestors.</p>\n<p>Now at a certain point in the application both Exported objects and Requestors are released.</p>\n<p>I'm removing the exports with a new <code>CompositionBatch</code> but then MEF raises a <code>ChangeRejectedException</code> and following <code>ObjectDisposedException: Cannot access a disposed object. </code> as the imports from (already released) requestors are somehow still requested in recomposition.</p>\n<p>Is the only way using <code>[Import(AllowRecomposition, AllowDefault)]</code> in attributes? Or is their a way I could tell MEF to &quot;discard&quot; requestor's imports as well ?</p>\n<p>[Edit] : I figured out that some of the errors were coming from &quot;pooled&quot; objects and thus adding the attribute was the sole way to fix the issue here. As expected.</p>\n<p>However the issue still occurs on a &quot;named&quot; import/export solely (<code>[Import(nameof(InGameStateMachine))]</code>) , are they handled differently by MEF ?</p>\n<p>Best</p>\n"
+        },
+        {
+            "tags": [
+                "c",
+                "integer",
+                "bitwise-operators",
+                "bit",
+                "operation"
+            ],
+            "owner": {
+                "reputation": 29,
+                "user_id": 12165736,
+                "user_type": "registered",
+                "profile_image": "https://i.stack.imgur.com/FsK4H.jpg?s=128&g=1",
+                "display_name": "zackmusgrave",
+                "link": "https://stackoverflow.com/users/12165736/zackmusgrave"
+            },
+            "comment_count": 7,
+            "is_answered": true,
+            "view_count": 40,
+            "answer_count": 1,
+            "score": 1,
+            "last_activity_date": 1602535196,
+            "creation_date": 1602531639,
+            "question_id": 64324377,
+            "link": "https://stackoverflow.com/questions/64324377/how-to-inverse-a-positive-integer-in-c-without-or-operators",
+            "title": "How to inverse a positive integer in C without * or - operators?",
+            "body": "<p>Hello I am trying to write a function for my lab which requires me to inverse a positive number with restricted operators. The operators allowed are: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;</p>\n<p>My initial approach was to double x using addition: x + x and then subtracting that from x to get the inverse, but was roadblocked due to the operator restrictions. I am rather new to C and trying to learn, if someone could provide me with the ideology behind performing this operation I would greatly appreciate it.</p>\n"
+        }
+    ],
+    "has_more": true,
+    "quota_max": 300,
+    "quota_remaining": 285
+}

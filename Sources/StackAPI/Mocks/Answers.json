@@ -1,0 +1,594 @@
+{
+    "items": [
+        {
+            "owner": {
+                "reputation": 43,
+                "user_id": 4321271,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/5f19a62f0729c3a0b87e50e639a09700?s=128&d=identicon&r=PG&f=1",
+                "display_name": "Ruderer",
+                "link": "https://stackoverflow.com/users/4321271/ruderer"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535212,
+            "creation_date": 1602535212,
+            "answer_id": 64325062,
+            "question_id": 64325021,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>You can add</p>\n<pre class=\"lang-css prettyprint-override\"><code>body {\n    overflow-x: scroll;\n}\n</code></pre>\n<p>or</p>\n<pre class=\"lang-css prettyprint-override\"><code>table {\n    overflow-x: scroll;\n}\n</code></pre>\n"
+        },
+        {
+            "owner": {
+                "reputation": 1548,
+                "user_id": 7108589,
+                "user_type": "registered",
+                "profile_image": "https://graph.facebook.com/1305140272870362/picture?type=large",
+                "display_name": "Peter",
+                "link": "https://stackoverflow.com/users/7108589/peter"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535207,
+            "creation_date": 1602535207,
+            "answer_id": 64325061,
+            "question_id": 64323583,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>The first rule with Anaconda is to not manually mess around with the paths. Anaconda has a different philosophy: Before you can use Python, you need to activate a conda environment.</p>\n<pre><code>c:\\&gt; conda activate\n(Anaconda3) c:\\&gt; python\n&gt;&gt;&gt;\n</code></pre>\n<p>VSCode detects conda environments and you just have to select one for your project (Python: Select interpreter). Now open a new terminal and watch VSCode activating the environment for you (like shown above).</p>\n<p>However, when you start your script for the first time, VSCode sometimes invokes the interpreter even before the conda activation has finialized. Then simply restart your script.</p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 42393,
+                "user_id": 12500315,
+                "user_type": "registered",
+                "profile_image": "https://i.stack.imgur.com/2liqZ.jpg?s=128&g=1",
+                "display_name": "Allan Cameron",
+                "link": "https://stackoverflow.com/users/12500315/allan-cameron"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535203,
+            "creation_date": 1602535203,
+            "answer_id": 64325060,
+            "question_id": 64324933,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>How about</p>\n<pre class=\"lang-r prettyprint-override\"><code>mtcars2 &lt;- rbind(mtcars, within(mtcars, cyl &lt;- &quot;(All)&quot;))\n\nqplot(mpg, wt, data = mtcars2) + facet_grid(. ~ cyl)\n</code></pre>\n<p><a href=\"https://i.stack.imgur.com/HoDTu.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/HoDTu.png\" alt=\"enter image description here\" /></a></p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 207110,
+                "user_id": 9515207,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/34932d3e923ffad9a4a1423e30b1d9fc?s=128&d=identicon&r=PG&f=1",
+                "display_name": "CertainPerformance",
+                "link": "https://stackoverflow.com/users/9515207/certainperformance"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535198,
+            "creation_date": 1602535198,
+            "answer_id": 64325058,
+            "question_id": 64325023,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>When you splice an array while iterating over it, the whole array will change <em>in-place</em>. For example, let's say that indexes 0 and 1 are duplicates (i is 1). Then, if you remove index 1 from the array, what used to be at index 2 will now be at index 1, and what used to be at index 3 will now be at index 2, etc.</p>\n<p>So, you need to subtract 1 from <code>i</code> when an element is removed, otherwise the next element will be skipped:</p>\n<p><div class=\"snippet\" data-lang=\"js\" data-hide=\"false\" data-console=\"true\" data-babel=\"false\">\r\n<div class=\"snippet-code\">\r\n<pre class=\"snippet-code-js lang-js prettyprint-override\"><code>var removeDuplicates = function(nums) {\n    for (let i = 1; i &lt; nums.length; i++){\n        if(nums[i] === nums[i-1]){\n            nums.splice(nums[i], 1);\n            i--;\n        }\n    }\n    return nums.length;\n};\nconsole.log(removeDuplicates([0, 0, 0]));</code></pre>\r\n</div>\r\n</div>\r\n</p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 87614,
+                "user_id": 4593267,
+                "user_type": "registered",
+                "accept_rate": 62,
+                "profile_image": "https://i.stack.imgur.com/EEyLy.jpg?s=128&g=1",
+                "display_name": "chqrlie",
+                "link": "https://stackoverflow.com/users/4593267/chqrlie"
+            },
+            "comment_count": 1,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535196,
+            "last_edit_date": 1602535196,
+            "creation_date": 1602535122,
+            "answer_id": 64325038,
+            "question_id": 64324377,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>Here is an original solution for 2's complement systems: not the one they are expecting, but just as efficient with an optimizing compiler:</p>\n<pre><code>#include &lt;limits.h&gt;\n\nint negate_positive_number(int n) {\n    return n * (INT_MIN + INT_MAX);\n}\n</code></pre>\n"
+        },
+        {
+            "owner": {
+                "reputation": 1,
+                "user_id": 14438281,
+                "user_type": "unregistered",
+                "profile_image": "https://www.gravatar.com/avatar/8db02a4eeb0096d1df7c5e3be4faf8f1?s=128&d=identicon&r=PG",
+                "display_name": "user14438281",
+                "link": "https://stackoverflow.com/users/14438281/user14438281"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535187,
+            "creation_date": 1602535187,
+            "answer_id": 64325057,
+            "question_id": 64324774,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>Items adsed in constructor should be imported in module</p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 2778,
+                "user_id": 10497483,
+                "user_type": "registered",
+                "profile_image": "https://graph.facebook.com/478365672547562/picture?type=large",
+                "display_name": "Himanshu Ahuja",
+                "link": "https://stackoverflow.com/users/10497483/himanshu-ahuja"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 1,
+            "last_activity_date": 1602535182,
+            "last_edit_date": 1602535182,
+            "creation_date": 1602534177,
+            "answer_id": 64324872,
+            "question_id": 64324695,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>Although row_number is the easiest way as done by @GMB. Can try this alternative as well</p>\n<pre><code>select city, fight_year\nfrom fights \ngroup by city, fightyear \nhaving count(*) = sum(case when fid is not null then 1 end)\n</code></pre>\n"
+        },
+        {
+            "owner": {
+                "reputation": 116,
+                "user_id": 5260876,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/4f17086fda9f17bcde029d5b1a1187d9?s=128&d=identicon&r=PG&f=1",
+                "display_name": "ilia",
+                "link": "https://stackoverflow.com/users/5260876/ilia"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535179,
+            "creation_date": 1602535179,
+            "answer_id": 64325056,
+            "question_id": 64318678,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>You can use <code>plt.grid(True)</code> and <code>plt.xticks(day)</code> as mentioned by @Shoaib Mirzaei.</p>\n<pre><code>import matplotlib.pyplot as plt\n\nday = [1,7,10]\nprofit = [100,200,150]\nsoldPrice = [150,300,250]\nplt.plot(day,profit,linewidth=2,linestyle=&quot;-&quot;,marker=&quot;o&quot;,label=&quot;Profit&quot;)\nplt.plot(day,soldPrice,linewidth=2,linestyle=&quot;-&quot;,marker=&quot;o&quot;,label=&quot;Sold For&quot;)\n\nplt.xlabel('day')\nplt.ylabel('amount')\n\nplt.xticks(day)\nplt.grid(True)\n\nplt.title('Report')\nplt.legend()\n</code></pre>\n<p><a href=\"https://i.stack.imgur.com/cXtvk.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/cXtvk.png\" alt=\"chart\" /></a></p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 11,
+                "user_id": 12312372,
+                "user_type": "registered",
+                "profile_image": "https://i.stack.imgur.com/5Oe5s.jpg?s=128&g=1",
+                "display_name": "NikolaJov",
+                "link": "https://stackoverflow.com/users/12312372/nikolajov"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535178,
+            "creation_date": 1602535178,
+            "answer_id": 64325055,
+            "question_id": 61804441,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>Hey can you send me your MVC project or link to git hub</p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 647,
+                "user_id": 4055580,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/7fc0fdf76cfbbeb9b0ef80b0b8152b22?s=128&d=identicon&r=PG&f=1",
+                "display_name": "Parameshwar Ande",
+                "link": "https://stackoverflow.com/users/4055580/parameshwar-ande"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535171,
+            "creation_date": 1602535171,
+            "answer_id": 64325050,
+            "question_id": 64307204,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>I see this as classic async/await issue only.</p>\n<ol>\n<li>As you declared function 'writeVars' as async, so I expect function 'set()' is async in nature. If so please add await in front of 'set' function.</li>\n<li>If 'get' function also an async one, then add await in front of it and add 'async' to 'readVars' function declaration.</li>\n<li>If point 1 and point 2 are correct, then add await in front of functions 'writeVars' and 'readVars' where ever you call them and add async to the function declaration of calling function.</li>\n</ol>\n"
+        },
+        {
+            "owner": {
+                "reputation": 6727,
+                "user_id": 6250385,
+                "user_type": "registered",
+                "profile_image": "https://i.stack.imgur.com/Zl6cg.jpg?s=128&g=1",
+                "display_name": "GProst",
+                "link": "https://stackoverflow.com/users/6250385/gprost"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535168,
+            "creation_date": 1602535168,
+            "answer_id": 64325047,
+            "question_id": 64325005,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>It won't be the same result, in the first example with a wrapper the time condition will be checked each time you call the decorated function. And in the second example, the time condition will be checked just once at the time you apply the decorator to a function.</p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 21017,
+                "user_id": 7758804,
+                "user_type": "registered",
+                "profile_image": "https://i.stack.imgur.com/UBA7j.jpg?s=128&g=1",
+                "display_name": "Trenton McKinney",
+                "link": "https://stackoverflow.com/users/7758804/trenton-mckinney"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535163,
+            "last_edit_date": 1602535163,
+            "creation_date": 1602534607,
+            "answer_id": 64324952,
+            "question_id": 64324678,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<ul>\n<li>Given a <code>pandas.DataFrame</code> with two columns of dates</li>\n<li><code>.fillna</code> on column <code>b</code>, which will ensure the time difference is &lt; 10 minutes</li>\n<li>Convert the columns to a datetime, with <code>pandas.to_datetime</code></li>\n</ul>\n<pre class=\"lang-py prettyprint-override\"><code>import pandas as pd\nimport numpy as np\nfrom datetime import timedelta\n\na = ['2017-12-31 16:00:00-08:00', '2017-12-31 17:00:00-08:00', '2017-12-31 18:00:00-08:00']\nb = ['2017-12-31 17:00:00-08:00', None, '2017-12-31 18:00:10-08:00']\n\n# dataframe\ndf = pd.DataFrame({'a': a, 'b': b})\n\n                           a                          b\n0  2017-12-31 16:00:00-08:00  2017-12-31 17:00:00-08:00\n1  2017-12-31 17:00:00-08:00                       None\n2  2017-12-31 18:00:00-08:00  2017-12-31 18:00:10-08:00\n\n# fillna\ndf.b = df.b.fillna(df.a)\n\n# convert columns to datetime format\ndf[['a', 'b']] = df[['a', 'b']].apply(pd.to_datetime)\n\n                          a                         b\n0 2017-12-31 16:00:00-08:00 2017-12-31 17:00:00-08:00\n1 2017-12-31 17:00:00-08:00 2017-12-31 17:00:00-08:00\n2 2017-12-31 18:00:00-08:00 2017-12-31 18:00:10-08:00\n\n# function\ndef date_check(x, y):\n    return (np.abs(x - y)) &lt; timedelta(minutes=10)\n\n\n# function call\ndate_check(df.a, df.b)\n[out]:\n0    False\n1     True\n2     True\ndtype: bool\n\n# add a column to the dataframe\ndf['time_diff'] = np.abs(df.a - df.b) &lt; pd.Timedelta(minutes=10)\n\n                          a                         b  time_diff\n0 2017-12-31 16:00:00-08:00 2017-12-31 17:00:00-08:00      False\n1 2017-12-31 17:00:00-08:00 2017-12-31 17:00:00-08:00       True\n2 2017-12-31 18:00:00-08:00 2017-12-31 18:00:10-08:00       True\n</code></pre>\n"
+        },
+        {
+            "owner": {
+                "reputation": 2871,
+                "user_id": 6748758,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/ebbcd2b43dd712eafbcc1e616bd3f89c?s=128&d=identicon&r=PG&f=1",
+                "display_name": "SteveC",
+                "link": "https://stackoverflow.com/users/6748758/stevec"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535156,
+            "creation_date": 1602535156,
+            "answer_id": 64325045,
+            "question_id": 64324097,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>As per the comments it doesn't seem necessary to store the value in Table_A because it's repetitive and it would create a dependency between tables and columns which would have to be programmatically maintained.  It's not clear what is meant by &quot;only the first customerPhonenumber&quot;.  Based on which column would we determine &quot;first&quot;?  Here's a query (which could be made into a <code>VIEW</code>) to return the <code>MAX</code> CustomerName from Table_C for CustomerIds.</p>\n<pre><code>select ta.CustomerId,\n       coalesce(max(tc.CustomerName ), 'No CustomerName') CustomerName \nfrom Table_A ta\n     join Table_B tb on ta.CustomerId=tb.CustomerId\n     left join Table_C tc on tb.CustomerPhonenumber=tc.CustomerPhonenumber\ngroup by ta.CustomerId;\n</code></pre>\n"
+        },
+        {
+            "owner": {
+                "reputation": 64125,
+                "user_id": 4785185,
+                "user_type": "registered",
+                "profile_image": "https://i.stack.imgur.com/ChR5h.jpg?s=128&g=1",
+                "display_name": "Prune",
+                "link": "https://stackoverflow.com/users/4785185/prune"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535156,
+            "creation_date": 1602535156,
+            "answer_id": 64325044,
+            "question_id": 64325005,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>The idea of a decorator is to return a function you can call as needed, with enhanced functionality according to the decorator's purpose.</p>\n<p>What you suggest will fail in use.  First of all, if I instantiate this during the night, your proposal will return <code>None</code>, and my calling program will crash, even if I call the function at noon.</p>\n<p>More generally, your proposal freezes the functionality based on time of instantiation, rather than when my use case calls the function.</p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 542,
+                "user_id": 5385615,
+                "user_type": "registered",
+                "accept_rate": 0,
+                "profile_image": "https://www.gravatar.com/avatar/b5b15f0036edba6127122b538813278b?s=128&d=identicon&r=PG&f=1",
+                "display_name": "ranah",
+                "link": "https://stackoverflow.com/users/5385615/ranah"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535155,
+            "creation_date": 1602535155,
+            "answer_id": 64325043,
+            "question_id": 64269044,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>Only numeric data can be plotted in the TSI Explorer, so in order to display a chart with your boolean values you can create a Type variable with a <a href=\"https://docs.microsoft.com/en-us/rest/api/time-series-insights/reference-time-series-expression-syntax#conversion-functions\" rel=\"nofollow noreferrer\">conversion</a> function in the Time Series Expression to cast the bool to a long or a double <code>toDouble($event.value.Bool)</code></p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 1802,
+                "user_id": 11044542,
+                "user_type": "registered",
+                "profile_image": "https://i.stack.imgur.com/ccLDA.jpg?s=128&g=1",
+                "display_name": "MaxiGui",
+                "link": "https://stackoverflow.com/users/11044542/maxigui"
+            },
+            "comment_count": 6,
+            "is_accepted": false,
+            "score": 2,
+            "last_activity_date": 1602535148,
+            "last_edit_date": 1602535148,
+            "creation_date": 1602522867,
+            "answer_id": 64322371,
+            "question_id": 64322171,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>Set it as: <code>min-heigh: 100vh;</code> it should take it</p>\n<h2>Edit:</h2>\n<p>So this is a little bit more complex than what it look based on your html structure, I would recommand css as follow:</p>\n<pre><code>body, #root, .content{\n  min-height: 100vh;\n}\n</code></pre>\n<p>Then where you are having <code>&lt;div class=&quot;h-100&quot;</code> make it like:</p>\n<pre><code>&lt;div class=&quot;h-100 d-flex flex-column&quot; style=&quot;min-height: 100vh;&quot;&gt;\n</code></pre>\n<p>With all this setting it should like:\n<a href=\"https://i.stack.imgur.com/UL6M5.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/UL6M5.png\" alt=\"enter image description here\" /></a></p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 5,
+                "user_id": 8441963,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/cab85c6966c7084a58ad1a8d228e73f9?s=128&d=identicon&r=PG&f=1",
+                "display_name": "Nikhil K",
+                "link": "https://stackoverflow.com/users/8441963/nikhil-k"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535146,
+            "creation_date": 1602535146,
+            "answer_id": 64325042,
+            "question_id": 64319612,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>Turns out I had to add the a converter for converting the string representation of the JSON to desired Swagger generated Model object something like:</p>\n<pre><code>@Component\npublic class StringToAttachmentObjectConverter implements Converter&lt;String, Attachment&gt; {\n    \n    Logger logger = LoggerFactory.getLogger(StringToAttachmentObjectConverter.class);\n    \n    @Autowired\n    private ObjectMapper objectMapper;\n    \n    DocumentContext docContext = null;\n\n    @Override\n    public Attachment convert(String source) {\n        try {\n            String sourceString = JsonPath.using(NetsUtilityJSONDatumUtils.jsonPathConfig).parse(source).jsonString();\n            return objectMapper.readValue(sourceString, Attachment.class);\n        } catch (JsonParseException e) {\n            logger.error(&quot;Error While converting the String: \\n&quot; + source, e);\n        } catch (JsonMappingException e) {\n            logger.error(&quot;Error While converting the String: \\n&quot; + source, e);\n        } catch (IOException e) {\n            logger.error(&quot;Error While converting the String: \\n&quot; + source, e);\n        }\n        return null;\n    }\n}\n</code></pre>\n<p>Not sure if there is any better way or if I am defying any best practice(s) but this did the trick for me.</p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 3013,
+                "user_id": 12763954,
+                "user_type": "registered",
+                "profile_image": "https://lh6.googleusercontent.com/-uYTsiw1bQ_o/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rev-nenZRronqGEJxeFQWww3ShBnQ/photo.jpg?sz=128",
+                "display_name": "Olivier",
+                "link": "https://stackoverflow.com/users/12763954/olivier"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535142,
+            "creation_date": 1602535142,
+            "answer_id": 64325040,
+            "question_id": 64324320,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>The basic idea is that, if the image height is twice the width, you will need twice more columns than rows.</p>\n<p>If:</p>\n<ul>\n<li>q is the image ratio (width/height)</li>\n<li>c is the number of columns</li>\n<li>r is the number of rows</li>\n<li>n is the total number of images</li>\n</ul>\n<p>then we have:</p>\n<p>r / c = q and r * c = n</p>\n<p>After a few substitutions:</p>\n<ul>\n<li><p>c = sqrt(n / q)</p>\n</li>\n<li><p>r = q * c</p>\n</li>\n</ul>\n<p>In your case, q = 160 / 331 = 0.48</p>\n<p>c = sqrt(25 / 0.48) = 7.2</p>\n<p>r = 0.48 * c = 3.5</p>\n<p>So (after rounding) the answer is 4 rows and 7 columns.</p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 508,
+                "user_id": 11479158,
+                "user_type": "registered",
+                "profile_image": "https://lh6.googleusercontent.com/--NuEf4m4if0/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rcM2BlK9xEGz5rfsk4O1B7ufRr5eA/mo/photo.jpg?sz=128",
+                "display_name": "tjorchrt",
+                "link": "https://stackoverflow.com/users/11479158/tjorchrt"
+            },
+            "comment_count": 0,
+            "is_accepted": true,
+            "score": 0,
+            "last_activity_date": 1602535137,
+            "last_edit_date": 1602535137,
+            "creation_date": 1602529977,
+            "answer_id": 64324025,
+            "question_id": 64323777,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>We want second input <code>n</code> become zero complete all list.\nAnd we want output is a list so we use <code>cons</code>.</p>\n<p>You can build your code by using minimum sample and add more complex data.</p>\n<p>If input is <code>(duplicate x 0)</code> we want output is <code>'()</code>.</p>\n<p>If input is <code>(duplicate x 1)</code> we want output is <code>'(x)</code>.</p>\n<p>So your code should looks like this</p>\n<pre><code>(define (duplicate x n)\n  (cond\n    [(= n 0) '()]\n    [else\n     (cons x ...)]))\n</code></pre>\n<p>But we already know we want output is <code>'(x)</code> which is <code>(cons x '())</code>.\nObvious <code>'()</code> is <code>(duplicate x 0)</code>'s output. So we add <code>(duplicate x (- n 1))</code> in second condition.</p>\n<pre><code>#lang racket\n\n(define (duplicate x n)\n  (cond\n    [(= n 0) '()]\n    [else\n     (cons x (duplicate x (- n 1)))]))\n\n\n;;; TEST\n(duplicate '() 0)\n(duplicate '() 3)\n(duplicate '() 5)\n(duplicate '(1 2) 5)\n</code></pre>\n<p>Or you can think like this way.\nWe have employee help us copy document.</p>\n<p>employee-1 : We give him a number than he minus 1 than order employee-2 do his job</p>\n<p>employee-2 : He copy a document than send message to employee-3</p>\n<p>employee-3 : He supervision finish or not (number become zero). If not finish send message to employee-1.</p>\n<p>So we want something like this\nfinish? -&gt; no -&gt; minus-1 -&gt; copy -&gt; finish? -&gt; no -&gt; minus-1 -&gt; ...</p>\n<pre><code>#lang racket\n(define x 1)\n(define result '())\n\n(define (employee-1 n)\n  (employee-2 (- n 1)))\n\n(define (employee-2 n)\n  (begin\n    (set! result (cons x result))\n    (employee-3 n)))\n\n(define (employee-3 n)\n  (if (= n 0)\n      result\n      (employee-1 n)))\n\n;;; TEST\n(employee-3 1) ; '(1)\n</code></pre>\n<p>Than we combine <code>employee-1</code> to <code>employee-3</code></p>\n<pre><code>; (define (employee-1 n) (employee-2 (- n 1)))\n(define (employee-3-v2 n)\n  (if (= n 0)\n      result\n      (employee-2 (- n 1))))\n</code></pre>\n<p>We use function input replace define global variable. So we have to remove <code>set!</code> and change input parameter.</p>\n<pre><code>; (define x 1)\n; (define result '())\n(define (employee-2-v2 n x result)\n  (employee-3-v2 n (cons x result)))\n\n(define (employee-3-v2 n result)\n  (if (= n 0)\n      result\n      (employee-2 (- n 1) result)))\n</code></pre>\n<p>Than we combine <code>employee-2-v2</code> to <code>employee-3-v2</code>. Remember we have to change input parameter.</p>\n<pre><code>(define (employee-3-v3 n x result)\n  (if (= n 0)\n      result\n      (employee-3-v3 (- n 1) x (cons x result))))\n\n\n;;; TEST\n(employee-3-v3 0 'x '())\n(employee-3-v3 1 'x '())\n(employee-3-v3 2 'x '())\n</code></pre>\n<p>Now we want remove not necessary input parameter <code>result</code>.</p>\n<pre><code>(define (employee-3-v4 n x)\n  (if (= n 0)\n      '()\n      (cons x (employee-3-v4 (- n 1) x))))\n\n;;; TEST\n(employee-3-v4 0 'x)\n(employee-3-v4 3 'x)\n</code></pre>\n"
+        },
+        {
+            "owner": {
+                "reputation": 27773,
+                "user_id": 765226,
+                "user_type": "registered",
+                "accept_rate": 50,
+                "profile_image": "https://i.stack.imgur.com/b0Qnm.jpg?s=128&g=1",
+                "display_name": "Alexis Olson",
+                "link": "https://stackoverflow.com/users/765226/alexis-olson"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535097,
+            "last_edit_date": 1602535097,
+            "creation_date": 1602533993,
+            "answer_id": 64324835,
+            "question_id": 64323864,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>In DAX, you'd write it like this:</p>\n<pre><code>FILTER ( Table1, Table1[column_name] IN { &quot;a&quot;, &quot;b&quot;, &quot;f&quot; } )\n</code></pre>\n<p>However, it appears you are actually asking about the M language (used in the Query Editor).</p>\n<p>In M, you can write it something like this:</p>\n<pre><code>Table.SelectRows(Table1, each List.Contains({&quot;a&quot;, &quot;b&quot;, &quot;f&quot;}, [column_name]))\n</code></pre>\n"
+        },
+        {
+            "owner": {
+                "reputation": 1274,
+                "user_id": 4593642,
+                "user_type": "registered",
+                "profile_image": "https://graph.facebook.com/10203096678250304/picture?type=large",
+                "display_name": "Amine Messaoudi",
+                "link": "https://stackoverflow.com/users/4593642/amine-messaoudi"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535095,
+            "creation_date": 1602535095,
+            "answer_id": 64325035,
+            "question_id": 64324082,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>After hours of debugging, I found the <code>ImportMixin</code> class, which is in <code>import_export/admin.py</code></p>\n<p>The class contains a method called <code>import_action</code> that looks like this</p>\n<pre><code>def import_action(self, request, *args, **kwargs):\n    ...\n    import_file = form.cleaned_data['import_file']\n    ...\n    data = tmp_storage.read(input_format.get_read_mode())\n    ...\n    dataset = input_format.create_dataset(data)\n    ...\n</code></pre>\n<p>As you can see, this is the function that reads the uploaded file to a string before passing it to <code>input_format.create_dataset()</code>. So all I had to do was adding a custom function that removed the blank lines</p>\n<pre><code>data = self.remove_blanks(data)\ndataset = input_format.create_dataset(data)\n</code></pre>\n<p><strong>import_export/admin.py/ImportMixin</strong></p>\n<pre><code>def remove_blanks(self, data):\n    return os.linesep.join([s for s in data.splitlines() if s.strip()])\n</code></pre>\n<p>This way any csv file will not have any blank line, which will force the first line to be the header and that solves the problem. I hope this will be useful to anyone facing the same issue.</p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 1,
+                "user_id": 8869366,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/f601330841f03dec26ffc3164ce3dbc6?s=128&d=identicon&r=PG&f=1",
+                "display_name": "Victor Zuev",
+                "link": "https://stackoverflow.com/users/8869366/victor-zuev"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535091,
+            "creation_date": 1602535091,
+            "answer_id": 64325034,
+            "question_id": 63371312,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>Possible solutions:</p>\n<ol>\n<li><p>Update <a href=\"https://forums.xamarin.com/discussion/174411/linker-error-after-adding-xamarin-google-ios-mobileads-nuget\" rel=\"nofollow noreferrer\">Xamarin.Build.Download</a> to the latest version.</p>\n</li>\n<li><p>Are there any other errors or only this one? It might be you need to update other libraries (in my case it was google/firebase libs) (and clean bin/obj and package folders of course :) )</p>\n</li>\n</ol>\n"
+        },
+        {
+            "owner": {
+                "reputation": 1978,
+                "user_id": 830841,
+                "user_type": "registered",
+                "accept_rate": 12,
+                "profile_image": "https://i.stack.imgur.com/TzZIB.jpg?s=128&g=1",
+                "display_name": "James Shapiro",
+                "link": "https://stackoverflow.com/users/830841/james-shapiro"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535085,
+            "creation_date": 1602535085,
+            "answer_id": 64325033,
+            "question_id": 64324533,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>Since you've indicated that you're okay with all of the files in the S3 being publicly accessible, I would suggest the following:</p>\n<ol>\n<li><p>select the bucket from in the AWS console (console.aws.amazon.com)</p>\n</li>\n<li><p>Under &quot;Permissions&quot; select &quot;Block Public Access&quot; and edit the settings by <em>un</em>-checking all of the options under and including &quot;Block all public access&quot;, then save and confirm.</p>\n</li>\n<li><p>Go to the bucket policy, and paste in the following (Note: replace &quot;YOUR_BUCKET_NAME_HERE&quot; with &quot;amplify-myvideoapp-dev-50540-deployment&quot; first):</p>\n</li>\n</ol>\n<p>{\n&quot;Version&quot;: &quot;2012-10-17&quot;,\n&quot;Statement&quot;: [\n{\n&quot;Sid&quot;: &quot;PublicRead&quot;,\n&quot;Effect&quot;: &quot;Allow&quot;,\n&quot;Principal&quot;: &quot;<em>&quot;,\n&quot;Action&quot;: [\n&quot;s3:GetObject&quot;,\n&quot;s3:GetObjectVersion&quot;\n],\n&quot;Resource&quot;: [\n&quot;arn:aws:s3:::[YOUR_BUCKET_NAME_HERE]/</em>&quot;\n]\n}\n]\n}</p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 453,
+                "user_id": 6591962,
+                "user_type": "registered",
+                "profile_image": "https://lh6.googleusercontent.com/-jD2Sszwl9p0/AAAAAAAAAAI/AAAAAAAAAnc/fIcnP9UYW9w/photo.jpg?sz=128",
+                "display_name": "Andrei Kovrov",
+                "link": "https://stackoverflow.com/users/6591962/andrei-kovrov"
+            },
+            "comment_count": 6,
+            "is_accepted": false,
+            "score": 2,
+            "last_activity_date": 1602535084,
+            "last_edit_date": 1602535084,
+            "creation_date": 1602210394,
+            "answer_id": 64273101,
+            "question_id": 59702276,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>It's already implemented <a href=\"https://github.com/spring-projects/spring-framework/blob/master/spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/method/annotation/RequestResponseBodyAdviceChain.java\" rel=\"nofollow noreferrer\">under the hood of Spring</a>.</p>\n<p>The class has private-package access but you can copy it and implement both <code>supports()</code> methods according to your requirements.</p>\n<p><strong>Updated</strong></p>\n<p>The PoC you can find <a href=\"https://github.com/rawmind/spring-body-processing\" rel=\"nofollow noreferrer\">here</a></p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 88510,
+                "user_id": 282848,
+                "user_type": "registered",
+                "accept_rate": 93,
+                "profile_image": "https://www.gravatar.com/avatar/ced1d4c4fa1cd38d87553bf0e4836120?s=128&d=identicon&r=PG",
+                "display_name": "Andreas Rejbrand",
+                "link": "https://stackoverflow.com/users/282848/andreas-rejbrand"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535080,
+            "creation_date": 1602535080,
+            "answer_id": 64325032,
+            "question_id": 64324320,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>Mathematically, this is an interesting question.</p>\n<p>I don't have time to think about it extensively, but here are my two cents:</p>\n<p>Let the width and height of the sprites be <em>w</em> and <em>h</em>, respectively, and let the number of sprites be <em>n</em>.</p>\n<p>If you put these in a grid consisting of <em>c</em> columns and <em>r</em> rows, the total width of the grid will be <em>cw</em>  and the total height <em>rh</em>. You want the quotient <em>cw</em>/<em>rh</em> to be as close to 1 as possible.</p>\n<p>Now, if you chose <em>c</em>  and <em>r</em> freely, the number of grid cells, <em>N := cr</em>, might well be slightly larger than <em>n</em>. In most cases, I would expect you to accept a partially empty last row.</p>\n<p>Since <em>N</em> is close to <em>n</em>,</p>\n<p><a href=\"https://i.stack.imgur.com/j46pp.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/j46pp.png\" alt=\"Equation 1\" /></a></p>\n<p>Hence, we want to find <em>c</em> such that</p>\n<p><a href=\"https://i.stack.imgur.com/kgMxZ.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/kgMxZ.png\" alt=\"Equation 2\" /></a></p>\n<p>is as small as possible. Since the square function <em>x</em> ↦ <em>x</em>² is increasing on the positive reals, we can instead optimize</p>\n<p><a href=\"https://i.stack.imgur.com/k0LjV.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/k0LjV.png\" alt=\"Equation 3\" /></a></p>\n<p>which doesn't involve the absolute value function.</p>\n<p>Now, differentiation yields</p>\n<p><a href=\"https://i.stack.imgur.com/tCHk0.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/tCHk0.png\" alt=\"Equation 4\" /></a></p>\n<p>Hence, if you let the number of columns be √(<em>nh</em>/<em>w</em>) rounded to the nearest integer, you will probably get a fairly square grid.</p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 151565,
+                "user_id": 8620333,
+                "user_type": "registered",
+                "profile_image": "https://i.stack.imgur.com/WSmLn.png?s=128&g=1",
+                "display_name": "Temani Afif",
+                "link": "https://stackoverflow.com/users/8620333/temani-afif"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535080,
+            "creation_date": 1602535080,
+            "answer_id": 64325031,
+            "question_id": 64322282,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>Use <code>display:grid</code></p>\n<p><div class=\"snippet\" data-lang=\"js\" data-hide=\"false\" data-console=\"true\" data-babel=\"false\">\r\n<div class=\"snippet-code\">\r\n<pre class=\"snippet-code-css lang-css prettyprint-override\"><code>ul {\n  max-width: 250px;\n  overflow: scroll;\n  display: grid;\n  border: 1px solid red;\n  padding: 0;\n  margin: 0;\n}\n\nli {\n  white-space: nowrap;\n  list-style: none;\n}\n\nli:hover {\n  cursor: pointer;\n  background: #ccc;\n}</code></pre>\r\n<pre class=\"snippet-code-html lang-html prettyprint-override\"><code>&lt;ul&gt;\n  &lt;li&gt;sdjaflkjasd lfkjsadjf lksadjf ljadslfj lasdjfl jasf&lt;/li&gt;\n  &lt;li&gt;asdf asdf dsaf&lt;/li&gt;\n  &lt;li&gt;sdf dsaf dsa&lt;/li&gt;\n  &lt;li&gt;sd afdsa fdsaf &lt;/li&gt;\n  &lt;li&gt;sad fadsf sad&lt;/li&gt;\n&lt;/ul&gt;</code></pre>\r\n</div>\r\n</div>\r\n</p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 1280,
+                "user_id": 14251221,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/0fdacb141bca7fa57c392b5f03872176?s=128&d=identicon&r=PG&f=1",
+                "display_name": "Spectric",
+                "link": "https://stackoverflow.com/users/14251221/spectric"
+            },
+            "comment_count": 1,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535073,
+            "last_edit_date": 1602535073,
+            "creation_date": 1602534960,
+            "answer_id": 64325013,
+            "question_id": 64324978,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>You can convert the number to a String, then loop through every character. Parse that specific character and set it into the array like so:</p>\n<pre><code>public int[] intToArray(int number) {\n    String value = String.valueOf(number);\n    int[] arr = new int[value.length()];\n    for(int i = 0; i &lt; arr.length; i++) {\n        arr[i]=Integer.parseInt(String.valueOf(value.charAt(i)));\n    }\n    return arr;\n}\n</code></pre>\n<p>This:</p>\n<pre><code>int[] newarr = intToArray(12345);\nfor(int i = 0; i &lt; newarr.length; i++) {\n    System.out.println(newarr[i]);\n}\n</code></pre>\n<p>Provides this:</p>\n<pre><code>1\n2\n3\n4\n5\n</code></pre>\n"
+        },
+        {
+            "owner": {
+                "reputation": 33,
+                "user_id": 2414323,
+                "user_type": "registered",
+                "profile_image": "https://i.stack.imgur.com/yL8dz.jpg?s=128&g=1",
+                "display_name": "Leon the Logician",
+                "link": "https://stackoverflow.com/users/2414323/leon-the-logician"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535072,
+            "last_edit_date": 1602535072,
+            "creation_date": 1534286327,
+            "answer_id": 51850654,
+            "question_id": 5527712,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>Using the method below</p>\n<pre><code>public static &lt;TypeOfObject&gt; TypeOfObject[] removeFirst(TypeOfObject[] array, TypeOfObject valueToRemove) {\n    TypeOfObject[] result = Arrays.copyOf(array, array.length - 1);\n    List&lt;TypeOfObject&gt; tempList = new ArrayList&lt;&gt;();\n    tempList.addAll(Arrays.asList(array));\n    tempList.remove(valueToRemove);\n    return tempList.toArray(result);\n}\n</code></pre>\n<p>You can remove the first element of any array by calling the method as demonstrated in the below JUnit test.</p>\n<pre><code>@Test\npublic void removeFirstTest() {\n    // Given\n    Integer valToRemove = 5;\n    Integer[] input = {1,2,3,valToRemove,4,valToRemove,6,7,8,9};\n    Integer[] expected = {1,2,3,4,valToRemove,6,7,8,9};\n    \n    // When\n    Integer[] actual = removeFirst(input, valToRemove);\n    \n    // Then\n    Assert.assertArrayEquals(expected, actual);\n}\n</code></pre>\n"
+        },
+        {
+            "owner": {
+                "reputation": 387,
+                "user_id": 2495046,
+                "user_type": "registered",
+                "accept_rate": 15,
+                "profile_image": "https://www.gravatar.com/avatar/e4c1a5f1078cbc7bc21c219e85e9cbc3?s=128&d=identicon&r=PG&f=1",
+                "display_name": "DavidJS",
+                "link": "https://stackoverflow.com/users/2495046/davidjs"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535057,
+            "creation_date": 1602535057,
+            "answer_id": 64325027,
+            "question_id": 64289678,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>I increased the memory of the server. I was using an AWS virtual machine of type t2.micro which has 1 GB of memory.</p>\n"
+        },
+        {
+            "owner": {
+                "reputation": 1,
+                "user_id": 14437985,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/2d04cd2885d6b7533bbd1ef3135fa446?s=128&d=identicon&r=PG&f=1",
+                "display_name": "RenaissanceMan",
+                "link": "https://stackoverflow.com/users/14437985/renaissanceman"
+            },
+            "comment_count": 0,
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1602535040,
+            "last_edit_date": 1602535040,
+            "creation_date": 1602534648,
+            "answer_id": 64324964,
+            "question_id": 64197195,
+            "content_license": "CC BY-SA 4.0",
+            "body": "<p>The error is telling you that you need to update the system-properties, for example in domain.xml:</p>\n<pre><code>    &lt;/extensions&gt;\n      &lt;system-properties&gt;\n        &lt;property name=&quot;java.util.logging.manager&quot; value=&quot;org.jboss.logmanager.LogManager&quot;/&gt;\n        &lt;property name=&quot;jboss.modules.system.pkgs&quot; value=&quot;org.jboss.byteman,org.jboss.logmanager&quot;/&gt;\n      &lt;/system-properties&gt;\n    &lt;management&gt;\n</code></pre>\n"
+        }
+    ],
+    "has_more": true,
+    "backoff": 10,
+    "quota_max": 300,
+    "quota_remaining": 292
+}

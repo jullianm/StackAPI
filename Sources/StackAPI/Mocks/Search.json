@@ -1,0 +1,584 @@
+{
+    "items": [
+        {
+            "tags": [
+                "ios",
+                "swift",
+                "swiftui"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "has_accepted_answer": false,
+            "answer_count": 1,
+            "is_answered": false,
+            "question_id": 64324449,
+            "item_type": "question",
+            "score": 0,
+            "last_activity_date": 1602533694,
+            "creation_date": 1602531967,
+            "body": "I am coming to a issue where I have a picker and when the user selects a value and press done. But, I dont know how to pass the &quot;You Selected: value&quot; in my another view. Below, I show you my picker view and my next view when the user clicks on the &quot;Done&quot; button. Is it possible to pass in the value? please help. here is my code:\n\nNextView:\n\n",
+            "excerpt": "I am coming to a issue where I have a picker and when the user selects a value and press done. But, I dont know how to pass the &quot;You Selected: value&quot; in my another view. Below, I show you my picker vi &hellip; ",
+            "title": "How to pass picker selected value to another view in SwiftUI?"
+        },
+        {
+            "tags": [
+                "ios",
+                "swift",
+                "swiftui"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "answer_id": 64324766,
+            "is_answered": false,
+            "question_id": 64324449,
+            "item_type": "answer",
+            "score": 0,
+            "last_activity_date": 1602533694,
+            "creation_date": 1602533694,
+            "body": "Declare them as properties in your next view\n\nand call the view like this\n\n",
+            "excerpt": "Declare them as properties in your next view\nstruct UploadPhoto: View {\n    var event: String\n    var year: String\n    var parish: String\n    \n\nand call the view like this\nUploadPhoto(event: eventsArr &hellip; ",
+            "title": "How to pass picker selected value to another view in SwiftUI?"
+        },
+        {
+            "tags": [
+                "swift",
+                "swiftui"
+            ],
+            "question_score": 1,
+            "is_accepted": false,
+            "has_accepted_answer": true,
+            "answer_count": 1,
+            "is_answered": true,
+            "question_id": 64324236,
+            "item_type": "question",
+            "score": 1,
+            "last_activity_date": 1602532780,
+            "creation_date": 1602530988,
+            "body": "I have a .\n\nIf user open the app via the app icon, I set  active.\nIf user open the app via the widget, I set  active by setting the  in .\nEverything is okay until now.\nThe problem is possibly I have 2 different instance of the same environmentObject. See https://github.com/peterfriese/Swift-EnvironmentObject-Demo\nBecause when I change anything in any view, the other view doesn&#39;t aware of it.\nTo get rid of the problem, I have tried to use , since this approach aims to push the  as a child view but no chance. Widget click doesn&#39;t push the  to the navigation stack.\n\nHow can I use the  as a single instance?\n",
+            "excerpt": "I have a @EnvironmentObject.\n@main\nstruct Image_WidgetApp: App {\n    @State var imageNumString = &quot;&quot;\n    @State var showDetailView = false  \n    @EnvironmentObject var userData: UserData\n    var body:  &hellip; ",
+            "title": "Multiple Instance of the Same EnvironmentObject"
+        },
+        {
+            "tags": [
+                "swift",
+                "swiftui"
+            ],
+            "question_score": 1,
+            "is_accepted": true,
+            "answer_id": 64324367,
+            "is_answered": false,
+            "question_id": 64324236,
+            "item_type": "answer",
+            "score": 2,
+            "last_activity_date": 1602532780,
+            "creation_date": 1602531576,
+            "body": "\nHow can I use the @EnvironmentObject as a single instance?\n\nYou can create one global  instance and inject where necessary:\n\nRegarding launching a different view from an App/Widget see:\n\nDetect app launch from WidgetKit widget extension\n\n",
+            "excerpt": "\nHow can I use the @EnvironmentObject as a single instance?\n\nYou can create one global UserData instance and inject where necessary:\n@main\nstruct Image_WidgetApp: App { \n    @StateObject var userData  &hellip; ",
+            "title": "Multiple Instance of the Same EnvironmentObject"
+        },
+        {
+            "tags": [
+                "swift",
+                "swiftui"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "has_accepted_answer": false,
+            "answer_count": 1,
+            "is_answered": false,
+            "question_id": 64324089,
+            "item_type": "question",
+            "score": 0,
+            "last_activity_date": 1602532670,
+            "creation_date": 1602530322,
+            "body": "The listView structure below displays coreData and uses onDelete to delete individual entries in coreData. The display of coreData entries and deleting of entries all work fine. When deleting an entry I would like to subtract the entry value from a system total found in the class UserData (rateArray). I&#39;m having trouble with my call to my UserData method adjTotal. If I put all my parameters in the call I get about six errors, but if I first reduce the coreData parameters to three simple parameters I still get one error &quot;Type of expression is ambiguous without more context&quot;. I&#39;m guessing this error has to do with non-view calculations but I&#39;m not sure how to avoid this.  id, entryDsc, entryDT, entryCat, moneyS, and rate are attributes of my coreData entity CurrTrans.\n\n",
+            "excerpt": "The listView structure below displays coreData and uses onDelete to delete individual entries in coreData. The display of coreData entries and deleting of entries all work fine. When deleting an entry &hellip; ",
+            "title": "Adjust System Total as a result of .onDelete"
+        },
+        {
+            "tags": [
+                "swift",
+                "swiftui"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "answer_id": 64324519,
+            "is_answered": false,
+            "question_id": 64324089,
+            "item_type": "answer",
+            "score": 0,
+            "last_activity_date": 1602532398,
+            "creation_date": 1602532398,
+            "body": "The  function expects three parameters:\n\nHowever, this is wrong - you can&#39;t just pass  (or other types):\n\nYou need to pass the already calculated values:\n\nFor more information see the documentation of Functions.\n",
+            "excerpt": "The adjTotal function expects three parameters:\nfunc adjTotal( moneyS: String, rate: Double, cat: Int)\n\nHowever, this is wrong - you can&#39;t just pass String (or other types):\nself.userData.adjTotal( mo &hellip; ",
+            "title": "Adjust System Total as a result of .onDelete"
+        },
+        {
+            "tags": [
+                "swift",
+                "swiftui"
+            ],
+            "question_score": -1,
+            "is_accepted": false,
+            "has_accepted_answer": false,
+            "answer_count": 0,
+            "is_answered": false,
+            "question_id": 64323825,
+            "item_type": "question",
+            "score": -1,
+            "last_activity_date": 1602532085,
+            "creation_date": 1602529173,
+            "body": "Currently, if I have ViewA and ViewA contains ViewB, and ViewB is another custom tabbed view, any changes in ViewA will stop all processes and re-init viewB. If I have a listener in ViewA, and that listener ping the view of an update, ViewB will reset and try to change itself because the parent view got pinged. I don&#39;t change viewB at all. Is there any ways around this? I found a way  where viewA is just a Tab controller, but it just led to some Text not showing up half the time.\nFixed: Declared singleton to the view model. If this is negative post by end of week I will remove it.\n",
+            "excerpt": "Currently, if I have ViewA and ViewA contains ViewB, and ViewB is another custom tabbed view, any changes in ViewA will stop all processes and re-init viewB. If I have a listener in ViewA, and that li &hellip; ",
+            "title": "Have child View have priority on object changes?"
+        },
+        {
+            "tags": [
+                "swift",
+                "swiftui"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "has_accepted_answer": true,
+            "answer_count": 1,
+            "is_answered": true,
+            "question_id": 64323840,
+            "item_type": "question",
+            "score": 0,
+            "last_activity_date": 1602529518,
+            "creation_date": 1602529233,
+            "body": "I have this list, populated from Core Data:\n\nthe last line,\n\nis my try to detect if that button was clicked. In that case, I want to change the font color to black.\nThe app crashes on that line when I try to scroll the list, with the message:\n\nI am new to SwiftUI.\nHow do I do that?\n",
+            "excerpt": " the message:\n__boundsFail: index 18446744073709551615 beyond bounds [0 .. 605]&#39;\n\nI am new to <span class=\"highlight\">SwiftUI</span>.\nHow do I do that?\n &hellip; ",
+            "title": "How do I know a particular button was clicked inside a List"
+        },
+        {
+            "tags": [
+                "swift",
+                "swiftui"
+            ],
+            "question_score": 0,
+            "is_accepted": true,
+            "answer_id": 64323909,
+            "is_answered": false,
+            "question_id": 64323840,
+            "item_type": "answer",
+            "score": 1,
+            "last_activity_date": 1602529518,
+            "creation_date": 1602529518,
+            "body": "Instead of storing index (which differs in full and filtered arrays) store  directly (just make its type Equatable), ie\n\n",
+            "excerpt": "Instead of storing index (which differs in full and filtered arrays) store item directly (just make its type Equatable), ie\nButton(action: {\n  selectedItem = item       // &lt;&lt; store item in selection\n  &hellip; ",
+            "title": "How do I know a particular button was clicked inside a List"
+        },
+        {
+            "tags": [
+                "swiftui"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "has_accepted_answer": false,
+            "answer_count": 0,
+            "is_answered": false,
+            "question_id": 64161948,
+            "item_type": "question",
+            "score": 0,
+            "last_activity_date": 1602528404,
+            "creation_date": 1601580096,
+            "body": "The application I&#39;m building consists of multiple views I need to navigate between.  is great, but my App targets MacOS 11 and there is no single content view navigation style (I basically want to display a single view at a time, nothing more).\nI&#39;ve written a custom view to do this but it can&#39;t utilise  and all the other helpers (or.. can it?)\nImplementing a custom  should work, but I can&#39;t figure it out from the Protocol. Apples documentation doesn&#39;t really help.\nThis actually displays a single view but navigation either does not seem to work or just does not trigger a view update. What am I missing ?\n\n",
+            "excerpt": "The application I&#39;m building consists of multiple views I need to navigate between. NavigationView is great, but my App targets MacOS 11 and there is no single content view navigation style (I basical &hellip; ",
+            "title": "SwiftUI implementing a custom NavigationViewStyle"
+        },
+        {
+            "tags": [
+                "animation",
+                "swiftui",
+                "vstack"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "answer_id": 64323169,
+            "is_answered": false,
+            "question_id": 64322626,
+            "item_type": "answer",
+            "score": 0,
+            "last_activity_date": 1602527700,
+            "creation_date": 1602526185,
+            "body": "The problem is that  is a new  and thus just fades or appears at its final destination, so its position doesn&#39;t animate because it previously wasn&#39;t on screen.\nThe trick is to keep  on screen at all times and just adjust its .   is used to keep the view from growing due to the word  that isn&#39;t always present.  A blank text view  is added or removed to cause the view to grow as before.\nHere&#39;s the workaround that gives a better looking animation:\n\n\nHere it is running in the simulator:\n\n",
+            "excerpt": "The problem is that Bar is a new View and thus just fades or appears at its final destination, so its position doesn&#39;t animate because it previously wasn&#39;t on screen.\nThe trick is to keep Bar on scree &hellip; ",
+            "title": "SwiftUI VStack Animation looks broken - Animated View will not change position"
+        },
+        {
+            "tags": [
+                "animation",
+                "swiftui",
+                "vstack"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "has_accepted_answer": false,
+            "answer_count": 1,
+            "is_answered": false,
+            "question_id": 64322626,
+            "item_type": "question",
+            "score": 0,
+            "last_activity_date": 1602527700,
+            "creation_date": 1602523901,
+            "body": "Let&#39;s take a look at the following Code Snippet:\n\nI would expect that the Text(&quot;Hide&quot;) will animate the position inside the parent VStack.\nBut it will stick to its last position and fade from there and also animate back to that position. Is there a possibility to give this animation a more natural feel so it will animate inside its parent.\nHere is a gif that visualizes the Problem:\n\n",
+            "excerpt": "Let&#39;s take a look at the following Code Snippet:\nstruct ContentView: View {\n    @State private var isViewHidden: Bool = false\n    let data = [1,2,3,4,5,6,7]\n    public var body: some View {\n        VS &hellip; ",
+            "title": "SwiftUI VStack Animation looks broken - Animated View will not change position"
+        },
+        {
+            "tags": [
+                "swiftui",
+                "combine",
+                "retain-cycle"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "answer_id": 64322996,
+            "is_answered": false,
+            "question_id": 64316975,
+            "item_type": "answer",
+            "score": 0,
+            "last_activity_date": 1602525391,
+            "creation_date": 1602525391,
+            "body": "The closure, as you expected, does retain a strong reference to . The closure itself is maintained by the  subscriber.\nIf nothing else happens, this is a memory leak because the subscriber is never cancelled, because  is never released, because   never de-inits, and  never de-inits because the subscriber is holding a reference it.\nHowever, in your case, the publisher completes, and that&#39;s another way for the subscriber to release its closures. So,  is only released after the pipeline completes.\nTo illustrate, we can use a  to explicitly send a completion:\n\nBecause  is captured, it&#39;s not released until after a completion is sent 2 seconds later:\n\nIf you comment out the line , there will not be a :\n\nIf you use  in the closure, the pipeline would cancel:\n\n",
+            "excerpt": "The closure, as you expected, does retain a strong reference to self. The closure itself is maintained by the Sink subscriber.\nIf nothing else happens, this is a memory leak because the subscriber is  &hellip; ",
+            "title": "Why Is There No Retain Cycle In ReceiveValue Block Combine Subscription"
+        },
+        {
+            "tags": [
+                "swiftui",
+                "combine",
+                "retain-cycle"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "has_accepted_answer": false,
+            "answer_count": 1,
+            "is_answered": false,
+            "question_id": 64316975,
+            "item_type": "question",
+            "score": 0,
+            "last_activity_date": 1602525391,
+            "creation_date": 1602502052,
+            "body": "I&#39;m determined to fully understand why this isn&#39;t causing a reference cycle. And in general what is happening at each stage of memory management here.\nI have the following setup:\n\nSo when I create a PresenterView and then dismiss it I get a successful deinit print.\nHowever I don&#39;t understand why they is no reference cycle here.  has  which has a subscription that captures self. So  -&gt; subscription and subscription -&gt; . How can  be triggered? In general is there a good approach to understanding whether there is a retain cycle in these kinds of situation?\n",
+            "excerpt": "I&#39;m determined to fully understand why this isn&#39;t causing a reference cycle. And in general what is happening at each stage of memory management here.\nI have the following setup:\nstruct PresenterView: &hellip; ",
+            "title": "Why Is There No Retain Cycle In ReceiveValue Block Combine Subscription"
+        },
+        {
+            "tags": [
+                "swift",
+                "swiftui"
+            ],
+            "question_score": -3,
+            "is_accepted": false,
+            "has_accepted_answer": false,
+            "answer_count": 0,
+            "is_answered": false,
+            "question_id": 64321937,
+            "item_type": "question",
+            "score": -3,
+            "last_activity_date": 1602521400,
+            "creation_date": 1602521092,
+            "body": "I would like to have a view of a model that is represented as a graph. Think of a virtually infinite cork-board or a light table with cards and connectors in between them. Elements/nodes are views to be further manipulated by touch or maybe with a bit of text editing. Connectors are touchable as well. Elements in the view might contain control views, buttons, various handles.\nWhat is the best way to have arbitrarily located, movable (draggable) and potentially touch-resizable subviews using SwiftUI? Stacks, Grids and List are doing auto-layout of the components.\nEDIT: Example of views that I am looking for are similar to those described in: Frank G. Halasz: NoteCards in a Nutshell, 1987; Reflections on NoteCards, 1988.\n",
+            "excerpt": " to have arbitrarily located, movable (draggable) and potentially touch-resizable subviews using <span class=\"highlight\">SwiftUI</span>? Stacks, Grids and List are doing auto-layout of the components.\nEDIT: Example of views that I &hellip; ",
+            "title": "Graph-like collection views in SwiftUI"
+        },
+        {
+            "tags": [
+                "swiftui",
+                "slider"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "has_accepted_answer": false,
+            "answer_count": 1,
+            "is_answered": false,
+            "question_id": 64311630,
+            "item_type": "question",
+            "score": 0,
+            "last_activity_date": 1602521328,
+            "creation_date": 1602476324,
+            "body": "I&#39;ve been looking ways to change my thumb image of the slider conditionally for every value change. Since I was not able to find ways to locate the thumb, I used customised slider, using this article. It works perfectly fine, however, I&#39;m not sure how to change the thumb image conditionally.\nPlease help.\nPretty new to SwiftUI.\n",
+            "excerpt": ". It works perfectly fine, however, I&#39;m not sure how to change the thumb image conditionally.\nPlease help.\nPretty new to <span class=\"highlight\">SwiftUI</span>.\n &hellip; ",
+            "title": "Changing the thumb image of the slider conditionally in SwiftUI"
+        },
+        {
+            "tags": [
+                "button",
+                "swiftui",
+                "navigationview"
+            ],
+            "question_score": -1,
+            "is_accepted": false,
+            "has_accepted_answer": false,
+            "answer_count": 0,
+            "is_answered": false,
+            "question_id": 64321907,
+            "item_type": "question",
+            "score": -1,
+            "last_activity_date": 1602520931,
+            "creation_date": 1602520931,
+            "body": "I have 3 buttons (Create Game, Join Game and Rules) in a vertical stack inside navigation view as the home screen of the app. Pressing each button will change the value of the selection variable and will redirect you to a relevant detail screen accordingly with a back button which can allow you to return to the home screen. Upon testing however, I get weird outputs. When I press a button (say Create Game) the first time, it takes me to the detail screen but when I go back and press another button (Say Join Game), it takes me to a detail screen for a second and then automatically returns back to the home screen. Pressing these buttons again after this happens does not redirect me to any screen from the home screen. Could somebody please tell me how to fix this?\n\n",
+            "excerpt": " to the home screen. Pressing these buttons again after this happens does not redirect me to any screen from the home screen. Could somebody please tell me how to fix this?\nimport <span class=\"highlight\">SwiftUI</span>\n\nstruct &hellip; ",
+            "title": "SwiftUI NavigationView automatically goes back to main screen from detail view"
+        },
+        {
+            "tags": [
+                "swift",
+                "swiftui",
+                "vstack",
+                "zstack"
+            ],
+            "question_score": 1,
+            "is_accepted": true,
+            "answer_id": 64321693,
+            "is_answered": false,
+            "question_id": 64321567,
+            "item_type": "answer",
+            "score": 2,
+            "last_activity_date": 1602520114,
+            "creation_date": 1602520114,
+            "body": "Put your image in the :\n\n",
+            "excerpt": "Put your image in the .background:\nstruct ContentView: View {\n    var body: some View {\n        \n        VStack {\n            // lots of stuff\n            Color.red\n            Color.blue\n        }\n   &hellip; ",
+            "title": "SwiftUI Zstack –&#160;Make element ignore safe area and another one don&#39;t"
+        },
+        {
+            "tags": [
+                "swift",
+                "swiftui",
+                "vstack",
+                "zstack"
+            ],
+            "question_score": 1,
+            "is_accepted": false,
+            "has_accepted_answer": true,
+            "answer_count": 1,
+            "is_answered": true,
+            "question_id": 64321567,
+            "item_type": "question",
+            "score": 1,
+            "last_activity_date": 1602520114,
+            "creation_date": 1602519510,
+            "body": "I have a Zstack like this:\n\nI want the image to ignore the safe area, but the  must respect the safe area.\nThe image is a background image that should cover all the area.\nThis code I have is making the  full screen too and I don&#39;t want that.\nWhy everything is not respecting the safe area is a mystery, because the respective modifier is applied to the image only.\n",
+            "excerpt": "I have a Zstack like this:\nZStack {\n  Image(&quot;beach&quot;)\n    .resizable()\n    .edgesIgnoringSafeArea(.all)\n    .scaledToFill()\n\n  VStack {\n    // with a lot of stuff\n  }\n}\n\nI want the image to ignore the  &hellip; ",
+            "title": "SwiftUI Zstack –&#160;Make element ignore safe area and another one don&#39;t"
+        },
+        {
+            "tags": [
+                "ios",
+                "swift",
+                "swiftui",
+                "widget"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "has_accepted_answer": false,
+            "answer_count": 2,
+            "is_answered": true,
+            "question_id": 64317185,
+            "item_type": "question",
+            "score": 0,
+            "last_activity_date": 1602519434,
+            "creation_date": 1602502829,
+            "body": "I have two images,  and , and my goal is to animate a transition between them in the following manner:\n\n is loaded\nPause for 1 second\n transitions to , with a duration of 1.5 seconds\n\nWith regular Swift, it would be using an  closure with an animation duration and a pause.\nHere is my attempt with SwiftUI, which is not showing a smooth transition, but a hard image change instead:\n\nWhat is missing in my implementation to animate the image transition?\nEdit: the entire codebase can be found here: TestWidget Github\n",
+            "excerpt": " of 1.5 seconds\n\nWith regular Swift, it would be using an UIView.animate closure with an animation duration and a pause.\nHere is my attempt with <span class=\"highlight\">SwiftUI</span>, which is not showing a smooth transition, but a &hellip; ",
+            "title": "SwiftUI: how to animate transition between two Images using a delay?"
+        },
+        {
+            "tags": [
+                "swift",
+                "swiftui"
+            ],
+            "question_score": 1,
+            "is_accepted": false,
+            "has_accepted_answer": true,
+            "answer_count": 2,
+            "is_answered": true,
+            "question_id": 64319810,
+            "item_type": "question",
+            "score": 1,
+            "last_activity_date": 1602515278,
+            "creation_date": 1602512851,
+            "body": "I&#39;m trying to re create an older version of my Onboarding setup with the new SwiftUI and when I try to share the state so the view changes, it simply doesn&#39;t know that something has changed, this is what I&#39;m doing:\nIn the main .swift struct (not ContentView.swift) I defined the pages like this:\n\nSo on the onBoarding page when I click the button to go to the login, it stores it, but it doesn&#39;t actually refreshes the view. There (in the OnboardingPageView.swift) I call the UserDefaults like this:\n\nand on the button I change it like this:\n\nSo what&#39;s going on?\nI know for instance if I create a @State on the @main and I bind it to the OnboardingPageView it works, as soon as I hit that button it takes me there.\n",
+            "excerpt": "I&#39;m trying to re create an older version of my Onboarding setup with the new <span class=\"highlight\">SwiftUI</span> and when I try to share the state so the view changes, it simply doesn&#39;t know that something has changed, this is &hellip; ",
+            "title": "Passing state between 2 pages SwiftUI"
+        },
+        {
+            "tags": [
+                "swift",
+                "swiftui"
+            ],
+            "question_score": 1,
+            "is_accepted": false,
+            "answer_id": 64320430,
+            "is_answered": false,
+            "question_id": 64319810,
+            "item_type": "answer",
+            "score": 0,
+            "last_activity_date": 1602515278,
+            "creation_date": 1602515278,
+            "body": "If I understood correctly, you are trying to pass the value of a state variable in the Content View to another view in the same app. For simplicity, Let&#39;s say your variable is initialised as follows in ContentView:\n\nNow, to transfer the value write the following in the Content View (or wherever the variable is initially):\n\nIn your second view or the other view, initialise a Binding variable called valueFromContentView using:\n\nThen, scroll down to the code that creates your previews. FYI, It is another  called ViewName_Previews: PreviewProvider { ... }\nIF you haven&#39;t changed anything, it will be:\n\nRemember, my second view is called NextPage.\nInside the previews braces, enter the code:\n\nSo, the code that creates the preview for your application now looks like:\n\nRemember, NextPage is the name of my view and valueFromContentView is teh binding variable that I initialised above\nLike this, you now can transfer the value of a variable in one view to another view.\n",
+            "excerpt": "If I understood correctly, you are trying to pass the value of a state variable in the Content View to another view in the same app. For simplicity, Let&#39;s say your variable is initialised as follows i &hellip; ",
+            "title": "Passing state between 2 pages SwiftUI"
+        },
+        {
+            "tags": [
+                "swift",
+                "swiftui"
+            ],
+            "question_score": 1,
+            "is_accepted": true,
+            "answer_id": 64320032,
+            "is_answered": false,
+            "question_id": 64319810,
+            "item_type": "answer",
+            "score": 1,
+            "last_activity_date": 1602513718,
+            "creation_date": 1602513718,
+            "body": "You can use  to manage  variable in multiple views:\n\n",
+            "excerpt": "You can use AppStorage to manage UserDefaults variable in multiple views:\n@main\nstruct TestApp: App {\n    @AppStorage(&quot;isOnBoardingDone&quot;) var isOnBoardingDone = false\n    \n    var body: some Scene {\n  &hellip; ",
+            "title": "Passing state between 2 pages SwiftUI"
+        },
+        {
+            "tags": [
+                "ios",
+                "swift",
+                "swiftui",
+                "environmentobject"
+            ],
+            "question_score": 1,
+            "is_accepted": false,
+            "answer_id": 64319713,
+            "is_answered": false,
+            "question_id": 64317508,
+            "item_type": "answer",
+            "score": 0,
+            "last_activity_date": 1602512454,
+            "creation_date": 1602512454,
+            "body": "Try to forward it explicitly into main queue\n\n",
+            "excerpt": "Try to forward it explicitly into main queue\n  signInHandler?.signIn { (user) in\n   DispatchQueue.main.async {\n     router.currentPage = .tasklist\n   }\n  }\n\n",
+            "title": "@Published property in @EnvironmentObject doesn&#39;t update the root view of my application"
+        },
+        {
+            "tags": [
+                "ios",
+                "swift",
+                "swiftui",
+                "environmentobject"
+            ],
+            "question_score": 1,
+            "is_accepted": false,
+            "has_accepted_answer": false,
+            "answer_count": 1,
+            "is_answered": false,
+            "question_id": 64317508,
+            "item_type": "question",
+            "score": 1,
+            "last_activity_date": 1602512454,
+            "creation_date": 1602504179,
+            "body": "I am trying to make a router object for my application using @EnvironmentObject. But the problem is the @Published property doesn&#39;t update the root view when the root view type is updated.\nHow it should work\n\nA user clicks Sign in with Apple button\nUpdate the router.currentPage property of @EnvironmentObject when a user logs in successfully.\nRootView get notified for updating router.currentPage and change the root view in accordance to the updated currentPage type.\n\nHere are my codes below.\nMainApp.swift\n\nViewRouter.swift\n\nRootView.swift\n\nSigninView.swift\n\n",
+            "excerpt": "I am trying to make a router object for my application using @EnvironmentObject. But the problem is the @Published property doesn&#39;t update the root view when the root view type is updated.\nHow it shou &hellip; ",
+            "title": "@Published property in @EnvironmentObject doesn&#39;t update the root view of my application"
+        },
+        {
+            "tags": [
+                "swiftui",
+                "ios14",
+                "widgetkit"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "has_accepted_answer": false,
+            "answer_count": 0,
+            "is_answered": false,
+            "question_id": 64319667,
+            "item_type": "question",
+            "score": 0,
+            "last_activity_date": 1602512309,
+            "creation_date": 1602512309,
+            "body": "I recently released a iOS 14 WidgetKit extension that&#39;s fairly basic, works great on my devices (both in development and from TestFlight) and the simulators, however I keep seeing crashes reported in AppStoreConnect Analytics as well as the Organizer Reports (Crashes). The Crash Report states the following error:\n\nI am using the latest Xcode 12.0.1.\nIs anyone else experiencing this issue? Or better, does anyone know how to fix it?\n",
+            "excerpt": "I recently released a iOS 14 WidgetKit extension that&#39;s fairly basic, works great on my devices (both in development and from TestFlight) and the simulators, however I keep seeing crashes reported in  &hellip; ",
+            "title": "WidgetKit: closure #1 getDescriptors(:completion) Crash"
+        },
+        {
+            "tags": [
+                "swiftui",
+                "swiftui-navigationlink"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "has_accepted_answer": false,
+            "answer_count": 1,
+            "is_answered": false,
+            "question_id": 64318959,
+            "item_type": "question",
+            "score": 0,
+            "last_activity_date": 1602512068,
+            "creation_date": 1602509741,
+            "body": "I&#39;m trying to figure out how to navigate to my secondary screen through a button alert. Firstly, the user inputs some fields through textfields in the primary screen.\nAt the bottom of this screen the user presses a submit button which then pops up an alert asking whether they would like to be taken to the secondary screen or cancel to not be taken. All the fields that have been entered through the primary screen then get passed onto the secondary screen. The user than has the option to navigate back to the primary screen if necessary once in the secondary screen.\nHere&#39;s what I&#39;ve tried:\n\nWhen using the code above it does navigate to my secondary screen (View2) however its like a sheet. View2 has no navigation properties back to View1 and this is what I&#39;m trying to achieve. Any help on this matter is greatly appreciated, Thank you!\n",
+            "excerpt": "I&#39;m trying to figure out how to navigate to my secondary screen through a button alert. Firstly, the user inputs some fields through textfields in the primary screen.\nAt the bottom of this screen the  &hellip; ",
+            "title": "SwiftUi: Navigating to a secondary page through Button Alert Confirmation"
+        },
+        {
+            "tags": [
+                "swiftui",
+                "swiftui-navigationlink"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "answer_id": 64319609,
+            "is_answered": false,
+            "question_id": 64318959,
+            "item_type": "answer",
+            "score": 0,
+            "last_activity_date": 1602512068,
+            "creation_date": 1602512068,
+            "body": "To get the  button you need a  vs a . You can just &quot;hide&quot; the  next to your \n\n",
+            "excerpt": "To get the Back button you need a NavigationLink vs a popover. You can just &quot;hide&quot; the NavigationLink next to your Button\nimport <span class=\"highlight\">SwiftUI</span>\n\nstruct ConfirmNavView: View {\n    @State var txtField1 &hellip; ",
+            "title": "SwiftUi: Navigating to a secondary page through Button Alert Confirmation"
+        },
+        {
+            "tags": [
+                "layout",
+                "swiftui",
+                "hstack"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "answer_id": 64319577,
+            "is_answered": false,
+            "question_id": 60710872,
+            "item_type": "answer",
+            "score": 0,
+            "last_activity_date": 1602511969,
+            "creation_date": 1602511969,
+            "body": "I was struggling with same problem and come with this solution\n\nThis code cause &quot;HStack1&quot; and &quot;HStack2&quot; have same width, I got this understanding from this answer\nTwo Spacers in Hstack1 are needed because one is ignored without other content (can be changed on empty Text(&quot;&quot;) for example, but I prefer Spacer)\n",
+            "excerpt": "I was struggling with same problem and come with this solution\nstruct ContentView: View {\n    var body: some View {\n        HStack(spacing: 4) {\n            HStack {               //HStack1\n           &hellip; ",
+            "title": "SwiftUI horizontal alignment from center to the right"
+        },
+        {
+            "tags": [
+                "layout",
+                "swiftui",
+                "hstack"
+            ],
+            "question_score": 0,
+            "is_accepted": false,
+            "has_accepted_answer": true,
+            "answer_count": 2,
+            "is_answered": true,
+            "question_id": 60710872,
+            "item_type": "question",
+            "score": 0,
+            "last_activity_date": 1602511969,
+            "creation_date": 1584381082,
+            "body": "I am trying to align a dynamic collection (ie of varying count) of views to the right of a centered view, without moving the center view from its original, center position.  \n\nFor example, the center view is  and the views to the right are  so I want the views to the right of  be displayed to its right, while  is centered horizontally on the screen:\n\n\n\nIf I try using an  the  will move away from center.  Is there a view modifier I can use?  ex. \n\nThis solution aligns the collection to the left of the right edge of the screen, but that&#39;s not the same thing.\n\n\n\nI would prefer not to have to duplicate the  on the left side and then make it disappear so as to balance the  on the right (that is a ridiculous way of creating a layout, plus the example I&#39;m providing here is simple, in actuality I have to use a  over the dynamic collection), ie\n\n\n\nUsing something like  is also winging it, as the font size of the center text will vary, and so I&#39;d have to guess and adjust the offset manually as well -- I&#39;d rather have a padding between the two views.\n",
+            "excerpt": "I am trying to align a dynamic collection (ie of varying count) of views to the right of a centered view, without moving the center view from its original, center position.  \n\nFor example, the center  &hellip; ",
+            "title": "SwiftUI horizontal alignment from center to the right"
+        }
+    ],
+    "has_more": true,
+    "quota_max": 300,
+    "quota_remaining": 279
+}
