@@ -56,7 +56,12 @@ enum QuestionsEndpoint {
         case .ids(let ids, _, _):
             return "2.2/questions/\(ids)"
         case .vote(let vote, let questionId, _):
-            return "2.2/questions/\(questionId)/\(vote.rawValue)"
+            var path = "2.2/questions/\(questionId)/\(vote.rawValue)"
+            if vote.shouldCancelVote {
+                path.append("/undo")
+            }
+            
+            return path
         }
     }
     
@@ -167,7 +172,12 @@ enum AnswersEndpoint {
         case .ids(let ids, _, _):
             return "2.2/answers/\(ids)"
         case .vote(let vote, let answerId, _):
-            return "2.2/answers/\(answerId)/\(vote.rawValue)"
+            var path = "2.2/answers/\(answerId)/\(vote.rawValue)"
+            if vote.shouldCancelVote {
+                path.append("/undo")
+            }
+            
+            return path
         }
     }
     
@@ -254,8 +264,13 @@ enum CommentsEndpoint {
             return "/2.2/comments/\(ids)"
         case .questionsIds(let questionsId, _, _):
             return "2.2/questions/\(questionsId)/comments"
-        case .vote(_, let commentId, _):
-            return "2.2/comments/\(commentId)/upvote"
+        case .vote(let vote, let commentId, _):
+            var path = "2.2/comments/\(commentId)/upvote"
+            if vote.shouldCancelVote {
+                path.append("/undo")
+            }
+            
+            return path
         }
     }
     

@@ -245,7 +245,7 @@ public extension StackITAPI {
     func voteComment(vote: Vote,
                      commentId: String,
                      credentials: StackCredentials) -> AnyPublisher<Comment, Error> {
-        precondition(vote == .upvote, "Downvote not available.")
+        precondition(vote.rawValue == "upvote" , "Downvote not available.")
         
         let subendpoint: CommentsEndpoint = .vote(vote: vote,
                                                   commentId: commentId,

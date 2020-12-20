@@ -257,7 +257,7 @@ final class StackAPITests: XCTestCase {
         let expectation = XCTestExpectation()
         let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.voteQuestion(vote: .upvote, questionId: "47494", credentials: credentials)
+        subscription = api.voteQuestion(vote: .upvote(), questionId: "47494", credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -277,7 +277,7 @@ final class StackAPITests: XCTestCase {
         let expectation = XCTestExpectation()
         let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.voteQuestion(vote: .downvote, questionId: "47494", credentials: credentials)
+        subscription = api.voteQuestion(vote: .downvote(), questionId: "47494", credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -297,7 +297,7 @@ final class StackAPITests: XCTestCase {
         let expectation = XCTestExpectation()
         let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.voteAnswer(vote: .upvote, answerId: "47494", credentials: credentials)
+        subscription = api.voteAnswer(vote: .upvote(), answerId: "47494", credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -317,7 +317,7 @@ final class StackAPITests: XCTestCase {
         let expectation = XCTestExpectation()
         let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.voteAnswer(vote: .downvote, answerId: "47494", credentials: credentials)
+        subscription = api.voteAnswer(vote: .downvote(), answerId: "47494", credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -337,7 +337,7 @@ final class StackAPITests: XCTestCase {
         let expectation = XCTestExpectation()
         let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.voteComment(vote: .upvote, commentId: "47494", credentials: credentials)
+        subscription = api.voteComment(vote: .upvote(), commentId: "47494", credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
