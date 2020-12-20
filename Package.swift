@@ -8,6 +8,7 @@ let package = Package(
     platforms: [
         // Add support for all platforms starting from a specific version.
         .macOS(.v10_15),
+        .iOS(.v14)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -23,19 +24,10 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "StackAPI",
-            dependencies: ["KeychainAccess"]
-        ),
+            dependencies: ["KeychainAccess"],
+            resources: [.process("Mocks")]),
         .testTarget(
             name: "StackAPITests",
-            dependencies: ["StackAPI"],
-            resources: [.copy("Answers.json"),
-                        .copy("Comments.json"),
-                        .copy("Inbox.json"),
-                        .copy("Posts.json"),
-                        .copy("Questions.json"),
-                        .copy("Search.json"),
-                        .copy("Tags.json"),
-                        .copy("Timeline.json"),
-                        .copy("User.json")]),
+            dependencies: ["StackAPI"])
     ]
 )
