@@ -127,18 +127,13 @@ enum QuestionsEndpoint {
     }
     
     var mockData: Data {
-        let url = URL(fileURLWithPath: #file)
-            .deletingLastPathComponent()
-            .deletingLastPathComponent()
-            .appendingPathComponent("Mocks")
-        
         switch self {
         case .filters, .ids:
-            return url.data(from: "Questions.json")
+            return Bundle.module.dataFromResource("Questions")
         case .keywords:
-            return url.data(from: "Search.json")
+            return Bundle.module.dataFromResource("Search")
         case .vote:
-            return url.data(from: "VotedQuestion.json")
+            return Bundle.module.dataFromResource("VotedQuestion")
         }
     }
 }
@@ -216,16 +211,11 @@ enum AnswersEndpoint {
     }
     
     var mockData: Data {
-        let url = URL(fileURLWithPath: #file)
-            .deletingLastPathComponent()
-            .deletingLastPathComponent()
-            .appendingPathComponent("Mocks")
-        
         switch self {
         case .questionId, .ids:
-            return url.data(from: "Answers.json")
+            return Bundle.module.dataFromResource("Answers")
         case .vote:
-            return url.data(from: "VotedAnswer.json")
+            return Bundle.module.dataFromResource("VotedAnswer")
         }
     }
 }
@@ -309,17 +299,12 @@ enum CommentsEndpoint {
         }
     }
     
-    var mockData: Data {
-        let url = URL(fileURLWithPath: #file)
-            .deletingLastPathComponent()
-            .deletingLastPathComponent()
-            .appendingPathComponent("Mocks")
-        
+    var mockData: Data {        
         switch self {
         case .ids, .questionsIds, .answersIds:
-            return url.data(from: "Comments.json")
+            return Bundle.module.dataFromResource("Comments")
         case .vote:
-            return url.data(from: "VotedComment.json")
+            return Bundle.module.dataFromResource("VotedComment")
         }
     }
 }

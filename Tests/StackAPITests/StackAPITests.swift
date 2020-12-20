@@ -177,10 +177,11 @@ final class StackAPITests: XCTestCase {
         wait(for: [expectation], timeout: 0.5)
     }
     
-    func testFetchUser() {
+    func testFetchUser() throws {
         let expectation = XCTestExpectation()
+        let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.fetchUser(credentials: loadCredentials())
+        subscription = api.fetchUser(credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -195,10 +196,11 @@ final class StackAPITests: XCTestCase {
         wait(for: [expectation], timeout: 0.5)
     }
     
-    func testFetchInbox() {
+    func testFetchInbox() throws {
         let expectation = XCTestExpectation()
+        let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.fetchInbox(credentials: loadCredentials())
+        subscription = api.fetchInbox(credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -213,10 +215,11 @@ final class StackAPITests: XCTestCase {
         wait(for: [expectation], timeout: 0.5)
     }
     
-    func testFetchPosts() {
+    func testFetchPosts() throws {
         let expectation = XCTestExpectation()
+        let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.fetchPosts(credentials: loadCredentials())
+        subscription = api.fetchPosts(credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -231,10 +234,11 @@ final class StackAPITests: XCTestCase {
         wait(for: [expectation], timeout: 0.5)
     }
     
-    func testFetchTimelime() {
+    func testFetchTimelime() throws {
         let expectation = XCTestExpectation()
+        let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.fetchTimeline(credentials: loadCredentials())
+        subscription = api.fetchTimeline(credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -249,10 +253,11 @@ final class StackAPITests: XCTestCase {
         wait(for: [expectation], timeout: 0.5)
     }
     
-    func testUpvoteQuestion() {
+    func testUpvoteQuestion() throws {
         let expectation = XCTestExpectation()
+        let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.voteQuestion(vote: .upvote, questionId: "47494", credentials: loadCredentials())
+        subscription = api.voteQuestion(vote: .upvote, questionId: "47494", credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -268,10 +273,11 @@ final class StackAPITests: XCTestCase {
         wait(for: [expectation], timeout: 0.5)
     }
     
-    func testDownvoteQuestion() {
+    func testDownvoteQuestion() throws {
         let expectation = XCTestExpectation()
+        let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.voteQuestion(vote: .downvote, questionId: "47494", credentials: loadCredentials())
+        subscription = api.voteQuestion(vote: .downvote, questionId: "47494", credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -287,10 +293,11 @@ final class StackAPITests: XCTestCase {
         wait(for: [expectation], timeout: 0.5)
     }
     
-    func testUpvoteAnswer() {
+    func testUpvoteAnswer() throws {
         let expectation = XCTestExpectation()
+        let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.voteAnswer(vote: .upvote, answerId: "47494", credentials: loadCredentials())
+        subscription = api.voteAnswer(vote: .upvote, answerId: "47494", credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -306,10 +313,11 @@ final class StackAPITests: XCTestCase {
         wait(for: [expectation], timeout: 0.5)
     }
     
-    func testDownvoteAnswer() {
+    func testDownvoteAnswer() throws {
         let expectation = XCTestExpectation()
+        let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.voteAnswer(vote: .downvote, answerId: "47494", credentials: loadCredentials())
+        subscription = api.voteAnswer(vote: .downvote, answerId: "47494", credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -325,10 +333,11 @@ final class StackAPITests: XCTestCase {
         wait(for: [expectation], timeout: 0.5)
     }
     
-    func testUpvoteComment() {
+    func testUpvoteComment() throws {
         let expectation = XCTestExpectation()
+        let credentials = try XCTUnwrap(loadCredentials())
         
-        subscription = api.voteComment(vote: .upvote, commentId: "47494", credentials: loadCredentials())
+        subscription = api.voteComment(vote: .upvote, commentId: "47494", credentials: credentials)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -346,14 +355,9 @@ final class StackAPITests: XCTestCase {
 }
 
 extension StackAPITests {
-    private func loadCredentials() -> StackCredentials {
-        let url = URL(fileURLWithPath: #file)
-            .deletingLastPathComponent()
-            .deletingLastPathComponent()
-            .deletingLastPathComponent()
-            .appendingPathComponent("Sources/StackAPI/Mocks/Credentials.json")
-        let data = try! Data(contentsOf: url)
+    private func loadCredentials() -> StackCredentials? {
+        let data = Bundle.module.dataFromResource("Credentials")
         
-        return try! JSONDecoder().decode(StackCredentials.self, from: data)
+        return try? JSONDecoder().decode(StackCredentials.self, from: data)
     }
 }
