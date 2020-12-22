@@ -31,11 +31,13 @@ final class NetworkManager: ServiceManager {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
+            .print("#RECEIVED RESPONSE")
             .mapError(Error.network)
             .map(\.data)
+            .print("#RECEIVED DATA")
             .decode(type: model, decoder: decoder)
             .mapError(Error.decodingError)
-            .print()
+            .print("#RECEIVED OBJECT")
             .handleEvents(receiveOutput: { [weak self] model in
                 if endpoint.method == .get {
                     self?.cache[endpoint.cacheID] = model
