@@ -126,8 +126,19 @@ enum QuestionsEndpoint {
         case .vote(_, _, let credentials):
             return [
                 URLQueryItem(name: "access_token", value: credentials.token),
-                URLQueryItem(name: "key", value: credentials.key)
+                URLQueryItem(name: "key", value: credentials.key),
+                URLQueryItem(name: "site", value: "stackoverflow"),
+                URLQueryItem(name: "filter", value: "!--1nZub2Jjsl")
             ]
+        }
+    }
+    
+    var headers: [String: String] {
+        switch self {
+        case .vote:
+            return ["Content-Type": "application/x-www-form-urlencoded"]
+        case _:
+            return [:]
         }
     }
     
@@ -223,8 +234,19 @@ enum AnswersEndpoint {
         case .vote(_, _, let credentials):
             return [
                 URLQueryItem(name: "access_token", value: credentials.token),
-                URLQueryItem(name: "key", value: credentials.key)
+                URLQueryItem(name: "key", value: credentials.key),
+                URLQueryItem(name: "site", value: "stackoverflow"),
+                URLQueryItem(name: "filter", value: "!--1nZxscv1HU")
             ]
+        }
+    }
+    
+    var headers: [String: String] {
+        switch self {
+        case .vote:
+            return ["Content-Type": "application/x-www-form-urlencoded"]
+        case _:
+            return [:]
         }
     }
     
@@ -326,8 +348,19 @@ enum CommentsEndpoint {
         case .vote(_, _, let credentials):
             return [
                 URLQueryItem(name: "access_token", value: credentials.token),
-                URLQueryItem(name: "key", value: credentials.key)
+                URLQueryItem(name: "key", value: credentials.key),
+                URLQueryItem(name: "site", value: "stackoverflow"),
+                URLQueryItem(name: "filter", value: "!9_bDE*Xsp")
             ]
+        }
+    }
+    
+    var headers: [String: String] {
+        switch self {
+        case .vote:
+            return ["Content-Type": "application/x-www-form-urlencoded"]
+        case _:
+            return [:]
         }
     }
     

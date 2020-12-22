@@ -54,6 +54,19 @@ enum Endpoint {
         }
     }
     
+    var headers: [String: String] {
+        switch self {
+        case .answers(let subendpoint):
+            return subendpoint.headers
+        case .questions(let subendpoint):
+            return subendpoint.headers
+        case .comments(let subendpoint):
+            return subendpoint.headers
+        case _:
+            return [:]
+        }
+    }
+    
     var urlRequest: URLRequest? {
         var components = URLComponents()
         components.scheme = "https"
@@ -67,6 +80,11 @@ enum Endpoint {
         
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
+        request.allHTTPHeaderFields = headers
+        
+        if method == .post {
+            request.httpBody = components.query?.data(using: .utf8)
+        }
         
         return request
     }
