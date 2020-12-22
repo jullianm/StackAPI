@@ -12,6 +12,8 @@
             "comment_count": 0,
             "is_accepted": false,
             "score": 0,
+            "upvoted": true,
+            "downvoted": false,
             "last_activity_date": 1602535212,
             "creation_date": 1602535212,
             "answer_id": 64325062,

@@ -133,12 +133,10 @@ enum QuestionsEndpoint {
     
     var mockData: Data {
         switch self {
-        case .filters, .ids:
+        case .filters, .ids, .vote:
             return Bundle.module.dataFromResource("Questions")
         case .keywords:
             return Bundle.module.dataFromResource("Search")
-        case .vote:
-            return Bundle.module.dataFromResource("VotedQuestion")
         }
     }
 }
@@ -232,10 +230,8 @@ enum AnswersEndpoint {
     
     var mockData: Data {
         switch self {
-        case .questionId, .ids:
+        case .questionId, .ids, .vote:
             return Bundle.module.dataFromResource("Answers")
-        case .vote:
-            return Bundle.module.dataFromResource("VotedAnswer")
         }
     }
 }
@@ -337,10 +333,8 @@ enum CommentsEndpoint {
     
     var mockData: Data {        
         switch self {
-        case .ids, .questionsIds, .answersIds:
+        case .ids, .questionsIds, .answersIds, .vote:
             return Bundle.module.dataFromResource("Comments")
-        case .vote:
-            return Bundle.module.dataFromResource("VotedComment")
         }
     }
 }

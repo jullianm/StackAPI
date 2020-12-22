@@ -271,7 +271,7 @@ final class StackAPITests: XCTestCase {
                     XCTFail(error.localizedDescription)
                 }
             } receiveValue: { model in
-                XCTAssertTrue(model.upvoted == true)
+                XCTAssertTrue(model.items[0].upvoted == true)
                 expectation.fulfill()
             }
         
@@ -292,7 +292,7 @@ final class StackAPITests: XCTestCase {
                     XCTFail(error.localizedDescription)
                 }
             } receiveValue: { model in
-                XCTAssertTrue(model.downvoted == true)
+                XCTAssertTrue(model.items[0].downvoted == true)
                 expectation.fulfill()
             }
         
@@ -313,7 +313,7 @@ final class StackAPITests: XCTestCase {
                     XCTFail(error.localizedDescription)
                 }
             } receiveValue: { model in
-                XCTAssertTrue(model.upvoted == true)
+                XCTAssertTrue(model.items[0].upvoted == true)
                 expectation.fulfill()
             }
         
@@ -334,7 +334,7 @@ final class StackAPITests: XCTestCase {
                     XCTFail(error.localizedDescription)
                 }
             } receiveValue: { model in
-                XCTAssertTrue(model.upvoted == true)
+                XCTAssertTrue(model.items[0].upvoted == true)
                 expectation.fulfill()
             }
         
@@ -355,7 +355,7 @@ final class StackAPITests: XCTestCase {
                     XCTFail(error.localizedDescription)
                 }
             } receiveValue: { model in
-                XCTAssertTrue(model.upvoted == true)
+                XCTAssertTrue(model.items[0].upvoted == true)
                 expectation.fulfill()
             }
         

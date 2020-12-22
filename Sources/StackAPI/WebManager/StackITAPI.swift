@@ -206,13 +206,13 @@ public extension StackITAPI {
     /// - returns : A type-erased publisher of `Question` and `Error`.
     func voteQuestion(vote: Vote,
                       questionId: String,
-                      credentials: StackCredentials) -> AnyPublisher<Question, Error> {
+                      credentials: StackCredentials) -> AnyPublisher<Questions, Error> {
         let subendpoint: QuestionsEndpoint = .vote(vote: vote,
                                                    questionId: questionId,
                                                    credentials: credentials)
         
         return serviceManager.fetch(endpoint: .questions(subendpoint: subendpoint),
-                                    model: Question.self)
+                                    model: Questions.self)
     }
     
     /// Send a vote for a specific answer  to `Stack Exchange` API.
@@ -224,13 +224,13 @@ public extension StackITAPI {
     /// - returns : A type-erased publisher of `Answer` and `Error`.
     func voteAnswer(vote: Vote,
                     answerId: String,
-                    credentials: StackCredentials) -> AnyPublisher<Answer, Error> {
+                    credentials: StackCredentials) -> AnyPublisher<Answers, Error> {
         let subendpoint: AnswersEndpoint = .vote(vote: vote,
                                                  answerId: answerId,
                                                  credentials: credentials)
         
         return serviceManager.fetch(endpoint: .answers(subendpoint: subendpoint),
-                                    model: Answer.self)
+                                    model: Answers.self)
     }
     
     /// Send an upvote for a specific comment  to `Stack Exchange` API.
@@ -244,7 +244,7 @@ public extension StackITAPI {
     /// - returns : A type-erased publisher of `Comment` and `Error`.
     func voteComment(vote: Vote,
                      commentId: String,
-                     credentials: StackCredentials) -> AnyPublisher<Comment, Error> {
+                     credentials: StackCredentials) -> AnyPublisher<Comments, Error> {
         precondition(vote.rawValue == "upvote" , "Downvote not available.")
         
         let subendpoint: CommentsEndpoint = .vote(vote: vote,
@@ -252,6 +252,6 @@ public extension StackITAPI {
                                                   credentials: credentials)
         
         return serviceManager.fetch(endpoint: .comments(subendpoint: subendpoint),
-                                    model: Comment.self)
+                                    model: Comments.self)
     }
 }
