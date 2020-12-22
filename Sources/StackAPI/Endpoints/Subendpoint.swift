@@ -94,6 +94,7 @@ enum QuestionsEndpoint {
             if let credentials = credentials, !credentials.token.isEmpty {
                 items.append(.init(name: "filter", value: "!3zl2.6HRQMHqUnHP9"))
                 items.append(.init(name: "access_token", value: credentials.token))
+                items.append(.init(name: "key", value: credentials.key))
             } else {
                 items.append(.init(name: "filter", value: "!--1nZw8Pr5S*"))
             }
@@ -118,6 +119,7 @@ enum QuestionsEndpoint {
             if let credentials = credentials, !credentials.token.isEmpty {
                 items.append(.init(name: "filter", value: "!3zl2.6HRQMHqUnHP9"))
                 items.append(.init(name: "access_token", value: credentials.token))
+                items.append(.init(name: "key", value: credentials.key))
             } else {
                 items.append(.init(name: "filter", value: "!--1nZw8Pr5S*"))
             }
@@ -128,7 +130,7 @@ enum QuestionsEndpoint {
                 URLQueryItem(name: "access_token", value: credentials.token),
                 URLQueryItem(name: "key", value: credentials.key),
                 URLQueryItem(name: "site", value: "stackoverflow"),
-                URLQueryItem(name: "filter", value: "!--1nZub2Jjsl")
+                URLQueryItem(name: "filter", value: "!3zl2.6HRQMHqUnHP9")
             ]
         }
     }
@@ -224,7 +226,7 @@ enum AnswersEndpoint {
             if let credentials = credentials, !credentials.token.isEmpty {
                 items.append(.init(name: "access_token", value: credentials.token))
                 items.append(.init(name: "filter", value: "!b6AubgRQF6zu4D"))
-                
+                items.append(.init(name: "key", value: credentials.key))
             } else {
                 items.append(.init(name: "filter", value: "!--1nZxQ38Bk1"))
             }
@@ -236,7 +238,7 @@ enum AnswersEndpoint {
                 URLQueryItem(name: "access_token", value: credentials.token),
                 URLQueryItem(name: "key", value: credentials.key),
                 URLQueryItem(name: "site", value: "stackoverflow"),
-                URLQueryItem(name: "filter", value: "!--1nZxscv1HU")
+                URLQueryItem(name: "filter", value: "!3zl2.FwwamcT_Hxiu")
             ]
         }
     }
@@ -338,6 +340,7 @@ enum CommentsEndpoint {
             
             if let credentials = credentials, !credentials.token.isEmpty {
                 items.append(.init(name: "access_token", value: credentials.token))
+                items.append(.init(name: "key", value: credentials.key))
                 items.append(.init(name: "filter", value: "!--1nZxYynKnV"))
             } else {
                 items.append(.init(name: "filter", value: "!9_bDE0E4s"))
@@ -350,7 +353,7 @@ enum CommentsEndpoint {
                 URLQueryItem(name: "access_token", value: credentials.token),
                 URLQueryItem(name: "key", value: credentials.key),
                 URLQueryItem(name: "site", value: "stackoverflow"),
-                URLQueryItem(name: "filter", value: "!9_bDE*Xsp")
+                URLQueryItem(name: "filter", value: "!--1nZxYynKnV")
             ]
         }
     }
