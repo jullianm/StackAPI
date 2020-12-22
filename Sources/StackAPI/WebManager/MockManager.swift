@@ -16,6 +16,7 @@ final class MockManager: ServiceManager {
         return Just(endpoint.mockData).map { data in
             return try! decoder.decode(model, from: data)
         }
+        .print()
         .setFailureType(to: Error.self)
         .eraseToAnyPublisher()
     }
@@ -33,7 +34,7 @@ final class MockManager: ServiceManager {
             .map(\.data)
             .decode(type: model, decoder: decoder)
             .mapError(Error.decodingError)
-            .print("#DEBUG")
+            .print()
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
     }

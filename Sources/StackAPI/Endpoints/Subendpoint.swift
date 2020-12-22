@@ -43,7 +43,7 @@ enum QuestionsEndpoint {
         case .keywords(_, let action):
             return action
         case .vote:
-            return nil
+            return .refresh
         }
     }
     
@@ -165,6 +165,16 @@ enum AnswersEndpoint {
         }
     }
     
+    var action: Action? {
+        switch self {
+        case .vote:
+            return .refresh
+        case .ids(_, let action, _),
+             .questionId(_, let action, _):
+            return action
+        }
+    }
+    
     var path: String {
         switch self {
         case let .questionId(questionId, _, _):
@@ -282,6 +292,17 @@ enum CommentsEndpoint {
             return path + ids + String(action?.pageCount ?? 1)
         case .vote:
             return .init()
+        }
+    }
+    
+    var action: Action? {
+        switch self {
+        case .vote:
+            return .refresh
+        case .answersIds(_, let action, _),
+             .ids(_, let action, _),
+             .questionsIds(_, let action, _):
+            return action
         }
     }
     

@@ -7,7 +7,7 @@ final class StackAPITests: XCTestCase {
     private var subscription: AnyCancellable?
     
     override func setUp() {
-        api = StackITAPI(enableMock: true)
+        api = .init(enableMock: true)
     }
     
     override func tearDown() {
@@ -179,7 +179,8 @@ final class StackAPITests: XCTestCase {
     
     func testFetchUser() throws {
         let expectation = XCTestExpectation()
-        let credentials = try XCTUnwrap(loadCredentials())
+        let credentials = try XCTUnwrap(loadModel(resourceName: "Credentials",
+                                                  type: StackCredentials.self))
         
         subscription = api.fetchUser(credentials: credentials)
             .sink { completion in
@@ -198,7 +199,8 @@ final class StackAPITests: XCTestCase {
     
     func testFetchInbox() throws {
         let expectation = XCTestExpectation()
-        let credentials = try XCTUnwrap(loadCredentials())
+        let credentials = try XCTUnwrap(loadModel(resourceName: "Credentials",
+                                                  type: StackCredentials.self))
         
         subscription = api.fetchInbox(credentials: credentials)
             .sink { completion in
@@ -217,7 +219,8 @@ final class StackAPITests: XCTestCase {
     
     func testFetchPosts() throws {
         let expectation = XCTestExpectation()
-        let credentials = try XCTUnwrap(loadCredentials())
+        let credentials = try XCTUnwrap(loadModel(resourceName: "Credentials",
+                                                  type: StackCredentials.self))
         
         subscription = api.fetchPosts(credentials: credentials)
             .sink { completion in
@@ -236,7 +239,8 @@ final class StackAPITests: XCTestCase {
     
     func testFetchTimelime() throws {
         let expectation = XCTestExpectation()
-        let credentials = try XCTUnwrap(loadCredentials())
+        let credentials = try XCTUnwrap(loadModel(resourceName: "Credentials",
+                                                  type: StackCredentials.self))
         
         subscription = api.fetchTimeline(credentials: credentials)
             .sink { completion in
@@ -255,7 +259,8 @@ final class StackAPITests: XCTestCase {
     
     func testUpvoteQuestion() throws {
         let expectation = XCTestExpectation()
-        let credentials = try XCTUnwrap(loadCredentials())
+        let credentials = try XCTUnwrap(loadModel(resourceName: "Credentials",
+                                                  type: StackCredentials.self))
         
         subscription = api.voteQuestion(vote: .upvote(), questionId: "47494", credentials: credentials)
             .sink { completion in
@@ -275,7 +280,8 @@ final class StackAPITests: XCTestCase {
     
     func testDownvoteQuestion() throws {
         let expectation = XCTestExpectation()
-        let credentials = try XCTUnwrap(loadCredentials())
+        let credentials = try XCTUnwrap(loadModel(resourceName: "Credentials",
+                                                  type: StackCredentials.self))
         
         subscription = api.voteQuestion(vote: .downvote(), questionId: "47494", credentials: credentials)
             .sink { completion in
@@ -295,7 +301,8 @@ final class StackAPITests: XCTestCase {
     
     func testUpvoteAnswer() throws {
         let expectation = XCTestExpectation()
-        let credentials = try XCTUnwrap(loadCredentials())
+        let credentials = try XCTUnwrap(loadModel(resourceName: "Credentials",
+                                                  type: StackCredentials.self))
         
         subscription = api.voteAnswer(vote: .upvote(), answerId: "47494", credentials: credentials)
             .sink { completion in
@@ -315,7 +322,8 @@ final class StackAPITests: XCTestCase {
     
     func testDownvoteAnswer() throws {
         let expectation = XCTestExpectation()
-        let credentials = try XCTUnwrap(loadCredentials())
+        let credentials = try XCTUnwrap(loadModel(resourceName: "Credentials",
+                                                  type: StackCredentials.self))
         
         subscription = api.voteAnswer(vote: .downvote(), answerId: "47494", credentials: credentials)
             .sink { completion in
@@ -335,7 +343,8 @@ final class StackAPITests: XCTestCase {
     
     func testUpvoteComment() throws {
         let expectation = XCTestExpectation()
-        let credentials = try XCTUnwrap(loadCredentials())
+        let credentials = try XCTUnwrap(loadModel(resourceName: "Credentials",
+                                                  type: StackCredentials.self))
         
         subscription = api.voteComment(vote: .upvote(), commentId: "47494", credentials: credentials)
             .sink { completion in
@@ -354,10 +363,12 @@ final class StackAPITests: XCTestCase {
     }
 }
 
-extension StackAPITests {
-    private func loadCredentials() -> StackCredentials? {
-        let data = Bundle.module.dataFromResource("Credentials")
+private extension StackAPITests {
+    private func loadModel<T: Decodable>(resourceName: String, type: T.Type) -> T? {
+        let data = Bundle.module.dataFromResource(resourceName)
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         
-        return try? JSONDecoder().decode(StackCredentials.self, from: data)
+        return try? decoder.decode(T.self, from: data)
     }
 }

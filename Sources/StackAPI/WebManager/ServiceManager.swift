@@ -19,15 +19,8 @@ final class NetworkManager: ServiceManager {
     private var cache: [CacheID: Any] = [:]
     
     func fetch<T: Decodable>(endpoint: Endpoint, model: T.Type) -> AnyPublisher<T, Error> {
-        if endpoint.action == .refresh {
-            cache = [:]
-        } else {
-            if endpoint.method == .get,
-               let value = cache[endpoint.cacheID] as? T {
-                return Just(value)
-                    .setFailureType(to: Error.self)
-                    .eraseToAnyPublisher()
-            }
+        if let cachedValue: AnyPublisher<T, Error> = resetOrFetchFromCache(endpoint: endpoint) {
+            return cachedValue
         }
         
         guard let urlRequest = endpoint.urlRequest else {
@@ -42,9 +35,11 @@ final class NetworkManager: ServiceManager {
             .map(\.data)
             .decode(type: model, decoder: decoder)
             .mapError(Error.decodingError)
-            .print("#DEBUG GET REQUEST")
+            .print()
             .handleEvents(receiveOutput: { [weak self] model in
-                self?.cache[endpoint.cacheID] = model
+                if endpoint.method == .get {
+                    self?.cache[endpoint.cacheID] = model
+                }
             })
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
@@ -63,9 +58,25 @@ final class NetworkManager: ServiceManager {
             .map(\.data)
             .decode(type: model, decoder: decoder)
             .mapError(Error.decodingError)
-            .print("#DEBUG POST REQUEST")
+            .print()
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
+    }
+}
+
+private extension NetworkManager {
+    /// Sets the cache to empty or fetch a cached value if present.
+    /// - Parameter endpoint: The endpoint that contains the action to execute (refresh cache or else).
+    /// - Returns: An optional publsher with the cached value.
+    func resetOrFetchFromCache<T>(endpoint: Endpoint) -> AnyPublisher<T, Error>? {
+        switch endpoint.action {
+        case .refresh:
+            cache = [:]
+            return nil
+        case _:
+            guard let value = cache[endpoint.cacheID] as? T else { return nil }
+            return Just(value).setFailureType(to: Error.self).eraseToAnyPublisher()
+        }
     }
 }
 
